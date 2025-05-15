@@ -1187,6 +1187,14 @@ input, select, textarea {
 			background-color: #000000;
 		}
 
+#bg.visible {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  transform: none !important;
+}
+
+
+
 /* Wrapper */
 
 	#wrapper {
