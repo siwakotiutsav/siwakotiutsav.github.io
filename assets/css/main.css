@@ -1107,15 +1107,10 @@ input, select, textarea {
 /* BG */
 
 #bg {
-  background-image: url('../images/bg.jpg'); /* Make sure this path is correct */
+  background-image: url('../images/bg.jpg'); /* Check the path */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  -moz-transform: scale(1.0);
-  -webkit-transform: scale(1.0);
-  -ms-transform: scale(1.0);
-  transform: scale(1.0);
-  -webkit-backface-visibility: hidden;
   position: fixed;
   top: 0;
   left: 0;
@@ -1124,8 +1119,17 @@ input, select, textarea {
   z-index: 1;
   opacity: 0;
   transition: opacity 1s ease-in-out;
+
+  -moz-transform: scale(1.0);
+  -webkit-transform: scale(1.0);
+  -ms-transform: scale(1.0);
+  transform: scale(1.0);
+  -webkit-backface-visibility: hidden;
 }
 
+#bg.visible {
+  opacity: 1 !important;
+}
 
 		#bg:before, #bg:after {
 			content: '';
@@ -1186,12 +1190,6 @@ input, select, textarea {
 		body.is-preload #bg:before {
 			background-color: #000000;
 		}
-
-#bg.visible {
-  opacity: 1 !important;
-  pointer-events: auto !important;
-  transform: none !important;
-}
 
 
 
