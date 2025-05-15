@@ -92,9 +92,14 @@
 <script>
   window.addEventListener('load', function () {
     document.body.classList.remove('is-preload');
-    document.querySelector('#bg').style.opacity = '1';
+
+    const bg = document.querySelector('#bg');
+    if (bg) {
+      bg.classList.add('visible');
+    }
   });
 </script>
+
 
 						
   </body>
