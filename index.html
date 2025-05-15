@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-	  <style>
+<style>
   #bg {
     opacity: 1 !important;
-    transition: none !important;
+    pointer-events: auto !important;
+    transform: none !important;
   }
 </style>
+
 
   </head>
   <body class="is-preload">
@@ -87,5 +89,13 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
 
+<script>
+  window.addEventListener('load', function () {
+    document.body.classList.remove('is-preload');
+    document.querySelector('#bg').style.opacity = '1';
+  });
+</script>
+
+						
   </body>
 </html>
