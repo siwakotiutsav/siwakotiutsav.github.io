@@ -1,72 +1,128 @@
 <!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Stellar View - Utsav Siwakoti</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
-		<div id="wrapper">
-			<header id="header">
-				<div class="logo">
-					<span class="icon fa-star"></span>
-				</div>
-				<div class="content">
-					<div class="inner">
-						<h1>Stellar View</h1>
-						<p>A glimpse into my public outreach and passion for astrophotography.</p>
-					</div>
-				</div>
-				<nav>
-					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="research.html">Research</a></li>
-						<li><a href="education.html">Education</a></li>
-						<li><a href="stellar.html" class="active">Stellar View</a></li>
-					</ul>
-				</nav>
-			</header>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stellar View | Astrophotography</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <style>
+    html, body {
+      height: auto;
+      overflow-y: auto;
+    }
 
-			<div id="main">
-				<article id="stellar">
-					<h2 class="major">Astronomy Outreach</h2>
-					<p>I am passionate about bringing the universe closer to the public through interactive talks, stargazing sessions, and community events. Some highlights of my outreach work include:</p>
+    #wrapper {
+      min-height: 100vh;
+      overflow-y: auto;
+    }
 
-					<ul>
-						<li>Organized monthly public telescope nights at the University of Kansas Observatory (2023–2024)</li>
-						<li>Presented “The James Webb Space Telescope: A New Era in Astronomy” at Lawrence Public Library (2023)</li>
-						<li>Led stargazing sessions for high school students in Nepal during outreach tours (2018–2019)</li>
-						<li>Volunteer speaker at Astronomy Day events, KU Physics & Astronomy Department</li>
-					</ul>
+    #main {
+      overflow-y: auto;
+      max-height: none;
+    }
 
-					<h2 class="major">Astrophotography</h2>
-					<p>Capturing the cosmos through my lens is a personal passion. Below are a few selected shots from my astrophotography collection.</p>
+    article {
+      padding: 2em;
+    }
 
-					<section class="gallery">
-						<span class="image fit"><img src="images/milkyway_nepal.jpg" alt="Milky Way over Nepal" /></span>
-						<span class="image fit"><img src="images/lunar_eclipse.jpg" alt="Lunar Eclipse" /></span>
-						<span class="image fit"><img src="images/orion_nebula.jpg" alt="Orion Nebula" /></span>
-						<span class="image fit"><img src="images/andromeda.jpg" alt="Andromeda Galaxy" /></span>
-					</section>
+    section.box {
+      margin-bottom: 3em;
+    }
+  </style>
+</head>
+<body class="is-preload">
 
-					<p>More images and detailed stories behind each shot coming soon.</p>
-				</article>
-			</div>
+  <!-- Background -->
+  <div id="bg"></div>
 
-			<footer id="footer">
-				<p class="copyright">&copy; Utsav Siwakoti. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-			</footer>
-		</div>
+  <div id="wrapper">
 
-		<div id="bg"></div>
+    <!-- Header -->
+    <header id="header">
+      <div class="logo"><span class="icon fa-camera-retro"></span></div>
+      <div class="content">
+        <div class="inner">
+          <h1>Stellar View</h1>
+          <p>My Astrophotography Adventures</p>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li><a href="stellar.html" class="active">Astrophotography</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-	</body>
+    <!-- Main -->
+    <div id="main">
+      <article id="stellar" class="active">
+        <h2 class="major">Astrophotography Posts</h2>
+
+        <!-- Post 1 -->
+        <section class="box">
+          <h3>Lunar Eclipse Over Lawrence, Kansas</h3>
+          <p><em>Published: March 15, 2025</em></p>
+          <div class="image fit">
+            <img src="astrophotography/lunar-eclipse.png" alt="Composite of lunar eclipse phases" />
+          </div>
+          <p>Yesterday was a truly magical evening here in Lawrence, Kansas, as the Moon slipped into Earth’s shadow and put on a captivating celestial show...</p>
+          <!-- Truncated for brevity -->
+        </section>
+
+        <!-- Post 2 -->
+        <section class="box">
+          <h3>Capturing the Hubble Space Telescope Over Kathmandu</h3>
+          <p><em>Published: January 1, 2024</em></p>
+          <div class="image fit">
+            <img src="astrophotography/hst-nepal.jpg" alt="Hubble Space Telescope trail over Nepal" />
+          </div>
+          <p>As I was browsing Facebook during the lockdown, I came across a post by the Nepal Astronomical Society (NASO)...</p>
+        </section>
+
+        <!-- Post 3 -->
+        <section class="box">
+          <h3>Venus and the Pleiades Celestial Dance</h3>
+          <p><em>Published: April 2, 2021</em></p>
+          <div class="image fit">
+            <img src="astrophotography/venus-pleiades.jpg" alt="Venus and the Pleiades alignment" />
+          </div>
+          <p>On the night of April 3, 2020, Venus and the Pleiades aligned in a stunning celestial dance visible only once every eight years...</p>
+        </section>
+
+        <!-- Post 4 -->
+        <section class="box">
+          <h3>Orion Unbound: Capturing the Hunter in Bhaktapur</h3>
+          <p><em>Published: October 28, 2020</em></p>
+          <div class="image fit">
+            <img src="astrophotography/orion-unbound.jpg" alt="Orion constellation over Bhaktapur Durbar Square" />
+          </div>
+          <p>Orion, the celestial hunter, has long been a winter sky icon...</p>
+        </section>
+      </article>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <p>&copy; Utsav Siwakoti. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Remove preload class to enable scroll animations
+    window.addEventListener('load', () => {
+      document.body.classList.remove('is-preload');
+    });
+  </script>
+</body>
 </html>

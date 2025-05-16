@@ -1,48 +1,114 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
-    <title>Research | Utsav Siwakoti</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Education | Utsav Siwakoti</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <style>
+    html, body {
+      height: auto;
+      overflow-y: auto;
+    }
+
+    #wrapper {
+      min-height: 100vh;
+      overflow-y: auto;
+    }
+
+    #main {
+      overflow-y: auto;
+      max-height: none;
+    }
+
+    article {
+      padding: 2em;
+    }
+
+    section.box {
+      margin-bottom: 3em;
+    }
+  </style>
 </head>
+
 <body class="is-preload">
-    <div id="wrapper">
-        <header id="header">
-            <div class="logo"><span class="icon fa-gem"></span></div>
-            <div class="content">
-                <div class="inner">
-                    <h1>Research</h1>
-                    <p>Ongoing work in astrophysics, starburst galaxies, JWST MIRI, ALMA, and molecular hydrogen studies.</p>
-                </div>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="research.html">Research</a></li>
-                    <li><a href="education.html">Education</a></li>
-                    <li><a href="stellar.html">Stellar View</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-        <section id="main">
-            <article>
-                <h2>Astrophysics Research</h2>
-                <p>[Insert your research description, publications, and projects here.]</p>
-            </article>
+  <!-- Background Image -->
+  <div id="bg"></div>
+
+  <!-- Wrapper Container -->
+  <div id="wrapper">
+    <!-- Header with Transition -->
+    <header id="header">
+      <div class="logo"><span class="icon fa-graduation-cap"></span></div>
+      <div class="content">
+        <div class="inner">
+          <h1>Education & Teaching</h1>
+          <p>Courses I’ve taught and institutions I’ve been affiliated with.</p>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="education.html" class="active">Education</a></li>
+          <li><a href="stellar.html">Astrophotography</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div id="main">
+      <article id="education" class="active">
+        <h2 class="major">Teaching Experience</h2>
+
+        <section class="box">
+          <h3>University of Kansas (Graduate Teaching Assistant)</h3>
+          <ul>
+            <li>
+              <strong>PHSX 114 – General Physics Lab</strong><br />
+              August 2024 – May 2025<br />
+              <a class="button small" href="syllabi/phsx114_2024.html" target="_blank">View Syllabus</a>
+            </li>
+          </ul>
         </section>
-        <footer id="footer">
-            <p class="copyright">
-                &copy; Utsav Siwakoti. Design: <a href="https://html5up.net">HTML5 UP</a>.
-            </p>
-        </footer>
+
+        <section class="box">
+          <h3>Kathmandu University (Visiting Faculty)</h3>
+          <ul>
+            <li>
+              <strong>Biophysics</strong><br />
+              August 2023 – January 2024<br />
+              <a class="button small" href="syllabi/biophysics_2023.html" target="_blank">View Syllabus</a>
+            </li>
+            <li>
+              <strong>Mechanics</strong><br />
+              April 2024 – July 2024<br />
+              <a class="button small" href="syllabi/mechanics_2024.html" target="_blank">View Syllabus</a>
+            </li>
+          </ul>
+        </section>
+      </article>
     </div>
-    <div id="bg"></div>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <p>&copy; Utsav Siwakoti. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Remove preload class to enable scrolling
+    window.addEventListener('load', () => {
+      document.body.classList.remove('is-preload');
+    });
+  </script>
 </body>
 </html>

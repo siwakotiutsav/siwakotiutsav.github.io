@@ -1448,9 +1448,11 @@ input, select, textarea {
 
 		@media screen and (max-width: 736px) {
 
-			#header > * {
-				margin-top: 2rem;
-			}
+		#header > * {
+		margin-top: 2rem;
+		}
+
+
 
 				#header > *:before {
 					top: calc(-2rem - 1px);
