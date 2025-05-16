@@ -4,36 +4,93 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Stellar View | Astrophotography</title>
+
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
   <style>
     html, body {
-      height: auto;
-      overflow-y: auto;
+      height: 100%;
+      margin: 0;
+      overflow-x: hidden;
     }
 
     #wrapper {
+      display: flex;
+      flex-direction: column;
       min-height: 100vh;
-      overflow-y: auto;
     }
 
     #main {
-      overflow-y: auto;
-      max-height: none;
+      flex: 1;
+      padding: 3em 2em;
     }
 
-    article {
-      padding: 2em;
-    }
-
-    section.box {
+    /* Accordion styling */
+    details.box {
       margin-bottom: 3em;
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 1em;
+      background: rgba(0,0,0,0.3);
+      border-radius: 4px;
+    }
+
+    details.box summary {
+      cursor: pointer;
+      list-style: none;
+      outline: none;
+      padding: 0.5em 0;
+    }
+
+    details.box summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details.box summary h3 {
+      display: inline;
+      margin: 0;
+      font-size: 1.2em;
+    }
+
+    details.box summary p {
+      display: inline;
+      margin: 0 0 0 1em;
+      color: #ccc;
+      font-style: normal;
+      font-size: 0.9em;
+    }
+
+    details.box[open] summary h3:after { content: " ▲"; }
+    details.box summary h3:after { content: " ▼"; }
+
+    .image.fit img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 1em 0;
+      border-radius: 4px;
+    }
+
+    #footer {
+      text-align: center;
+      padding: 2em;
+      font-size: 0.9em;
+      color: #aaa;
+    }
+
+    /* Background stays behind content */
+    #bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url("images/bg.jpg") center/cover no-repeat;
+      z-index: -1;
+      opacity: 1;
     }
   </style>
 </head>
-<body class="is-preload">
 
-  <!-- Background -->
+<body class="is-preload">
   <div id="bg"></div>
 
   <div id="wrapper">
@@ -58,68 +115,103 @@
       </nav>
     </header>
 
-    <!-- Main -->
+    <!-- Main Content -->
     <div id="main">
-      <article id="stellar" class="active">
-        <h2 class="major">Astrophotography Posts</h2>
+      <h2 class="major">Astrophotography Posts</h2>
 
-        <!-- Post 1 -->
-        <section class="box">
-          <h3>Lunar Eclipse Over Lawrence, Kansas</h3>
-          <p><em>Published: March 15, 2025</em></p>
-          <div class="image fit">
-            <img src="astrophotography/lunar-eclipse.png" alt="Composite of lunar eclipse phases" />
-          </div>
-          <p>Yesterday was a truly magical evening here in Lawrence, Kansas, as the Moon slipped into Earth’s shadow and put on a captivating celestial show...</p>
-          <!-- Truncated for brevity -->
-        </section>
+<details class="box" open>
+  <summary>
+    <h3>Chasing Earth’s Shadow</h3>
+    <p><em>Published: March 15, 2025</em></p>
+  </summary>
+  <div class="image fit">
+    <img src="astrophotography/lunar-eclipse.jpg" alt="Composite of lunar eclipse phases" />
+  </div>
 
-        <!-- Post 2 -->
-        <section class="box">
+  <p><strong>Chasing Earth’s Shadow</strong></p>
+  <p>Yesterday was a truly magical evening here in Lawrence, Kansas, as the Moon slipped into Earth’s shadow and put on a captivating celestial show. I’m excited to share my experience photographing the lunar eclipse and present a composite image I created to highlight each phase of this astronomical event.</p>
+
+  <p><strong>The Anticipation</strong></p>
+  <p>Lunar eclipses have always fascinated me—there’s something humbling about witnessing our planet’s shadow creeping across the face of the Moon. I began preparing well in advance: checking weather forecasts, scouting a suitable location with minimal light pollution, and planning my camera settings. Thankfully, Lawrence’s clear skies last night provided the perfect backdrop for the eclipse.</p>
+
+  <p><strong>Gear and Setup</strong></p>
+  <ul>
+    <li>Camera: Canon EOS 250D (crop sensor)</li>
+    <li>Lens: 55–250mm at 250mm</li>
+    <li>Support: Sturdy tripod</li>
+    <li>Settings: Adjusted shutter speed and ISO for each phase</li>
+    <li>Post-Processing: Adobe Photoshop for composite and color balance</li>
+  </ul>
+  <p>I experimented with various exposure settings and ISO values, adjusting them as the Moon’s brightness changed throughout the eclipse. Each phase required slight tweaks to capture the subtle differences in color and light.</p>
+
+  <p><strong>Watching the Eclipse Unfold</strong></p>
+  <ul>
+    <li><em>Before Eclipse:</em> The Moon started off bright and fully illuminated. I took a few baseline shots to capture the crisp lunar details, from craters to maria (the darker basaltic plains on the Moon).</li>
+    <li><em>Eclipse Begins:</em> As the Earth’s shadow began to nibble at the Moon’s edge, it felt like watching the first act of a cosmic ballet. The contrast between the bright illuminated portion and the emerging shadow was striking.</li>
+    <li><em>50% Partial:</em> This was the moment when the Moon looked especially dramatic—half shrouded in darkness, half gleaming in white. The surface details on the lit portion provided a beautiful contrast against the reddening shadow.</li>
+    <li><em>Total Eclipse:</em> Often referred to as the “Blood Moon,” the total eclipse stage saw the Moon take on a deep coppery-red hue. This occurs because sunlight filtering through Earth’s atmosphere scatters the shorter blue wavelengths, leaving predominantly red light to reach the Moon’s surface.</li>
+    <li><em>Greatest Eclipse:</em> At the peak, the red tone was at its most vivid. Photographing this phase can be tricky because the Moon is dimmer than usual—raising the ISO and slowing the shutter speed was crucial to capturing enough detail.</li>
+  </ul>
+
+  <p><strong>Creating the Composite</strong></p>
+  <p>After the eclipse, I gathered all my shots and selected the best image from each phase. I used Adobe Photoshop to arrange them into a single composite, adjusting the size and brightness to highlight each stage in a visually cohesive manner. This technique offers a storytelling perspective: you can see the progression from a bright full Moon to the dramatic red and back again—all in one frame.</p>
+
+  <p><strong>Reflecting on the Experience</strong></p>
+  <p>For me, the most rewarding part of photographing a lunar eclipse is the sense of connection to something larger than ourselves. Standing under the night sky in Lawrence, Kansas, I felt a profound appreciation for the elegance of our cosmic neighborhood. Every eclipse reminds me that these celestial events are happening all around us—if we just take the time to look up.</p>
+
+  <p>I hope this composite image and my account of the evening convey some of that wonder. Whether you’re a seasoned astronomer or just someone who loves a good sky show, witnessing a lunar eclipse is an unforgettable experience. If you missed this one, keep an eye on upcoming eclipse dates—there’s always another cosmic spectacle on the horizon!</p>
+
+  <p>Thank you for reading! If you enjoyed this post or have any questions about my photography process, feel free to leave a comment. I’d love to hear about your own eclipse experiences and tips for capturing these mesmerizing events.</p>
+
+  <p>Clear skies, and happy stargazing!<br />
+  — Utsav Siwakoti</p>
+</details>
+
+
+      <details class="box">
+        <summary>
           <h3>Capturing the Hubble Space Telescope Over Kathmandu</h3>
           <p><em>Published: January 1, 2024</em></p>
-          <div class="image fit">
-            <img src="astrophotography/hst-nepal.jpg" alt="Hubble Space Telescope trail over Nepal" />
-          </div>
-          <p>As I was browsing Facebook during the lockdown, I came across a post by the Nepal Astronomical Society (NASO)...</p>
-        </section>
+        </summary>
+        <div class="image fit">
+          <img src="astrophotography/hst-nepal.jpg"
+               alt="Hubble Space Telescope trail over Nepal" />
+        </div>
+        <p>As I was browsing Facebook during the lockdown...</p>
+      </details>
 
-        <!-- Post 3 -->
-        <section class="box">
+      <details class="box">
+        <summary>
           <h3>Venus and the Pleiades Celestial Dance</h3>
           <p><em>Published: April 2, 2021</em></p>
-          <div class="image fit">
-            <img src="astrophotography/venus-pleiades.jpg" alt="Venus and the Pleiades alignment" />
-          </div>
-          <p>On the night of April 3, 2020, Venus and the Pleiades aligned in a stunning celestial dance visible only once every eight years...</p>
-        </section>
+        </summary>
+        <div class="image fit">
+          <img src="astrophotography/venus-pleiades.jpg"
+               alt="Venus and the Pleiades alignment" />
+        </div>
+        <p>On the night of April 3, 2020, Venus slipped into the Pleiades star cluster...</p>
+      </details>
 
-        <!-- Post 4 -->
-        <section class="box">
+      <details class="box">
+        <summary>
           <h3>Orion Unbound: Capturing the Hunter in Bhaktapur</h3>
           <p><em>Published: October 28, 2020</em></p>
-          <div class="image fit">
-            <img src="astrophotography/orion-unbound.jpg" alt="Orion constellation over Bhaktapur Durbar Square" />
-          </div>
-          <p>Orion, the celestial hunter, has long been a winter sky icon...</p>
-        </section>
-      </article>
+        </summary>
+        <div class="image fit">
+          <img src="astrophotography/orion-unbound.jpg"
+               alt="Orion constellation over Bhaktapur Durbar Square" />
+        </div>
+        <p>Orion, the Celestial Hunter, has long been a winter sky icon...</p>
+      </details>
     </div>
 
     <!-- Footer -->
     <footer id="footer">
-      <p>&copy; Utsav Siwakoti. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+      <p>&copy; 2025 Utsav Siwakoti. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
     </footer>
   </div>
 
-  <!-- Scripts -->
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/browser.min.js"></script>
-  <script src="assets/js/breakpoints.min.js"></script>
-  <script src="assets/js/util.js"></script>
-  <script src="assets/js/main.js"></script>
   <script>
-    // Remove preload class to enable scroll animations
     window.addEventListener('load', () => {
       document.body.classList.remove('is-preload');
     });
