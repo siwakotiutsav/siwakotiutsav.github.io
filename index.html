@@ -6,7 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+    <style>
+      #bg {
+        background-image: url('images/bg'); /* Make sure this file exists */
+        background-size: cover;
+        background-position: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -1; /* Puts it behind all other content */
+        opacity: 1;
+      }
+    </style>
   </head>
+
   <body class="is-preload">
 
     <!-- Wrapper -->
@@ -15,15 +31,16 @@
       <!-- Header -->
       <header id="header">
         <div class="logo">
-          <span class="icon fa-gem"></span>
+          <img src="images/logo.png" alt="Utsav Siwakoti" style="width: 240px; height: 240px; border-radius: 50%; object-fit: cover;" />
         </div>
+
+
         <div class="content">
           <div class="inner">
             <h1>UTSAV SIWAKOTI</h1>
-            <p>
-              PhD Student <a href="https://physics.ku.edu/people/utsav-siwakoti" target="_blank">click here</a><br />
-              University of Kansas <a href="https://physics.ku.edu/" target="_blank">click here</a>
-            </p>
+            <p> I am a graduate student in the Department of Physics and Astronomy at the <a href="https://physics.ku.edu/people/utsav-siwakoti" target="_blank">University of Kansas</a>. 
+              I work in the Nearby galaxy lab with <a href="https://mills.ku.edu/group/" target="_blank">Prof. Elisabeth Mills.</a><br /> I am interested in star formation mechanisms, distance mapping and galactic evolution as a whole. 
+              Currently, I am using the JWST MIRI dataset to study the star-forming zones of NGC 253. You can find my full CV here: (Uploading soon)</p>
           </div>
         </div>
         <nav>
@@ -36,41 +53,44 @@
         </nav>
       </header>
 
-				<!-- Main -->
-					<div id="main">
+      <!-- Main -->
+      <div id="main">
+        <!-- Contact -->
+        <article id="contact">
+          <h2 class="major">Contact</h2>
+          <form method="post" action="#">
+            <div class="fields">
+              <div class="field half">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" />
+              </div>
+              <div class="field half">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" />
+              </div>
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" rows="4"></textarea>
+              </div>
+            </div>
+            <ul class="actions">
+              <li><input type="submit" value="Send Message" class="primary" /></li>
+              <li><input type="reset" value="Reset" /></li>
+            </ul>
+          </form>
+          <ul class="icons">
+            <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+            <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+            <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+          </ul>
+        </article>
+      </div>
 
-<!-- Contact -->
-							<article id="contact">
-								<h2 class="major">Contact</h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="4"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</form>
-								<ul class="icons">
-									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</article>
-    <!-- Background -->
-    <div id="bg"></div>
+      <!-- Background -->
+      <div id="bg"></div>
+
+    </div>
 
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
