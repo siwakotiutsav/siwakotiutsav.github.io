@@ -6,6 +6,30 @@
   <title>Education | Utsav Siwakoti</title>
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <style>
+    html, body {
+      height: auto;
+      overflow-y: auto;
+    }
+
+    #wrapper {
+      min-height: 100vh;
+      overflow-y: auto;
+    }
+
+    #main {
+      overflow-y: auto;
+      max-height: none;
+    }
+
+    article {
+      padding: 2em;
+    }
+
+    section.box {
+      margin-bottom: 3em;
+    }
+  </style>
 </head>
 
 <body class="is-preload">
@@ -80,5 +104,11 @@
   <script src="assets/js/breakpoints.min.js"></script>
   <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
+  <script>
+    // Remove preload class to enable scrolling
+    window.addEventListener('load', () => {
+      document.body.classList.remove('is-preload');
+    });
+  </script>
 </body>
 </html>
