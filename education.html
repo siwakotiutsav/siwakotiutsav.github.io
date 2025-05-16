@@ -101,7 +101,7 @@
       <div class="content">
         <div class="inner">
           <h1>Stellar View</h1>
-          <p>Courses I've taughted and institutions I'vd been affiliated with.</p>
+          <p>Courses I've taught and institutions I've been affiliated with.</p>
         </div>
       </div>
       <nav>
@@ -117,46 +117,71 @@
     </header>
 
 
-  <main id="main">
-    <h2 class="major">Teaching Experience</h2>
+<main id="main">
+  <h2 class="major">Teaching Experience</h2>
 
-    <section class="box">
+  <details class="box" open>
+    <summary>
       <h3>University of Kansas (Graduate Teaching Assistant)</h3>
-      <ul>
-        <li>
-          <strong>PHSX 114 – General Physics Lab</strong><br />
-          August 2024 – May 2025<br />
-          <a class="button small" href="syllabi/phsx114_2024.html" target="_blank">View Syllabus</a>
-        </li>
-      </ul>
-    </section>
+      <p><em>August 2024 – May 2025</em></p>
+    </summary>
+    <p><strong>PHSX 114 – General Physics Lab</strong></p>
+    <p>
+      <a class="button small"
+         href="syllabi/phsx114_2024.html"
+         target="_blank">
+        View Syllabus
+      </a>
+    </p>
+  </details>
 
-    <section class="box">
+  <details class="box">
+    <summary>
       <h3>Kathmandu University (Visiting Faculty)</h3>
-      <ul>
-        <li>
-          <strong>Biophysics</strong><br />
-          August 2023 – January 2024<br />
-          <a class="button small" href="syllabi/biophysics_2023.html" target="_blank">View Syllabus</a>
-        </li>
-        <li>
-          <strong>Mechanics</strong><br />
-          April 2024 – July 2024<br />
-          <a class="button small" href="syllabi/mechanics_2024.html" target="_blank">View Syllabus</a>
-        </li>
-      </ul>
-    </section>
-  </main>
+      <p><em>August 2023 – January 2024 • Biophysics</em></p>
+    </summary>
+    <p><strong>Biophysics</strong></p>
+    <p>
+      <a class="button small"
+         href="syllabi/biophysics_2023.html"
+         target="_blank">
+        View Syllabus
+      </a>
+    </p>
+  </details>
 
-  <footer id="footer">
-    <p>&copy; Utsav Siwakoti. Design: <a href="https://html5up.net">HTML5 UP</a></p>
-  </footer>
+  <details class="box">
+    <summary>
+      <h3>Kathmandu University (Visiting Faculty)</h3>
+      <p><em>April 2024 – July 2024 • Mechanics</em></p>
+    </summary>
+    <p><strong>Mechanics</strong></p>
+    <p>
+      <a class="button small"
+         href="syllabi/mechanics_2024.html"
+         target="_blank">
+        View Syllabus
+      </a>
+    </p>
+  </details>
+</main>
 
-  <!-- Your scripts -->
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/browser.min.js"></script>
-  <script src="assets/js/breakpoints.min.js"></script>
-  <script src="assets/js/util.js"></script>
-  <script src="assets/js/main.js"></script>
+<footer id="footer">
+  <p>&copy; Utsav Siwakoti. Design: <a href="https://html5up.net">HTML5 UP</a></p>
+</footer>
+
+<!-- Your scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+
+<script>
+window.addEventListener('load', () => {
+document.body.classList.remove('is-preload');
+});
+</script>
 </body>
 </html>
