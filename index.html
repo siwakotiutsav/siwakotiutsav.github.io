@@ -1,12 +1,28 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html>
   <head>
     <title>Utsav Siwakoti</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+    <style>
+      #bg {
+        background-image: url('images/bg.jpg'); /* Make sure this file exists */
+        background-size: cover;
+        background-position: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -1; /* Puts it behind all other content */
+        opacity: 1;
+      }
+    </style>
   </head>
+
   <body class="is-preload">
 
     <!-- Wrapper -->
@@ -15,14 +31,14 @@
       <!-- Header -->
       <header id="header">
         <div class="logo">
-          <span class="icon fa-gem" aria-hidden="true"></span>
+          <span class="icon fa-gem"></span>
         </div>
         <div class="content">
           <div class="inner">
-            <h1>Utsav Siwakoti</h1>
+            <h1>UTSAV SIWAKOTI</h1>
             <p>
-              PhD Student <a href="https://physics.ku.edu/people/utsav-siwakoti" target="_blank" rel="noopener noreferrer">click here</a><br />
-              University of Kansas <a href="https://physics.ku.edu/" target="_blank" rel="noopener noreferrer">click here</a>
+              PhD Student <a href="https://physics.ku.edu/people/utsav-siwakoti" target="_blank">click here</a><br />
+              University of Kansas <a href="https://physics.ku.edu/" target="_blank">click here</a>
             </p>
           </div>
         </div>
@@ -45,15 +61,15 @@
             <div class="fields">
               <div class="field half">
                 <label for="name">Name</label>
-                <input type="text" name="name" id="name" required />
+                <input type="text" name="name" id="name" />
               </div>
               <div class="field half">
                 <label for="email">Email</label>
-                <input type="email" name="email" id="email" required />
+                <input type="text" name="email" id="email" />
               </div>
               <div class="field">
                 <label for="message">Message</label>
-                <textarea name="message" id="message" rows="4" required></textarea>
+                <textarea name="message" id="message" rows="4"></textarea>
               </div>
             </div>
             <ul class="actions">
@@ -62,18 +78,18 @@
             </ul>
           </form>
           <ul class="icons">
-            <li><a href="#" class="icon brands fa-twitter" aria-label="Twitter"></a></li>
-            <li><a href="#" class="icon brands fa-facebook-f" aria-label="Facebook"></a></li>
-            <li><a href="#" class="icon brands fa-instagram" aria-label="Instagram"></a></li>
-            <li><a href="#" class="icon brands fa-github" aria-label="GitHub"></a></li>
+            <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+            <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+            <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
           </ul>
         </article>
       </div>
 
-    </div>
+      <!-- Background -->
+      <div id="bg"></div>
 
-    <!-- Background -->
-    <div id="bg" aria-hidden="true"></div>
+    </div>
 
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
