@@ -4,57 +4,59 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Education | Utsav Siwakoti</title>
-
-  <!-- keep your original CSS -->
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-
-  <!--
-    OVERRIDES: force the article visible & re‐enable scrolling
-  -->
   <style>
-    /* Allow normal page scrolling */
     html, body {
-      height: auto !important;
-      overflow-x: hidden !important;
-      overflow-y: auto !important;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
     }
 
-    /* The one-page template hides #wrapper/#main when no hash.
-       We override those here so your content is always visible. */
-    #wrapper, 
+    #wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
     #main {
-      overflow: visible !important;
-      height: auto !important;
-      max-height: none !important;
+      flex-grow: 1;
+      overflow-y: auto;
+      padding: 2em;
     }
 
-    /* The template JS may set your article to hidden/invisible-
-       force it back to its normal state. */
-    #main > article {
-      display: block !important;
-      position: relative !important;
-      top: auto !important;
-      opacity: 1 !important;
-      visibility: visible !important;
+    article {
+      max-width: 900px;
+      margin: 0 auto;
     }
 
-    /* Make sure the active article still looks correct */
-    #main > article.active {
-      /* nothing extra needed here if you already styled it */
+    section.box {
+      margin-bottom: 3em;
+    }
+
+    /* Prevent background image from covering scroll */
+    #bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      background-size: cover;
+      background-position: center;
     }
   </style>
 </head>
 
-<!-- Add is-article-visible so main.js thinks you opened an article -->
-<body class="is-preload is-article-visible">
+<body class="is-preload">
   <!-- Background Image -->
   <div id="bg"></div>
 
   <!-- Wrapper Container -->
   <div id="wrapper">
-
-    <!-- Header with Transition -->
+    <!-- Header -->
     <header id="header">
       <div class="logo"><span class="icon fa-graduation-cap"></span></div>
       <div class="content">
@@ -106,23 +108,22 @@
           </ul>
         </section>
       </article>
-    </div> <!-- /#main -->
+    </div>
 
     <!-- Footer -->
     <footer id="footer">
       <p>&copy; Utsav Siwakoti. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
     </footer>
+  </div>
 
-  </div> <!-- /#wrapper -->
-
-  <!-- Keep your scripts -->
+  <!-- Scripts -->
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/browser.min.js"></script>
   <script src="assets/js/breakpoints.min.js"></script>
   <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
   <script>
-    // remove preload once everything’s loaded
+    // Enable scrolling once page loads
     window.addEventListener('load', () => {
       document.body.classList.remove('is-preload');
     });
