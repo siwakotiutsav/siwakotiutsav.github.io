@@ -5,30 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Stellar View | Astrophotography</title>
 
-  <!-- Your existing CSS -->
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-  <!-- Overrides: allow normal scrolling & style the accordions -->
   <style>
     html, body {
-      height: auto !important;
+      height: 100%;
+      margin: 0;
       overflow-x: hidden;
-      overflow-y: auto;
     }
+
     #wrapper {
-      min-height: auto !important;
-      overflow: visible !important;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
-    #bg {
-      position: fixed; top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: url("images/bg.jpg") center/cover no-repeat;
-      z-index: -1; opacity: 1;
-    }
+
     #main {
+      flex: 1;
       padding: 3em 2em;
     }
+
     /* Accordion styling */
     details.box {
       margin-bottom: 3em;
@@ -37,20 +34,24 @@
       background: rgba(0,0,0,0.3);
       border-radius: 4px;
     }
+
     details.box summary {
       cursor: pointer;
       list-style: none;
       outline: none;
       padding: 0.5em 0;
     }
+
     details.box summary::-webkit-details-marker {
       display: none;
     }
+
     details.box summary h3 {
       display: inline;
       margin: 0;
       font-size: 1.2em;
     }
+
     details.box summary p {
       display: inline;
       margin: 0 0 0 1em;
@@ -58,9 +59,9 @@
       font-style: normal;
       font-size: 0.9em;
     }
-    /* Toggle arrows */
+
     details.box[open] summary h3:after { content: " ▲"; }
-    details.box summary h3:after    { content: " ▼"; }
+    details.box summary h3:after { content: " ▼"; }
 
     .image.fit img {
       display: block;
@@ -76,11 +77,20 @@
       font-size: 0.9em;
       color: #aaa;
     }
+
+    /* Background stays behind content */
+    #bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url("images/bg.jpg") center/cover no-repeat;
+      z-index: -1;
+      opacity: 1;
+    }
   </style>
 </head>
 
 <body class="is-preload">
-  <!-- full-screen background -->
   <div id="bg"></div>
 
   <div id="wrapper">
@@ -105,11 +115,10 @@
       </nav>
     </header>
 
-    <!-- Main -->
+    <!-- Main Content -->
     <div id="main">
       <h2 class="major">Astrophotography Posts</h2>
 
-      <!-- Post 1 -->
       <details class="box" open>
         <summary>
           <h3>Lunar Eclipse Over Lawrence, Kansas</h3>
@@ -119,10 +128,9 @@
           <img src="astrophotography/lunar-eclipse.jpg"
                alt="Composite of lunar eclipse phases" />
         </div>
-        <p>Yesterday was a truly magical evening here in Lawrence, Kansas, as the Moon slipped into Earth’s shadow and put on a captivating celestial show. I set up my telescope in my backyard, calibrated the tracking, and captured dozens of frames as the eclipse progressed. Later, I composited the images to showcase each phase-from the subtle penumbral shading to the deep red hue at totality. It was a night I’ll never forget.</p>
+        <p>Yesterday was a truly magical evening...</p>
       </details>
 
-      <!-- Post 2 -->
       <details class="box">
         <summary>
           <h3>Capturing the Hubble Space Telescope Over Kathmandu</h3>
@@ -132,10 +140,9 @@
           <img src="astrophotography/hst-nepal.jpg"
                alt="Hubble Space Telescope trail over Nepal" />
         </div>
-        <p>As I was browsing Facebook during the lockdown, I came across a post by the Nepal Astronomical Society (NASO) predicting a visible pass of the Hubble Space Telescope over Kathmandu. I grabbed my wide-angle lens, hiked up to the Swayambhunath Temple, and waited in the pre-dawn chill. When Hubble’s reflected sunlight streaked across the sky, I fired off a burst of 30-second exposures. The result is a bright arc framing the ancient stupa-an intersection of history and cutting-edge science.</p>
+        <p>As I was browsing Facebook during the lockdown...</p>
       </details>
 
-      <!-- Post 3 -->
       <details class="box">
         <summary>
           <h3>Venus and the Pleiades Celestial Dance</h3>
@@ -145,10 +152,9 @@
           <img src="astrophotography/venus-pleiades.jpg"
                alt="Venus and the Pleiades alignment" />
         </div>
-        <p>On the night of April 3, 2020, Venus slipped into the Pleiades star cluster in a rare conjunction visible to the naked eye. I positioned my 200 mm telephoto lens on a tracking mount and balanced the bright planet against the faint blue glow of the Seven Sisters. The resulting frame captures Venus nestled within the cluster-an elegant dance set against the inky winter sky.</p>
+        <p>On the night of April 3, 2020, Venus slipped into the Pleiades star cluster...</p>
       </details>
 
-      <!-- Post 4 -->
       <details class="box">
         <summary>
           <h3>Orion Unbound: Capturing the Hunter in Bhaktapur</h3>
@@ -158,7 +164,7 @@
           <img src="astrophotography/orion-unbound.jpg"
                alt="Orion constellation over Bhaktapur Durbar Square" />
         </div>
-        <p>Orion, the Celestial Hunter, has long been a winter sky icon. From the courtyards of Bhaktapur Durbar Square, I set my tracking mount to follow the constellation’s rise. Over a five-minute exposure, the star fields and nebulae of Orion’s Belt painted an ethereal band above the ancient brick temples. The juxtaposition of Himalayan architecture and glowing cosmos made for an unforgettable scene.</p>
+        <p>Orion, the Celestial Hunter, has long been a winter sky icon...</p>
       </details>
     </div>
 
@@ -166,7 +172,12 @@
     <footer id="footer">
       <p>&copy; 2025 Utsav Siwakoti. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
     </footer>
-
   </div>
+
+  <script>
+    window.addEventListener('load', () => {
+      document.body.classList.remove('is-preload');
+    });
+  </script>
 </body>
 </html>
