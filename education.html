@@ -3,145 +3,119 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Stellar View | Education</title>
+  <title>Education and Teaching</title>
 
   <link rel="stylesheet" href="assets/css/main.css" />
-  <noscript>
-    <link rel="stylesheet" href="assets/css/noscript.css" />
-  </noscript>
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
   <style>
-    /*- Reset margins and padding -*/
-    * {
+    html, body {
+      height: 100%;
       margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      overflow-x: hidden;
     }
 
-    /*- Body styles -*/
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background: #111;
-      color: #eee;
-    }
-
-    /*- Header -*/
-    #header {
-      background: rgba(0,0,0,0.7);
-      padding: 2em 1em;
-      text-align: center;
-    }
-    #header .logo .icon {
-      font-size: 2em;
-      color: #f5a623;
-    }
-    #header h1 {
-      margin-top: 0.5em;
-      font-size: 2em;
-    }
-    #header p {
-      opacity: 0.8;
-    }
-
-    /*- Navigation -*/
-    nav {
-      background: #222;
-    }
-    nav ul {
-      list-style: none;
+    #wrapper {
       display: flex;
-      justify-content: center;
-    }
-    nav li + li {
-      margin-left: 1em;
-    }
-    nav a {
-      display: block;
-      padding: 0.75em 1em;
-      color: #ddd;
-      text-decoration: none;
-      transition: background 0.2s;
-    }
-    nav a:hover,
-    nav a.active {
-      background: #444;
-      color: #fff;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
-    /*- Main content -*/
     #main {
-      max-width: 800px;
-      margin: 2em auto;
-      padding: 0 1em;
+      flex: 1;
+      padding: 3em 2em;
     }
-    h2.major {
-      font-size: 1.8em;
-      margin-bottom: 0.5em;
-      border-bottom: 2px solid #444;
-      padding-bottom: 0.2em;
-    }
-    section.box {
-      background: rgba(0,0,0,0.5);
-      border: 1px solid #444;
-      border-radius: 4px;
+
+    /* Accordion styling */
+    details.box {
+      margin-bottom: 3em;
+      border: 1px solid rgba(255,255,255,0.2);
       padding: 1em;
-      margin-bottom: 2em;
+      background: rgba(0,0,0,0.3);
+      border-radius: 4px;
     }
-    section.box h3 {
-      margin-top: 0;
+
+    details.box summary {
+      cursor: pointer;
+      list-style: none;
+      outline: none;
+      padding: 0.5em 0;
     }
-    section.box ul {
-      list-style: disc inside;
-      margin-top: 0.5em;
+
+    details.box summary::-webkit-details-marker {
+      display: none;
     }
-    .button.small {
-      display: inline-block;
-      margin-top: 0.5em;
-      padding: 0.4em 0.8em;
-      background: #f5a623;
-      color: #111;
-      text-decoration: none;
-      border-radius: 3px;
+
+    details.box summary h3 {
+      display: inline;
+      margin: 0;
+      font-size: 1.2em;
+    }
+
+    details.box summary p {
+      display: inline;
+      margin: 0 0 0 1em;
+      color: #ccc;
+      font-style: normal;
       font-size: 0.9em;
     }
-    .button.small:hover {
-      background: #d48e1f;
+
+    details.box[open] summary h3:after { content: " ▲"; }
+    details.box summary h3:after { content: " ▼"; }
+
+    .image.fit img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 1em 0;
+      border-radius: 4px;
     }
 
-    /*- Footer -*/
     #footer {
       text-align: center;
-      padding: 1em 0;
-      background: #222;
-      color: #888;
+      padding: 2em;
       font-size: 0.9em;
+      color: #aaa;
     }
-    #footer a {
-      color: #f5a623;
-      text-decoration: none;
+
+    /* Background stays behind content */
+    #bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url("images/bg.jpg") center/cover no-repeat;
+      z-index: -1;
+      opacity: 1;
     }
   </style>
 </head>
-<body>
 
-  <header id="header">
-    <div class="logo">
-      <span class="icon fa-graduation-cap"></span>
-    </div>
-    <h1>Education & Teaching</h1>
-    <p>Courses I’ve taught and institutions I’ve been affiliated with.</p>
-  </header>
+<body class="is-preload">
+  <div id="bg"></div>
 
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="education.html" class="active">Education</a></li>
-      <li><a href="stellar.html">Astrophotography</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-    </ul>
-  </nav>
+  <div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+      <div class="logo"><span class="icon fa-camera-retro"></span></div>
+      <div class="content">
+        <div class="inner">
+          <h1>Stellar View</h1>
+          <p>Courses I've taughted and institutions I'vd been affiliated with.</p>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="education.html" class="active">Education</a></li>
+          <li><a href="stellar.html">Astrophotography</a></li>
+          <li><a href="outreach.html">Outreach</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
 
   <main id="main">
     <h2 class="major">Teaching Experience</h2>
