@@ -3,59 +3,96 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Education | Utsav Siwakoti</title>
+  <title>Stellar View | Education</title>
+
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
   <style>
     html, body {
       height: 100%;
       margin: 0;
-      padding: 0;
       overflow-x: hidden;
-      overflow-y: auto;
     }
 
     #wrapper {
-      min-height: 100vh;
       display: flex;
       flex-direction: column;
+      min-height: 100vh;
     }
 
     #main {
-      flex-grow: 1;
-      overflow-y: auto;
-      padding: 2em;
+      flex: 1;
+      padding: 3em 2em;
     }
 
-    article {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    section.box {
+    details.box {
       margin-bottom: 3em;
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 1em;
+      background: rgba(0,0,0,0.3);
+      border-radius: 4px;
     }
 
-    /* Prevent background image from covering scroll */
+    details.box summary {
+      cursor: pointer;
+      list-style: none;
+      outline: none;
+      padding: 0.5em 0;
+    }
+
+    details.box summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details.box summary h3 {
+      display: inline;
+      margin: 0;
+      font-size: 1.2em;
+    }
+
+    details.box summary p {
+      display: inline;
+      margin: 0 0 0 1em;
+      color: #ccc;
+      font-style: normal;
+      font-size: 0.9em;
+    }
+
+    details.box[open] summary h3:after { content: " ▲"; }
+    details.box summary h3:after { content: " ▼"; }
+
+    .image.fit img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 1em 0;
+      border-radius: 4px;
+    }
+
+    #footer {
+      text-align: center;
+      padding: 2em;
+      font-size: 0.9em;
+      color: #aaa;
+    }
+
     #bg {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url("images/bg.jpg") center/cover no-repeat;
       z-index: -1;
-      background-size: cover;
-      background-position: center;
+      opacity: 1;
     }
   </style>
 </head>
 
 <body class="is-preload">
-  <!-- Background Image -->
   <div id="bg"></div>
 
-  <!-- Wrapper Container -->
   <div id="wrapper">
+
     <!-- Header -->
     <header id="header">
       <div class="logo"><span class="icon fa-graduation-cap"></span></div>
@@ -123,7 +160,6 @@
   <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
   <script>
-    // Enable scrolling once page loads
     window.addEventListener('load', () => {
       document.body.classList.remove('is-preload');
     });
