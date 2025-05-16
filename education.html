@@ -6,106 +6,183 @@
   <title>Stellar View | Education</title>
 
   <link rel="stylesheet" href="assets/css/main.css" />
-  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <noscript>
+    <link rel="stylesheet" href="assets/css/noscript.css" />
+  </noscript>
 
   <style>
-    html, body {
-      height: 100%;
+    /*- Reset margins and padding -*/
+    * {
       margin: 0;
-      overflow-x: hidden;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    #wrapper {
+    /*- Body styles -*/
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #111;
+      color: #eee;
+    }
+
+    /*- Header -*/
+    #header {
+      background: rgba(0,0,0,0.7);
+      padding: 2em 1em;
+      text-align: center;
+    }
+    #header .logo .icon {
+      font-size: 2em;
+      color: #f5a623;
+    }
+    #header h1 {
+      margin-top: 0.5em;
+      font-size: 2em;
+    }
+    #header p {
+      opacity: 0.8;
+    }
+
+    /*- Navigation -*/
+    nav {
+      background: #222;
+    }
+    nav ul {
+      list-style: none;
       display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+      justify-content: center;
+    }
+    nav li + li {
+      margin-left: 1em;
+    }
+    nav a {
+      display: block;
+      padding: 0.75em 1em;
+      color: #ddd;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    nav a:hover,
+    nav a.active {
+      background: #444;
+      color: #fff;
     }
 
+    /*- Main content -*/
     #main {
-      flex: 1;
-      padding: 3em 2em;
-      overflow-y: auto;
+      max-width: 800px;
+      margin: 2em auto;
+      padding: 0 1em;
+    }
+    h2.major {
+      font-size: 1.8em;
+      margin-bottom: 0.5em;
+      border-bottom: 2px solid #444;
+      padding-bottom: 0.2em;
+    }
+    section.box {
+      background: rgba(0,0,0,0.5);
+      border: 1px solid #444;
+      border-radius: 4px;
+      padding: 1em;
+      margin-bottom: 2em;
+    }
+    section.box h3 {
+      margin-top: 0;
+    }
+    section.box ul {
+      list-style: disc inside;
+      margin-top: 0.5em;
+    }
+    .button.small {
+      display: inline-block;
+      margin-top: 0.5em;
+      padding: 0.4em 0.8em;
+      background: #f5a623;
+      color: #111;
+      text-decoration: none;
+      border-radius: 3px;
+      font-size: 0.9em;
+    }
+    .button.small:hover {
+      background: #d48e1f;
     }
 
-    section.box {
-      margin-bottom: 2em;
-      border: 1px solid rgba(255,255,255,0.2);
-      padding: 1em;
-      background: rgba(0,0,0,0.3);
-      border-radius: 4px;
+    /*- Footer -*/
+    #footer {
+      text-align: center;
+      padding: 1em 0;
+      background: #222;
+      color: #888;
+      font-size: 0.9em;
+    }
+    #footer a {
+      color: #f5a623;
+      text-decoration: none;
     }
   </style>
 </head>
+<body>
 
-<body class="is-preload">
-  <div id="bg"></div>
-
-  <div id="wrapper">
-    <header id="header">
-      <div class="logo"><span class="icon fa-graduation-cap"></span></div>
-      <div class="content">
-        <div class="inner">
-          <h1>Education & Teaching</h1>
-          <p>Courses I’ve taught and institutions I’ve been affiliated with.</p>
-        </div>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="research.html">Research</a></li>
-          <li><a href="education.html" class="active">Education</a></li>
-          <li><a href="stellar.html">Astrophotography</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <div id="main">
-      <h2 class="major">Teaching Experience</h2>
-
-      <section class="box">
-        <h3>University of Kansas (Graduate Teaching Assistant)</h3>
-        <ul>
-          <li>
-            <strong>PHSX 114 – General Physics Lab</strong><br />
-            August 2024 – May 2025<br />
-            <a class="button small" href="syllabi/phsx114_2024.html" target="_blank">View Syllabus</a>
-          </li>
-        </ul>
-      </section>
-
-      <section class="box">
-        <h3>Kathmandu University (Visiting Faculty)</h3>
-        <ul>
-          <li>
-            <strong>Biophysics</strong><br />
-            August 2023 – January 2024<br />
-            <a class="button small" href="syllabi/biophysics_2023.html" target="_blank">View Syllabus</a>
-          </li>
-          <li>
-            <strong>Mechanics</strong><br />
-            April 2024 – July 2024<br />
-            <a class="button small" href="syllabi/mechanics_2024.html" target="_blank">View Syllabus</a>
-          </li>
-        </ul>
-      </section>
+  <header id="header">
+    <div class="logo">
+      <span class="icon fa-graduation-cap"></span>
     </div>
+    <h1>Education & Teaching</h1>
+    <p>Courses I’ve taught and institutions I’ve been affiliated with.</p>
+  </header>
 
-    <footer id="footer">
-      <p>&copy; Utsav Siwakoti. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-    </footer>
-  </div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="education.html" class="active">Education</a></li>
+      <li><a href="stellar.html">Astrophotography</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-  <!-- Scripts -->
+  <main id="main">
+    <h2 class="major">Teaching Experience</h2>
+
+    <section class="box">
+      <h3>University of Kansas (Graduate Teaching Assistant)</h3>
+      <ul>
+        <li>
+          <strong>PHSX 114 – General Physics Lab</strong><br />
+          August 2024 – May 2025<br />
+          <a class="button small" href="syllabi/phsx114_2024.html" target="_blank">View Syllabus</a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="box">
+      <h3>Kathmandu University (Visiting Faculty)</h3>
+      <ul>
+        <li>
+          <strong>Biophysics</strong><br />
+          August 2023 – January 2024<br />
+          <a class="button small" href="syllabi/biophysics_2023.html" target="_blank">View Syllabus</a>
+        </li>
+        <li>
+          <strong>Mechanics</strong><br />
+          April 2024 – July 2024<br />
+          <a class="button small" href="syllabi/mechanics_2024.html" target="_blank">View Syllabus</a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <p>&copy; Utsav Siwakoti. Design: <a href="https://html5up.net">HTML5 UP</a></p>
+  </footer>
+
+  <!-- Your scripts -->
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/browser.min.js"></script>
   <script src="assets/js/breakpoints.min.js"></script>
   <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
-  <script>
-    window.addEventListener('load', () => {
-      document.body.classList.remove('is-preload');
-    });
-  </script>
 </body>
 </html>
