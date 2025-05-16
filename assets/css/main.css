@@ -1304,16 +1304,20 @@ input, select, textarea {
 			}
 
 		#header .logo {
-			width: 5.5rem;
-			height: 5.5rem;
-			line-height: 5.5rem;
-			border: solid 1px #ffffff;
-			border-radius: 100%;
+  		position: relative;       /* for absolutely-positioned img */
+  		width: 240px;
+  		height: 240px;
+  		overflow: hidden;         /* clip overflow */
+  		border: solid 2px #fff;   /* adjust thickness/color as desired */
+  		border-radius: 50%;       /* perfect circle */
+  		margin: 0 auto;           /* center horizontally if needed */
 		}
 
-			#header .logo .icon:before {
-				font-size: 2rem;
-			}
+		/* remove icon-font styling */
+		#header .logo .icon:before {
+  		display: none;
+		}
+
 
 		#header .content {
 			border-style: solid;
