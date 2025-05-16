@@ -1447,10 +1447,15 @@ input, select, textarea {
 		}
 
 		@media screen and (max-width: 736px) {
+  		#header .logo {
+    		display: block !important;
+  		}
+		}
+		#header .logo img {
+  		max-width: 50vw;    /* or whatever size works on mobile */
+  		height: auto;
+		}
 
-			#header > * {
-				margin-top: 2rem;
-			}
 
 				#header > *:before {
 					top: calc(-2rem - 1px);
