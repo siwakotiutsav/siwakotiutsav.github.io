@@ -1,122 +1,26 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PHSX 114 Syllabus</title>
   <style>
     :root {
-      --header-height: 80px;
+      --header-height: 70px;
       --bg-opacity: 0.9;
     }
 
+    * {
+      box-sizing: border-box;
+    }
+
     html, body {
-      height: 100%;
       margin: 0;
-      overflow-x: hidden;
-      font-family: Arial, sans-serif;
-      color: white;
-    }
-
-    #wrapper {
-      margin-top: var(--header-height);
-      min-height: calc(100vh - var(--header-height));
-      display: flex;
-      flex-direction: column;
-    }
-
-    .table-wrapper {
-      margin: 1.5em 0;
-      overflow-x: auto;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: rgba(255,255,255,0.1);
-    }
-
-    td {
-      padding: 0.75em 1em;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
-    }
-
-    tr:nth-child(even) {
-      background: rgba(0,0,0,0.2);
-    }
-
-    .notice {
-      background: rgba(255,0,0,0.1);
-      border-left: 4px solid #ff4444;
-      padding: 1em;
-      margin: 1.5em 0;
-      border-radius: 4px;
-    }
-
-    .notice strong {
-      color: #ff8888;
-      display: block;
-      margin-bottom: 0.5em;
-    }
-
-    #main {
-      flex: 1;
-      padding: 2em;
-      overflow-y: auto;
-      background: rgba(0,0,0,0.7);
-    }
-
-    header#header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: var(--header-height);
-      background: rgba(0,0,0,var(--bg-opacity));
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 2em;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 1.8em;
-      letter-spacing: 1px;
-    }
-
-    nav ul {
-      list-style: none;
       padding: 0;
-      margin: 0;
-      display: flex;
-      gap: 2em;
-    }
-
-    nav a, nav button {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: white;
-      text-decoration: none;
-      padding: 0.5em 1em;
-      border-radius: 4px;
-      transition: background 0.3s ease;
-      background: none;
-      border: none;
-      font: inherit;
-      cursor: pointer;
-    }
-
-    nav a:hover, nav button:hover {
-      background: rgba(255,255,255,0.1);
-    }
-
-    #footer {
-      text-align: center;
-      padding: 2em;
-      font-size: 0.9em;
-      color: #aaa;
-      background: rgba(0,0,0,0.8);
+      background-color: black;
     }
 
     #bg {
@@ -126,18 +30,87 @@
       width: 100%;
       height: 100%;
       background: url("images/bg.jpg") center/cover no-repeat;
-      z-index: -1;
       opacity: 1;
+      z-index: -1;
     }
 
-    section {
-      margin: 2em 0;
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--header-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2em;
+      background: rgba(0, 0, 0, var(--bg-opacity));
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      z-index: 1000;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.6em;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1em;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav li {
+      display: inline;
+    }
+
+    nav a, nav button {
+      background: none;
+      border: none;
+      color: white;
+      text-decoration: none;
+      padding: 0.5em 1em;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    nav a:hover, nav button:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    #wrapper {
+      margin-top: var(--header-height);
+      display: flex;
+      flex-direction: column;
+      min-height: calc(100vh - var(--header-height));
+    }
+
+    main {
+      flex: 1;
+      padding: 2em;
+      background: rgba(0, 0, 0, 0.75);
     }
 
     h2 {
-      border-bottom: 2px solid #fff;
+      border-bottom: 2px solid white;
       padding-bottom: 0.5em;
       margin-bottom: 1em;
+    }
+
+    section {
+      margin-bottom: 2em;
+    }
+
+    p {
+      line-height: 1.6;
     }
 
     ul {
@@ -145,26 +118,91 @@
       line-height: 1.6;
     }
 
-    strong {
-      color: #fff;
+    .notice {
+      background: rgba(255, 0, 0, 0.15);
+      border-left: 4px solid #ff4444;
+      padding: 1em;
+      border-radius: 4px;
+    }
+
+    .notice strong {
+      display: block;
+      color: #ffaaaa;
+      margin-bottom: 0.5em;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: rgba(255, 255, 255, 0.08);
+      color: #eee;
+    }
+
+    table th, table td {
+      padding: 0.75em 1em;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    table tr:nth-child(even) {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    table tr:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2em;
+      background: rgba(0, 0, 0, 0.8);
+      color: #aaa;
+      font-size: 0.9em;
+    }
+
+    a {
+      color: #ffffff;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5em;
+        padding: 1em;
+      }
+
+      nav ul {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      nav a, nav button {
+        width: 100%;
+        text-align: left;
+      }
     }
   </style>
 </head>
-<body class="is-preload">
+<body>
   <div id="bg"></div>
-  <header id="header">
+
+  <header>
     <h1>PHSX-114</h1>
     <nav>
-    <ul>
-      <li><a href="../index.html" target="_self">Home</a></li>
-      <li><button onclick="history.back();">Back</button></li>
-    </ul>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><button onclick="history.back();">Back</button></li>
+      </ul>
     </nav>
-
   </header>
 
   <div id="wrapper">
-    <main id="main">
+    <main>
       <section>
         <h2>Physics Lab Syllabus</h2>
         <p>Welcome to physics lab! The goal of this course is for you to develop and demonstrate proficiency with the skills associated with experimental science, especially in the context of physics. You will learn how to collect data and make predictions/models based on this data. This includes analyzing data and appropriately treating sources of uncertainty.</p>
@@ -177,11 +215,15 @@
         <p>Your lab grade is based on reports, forum posts, and in-class lab practicals. A total of 400 points is possible. Grades are assigned as follows:</p>
         <div class="table-wrapper">
           <table>
-            <tr><td><strong>Grade</strong></td><td><strong>Points Needed</strong></td></tr>
-            <tr><td>A</td><td>320</td></tr>
-            <tr><td>B</td><td>240</td></tr>
-            <tr><td>C</td><td>160</td></tr>
-            <tr><td>D</td><td>80</td></tr>
+            <thead>
+              <tr><th>Grade</th><th>Points Needed</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>A</td><td>320</td></tr>
+              <tr><td>B</td><td>240</td></tr>
+              <tr><td>C</td><td>160</td></tr>
+              <tr><td>D</td><td>80</td></tr>
+            </tbody>
           </table>
         </div>
       </section>
@@ -235,8 +277,8 @@
       </section>
     </main>
 
-    <footer id="footer">
-      <p>&copy; Utsav Siwakoti. Design: <a href="https://html5up.net" target="_self" style="color:#fff;">HTML5 UP</a>.</p>
+    <footer>
+      <p>&copy; Utsav Siwakoti. Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a>.</p>
     </footer>
   </div>
 </body>
