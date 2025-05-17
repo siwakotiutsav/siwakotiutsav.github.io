@@ -7,267 +7,269 @@
   <link rel="stylesheet" href="../assets/css/main.css" />
   <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
   <style>
-    /* -- Scroll Fix -- */
+    :root {
+      --header-height: 80px;
+      --bg-opacity: 0.9;
+    }
+
     html, body {
-      height: 100% !important;
+      height: 100%;
       margin: 0;
-      padding: 0;
-      overflow-y: auto !important;
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+      color: white;
     }
 
     #wrapper {
-      min-height: 100vh;
-      position: relative;
+      margin-top: var(--header-height);
+      min-height: calc(100vh - var(--header-height));
+      display: flex;
+      flex-direction: column;
     }
 
     #main {
-      padding: 3em 2em;
+      flex: 1;
+      padding: 2em;
+      overflow-y: auto;
+      background: rgba(0,0,0,0.7);
     }
 
-    /* -- Background -- */
-    #bg {
-      position: fixed; 
-      top: 0; 
+    header#header {
+      position: fixed;
+      top: 0;
       left: 0;
-      width: 100%; 
+      right: 0;
+      height: var(--header-height);
+      background: rgba(0,0,0,var(--bg-opacity));
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2em;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8em;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 2em;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5em 1em;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+
+    nav a:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* Content Styling */
+    .major {
+      border-bottom: 2px solid #fff;
+      padding-bottom: 0.5em;
+      margin-bottom: 1em;
+    }
+
+    details {
+      background: rgba(255,255,255,0.1);
+      border-radius: 6px;
+      margin-bottom: 1em;
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 1em;
+      font-weight: 600;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details[open] summary {
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    details section {
+      padding: 1.5em;
+      background: rgba(0,0,0,0.3);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1em 0;
+      background: rgba(255,255,255,0.1);
+    }
+
+    th, td {
+      padding: 0.75em;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      text-align: left;
+    }
+
+    .notice {
+      background: rgba(255,0,0,0.1);
+      border-left: 4px solid #ff4444;
+      padding: 1em;
+      margin: 1.5em 0;
+      border-radius: 4px;
+    }
+
+    #bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
       height: 100%;
       background: url("../images/bg-education.jpg") center/cover no-repeat;
-      z-index: -1; 
+      z-index: -1;
       opacity: 1;
     }
 
-    /* -- Header -- */
-    #header {
-      text-align: center;
-      padding: 3em 2em 2em;
-      position: relative;
-    }
-    #header .logo img {
-      width: 180px; 
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid #fff;
-      margin-bottom: 1em;
-    }
-    #header .content .inner {
-      max-width: 600px; 
-      margin: 0 auto;
-      color: #fff;
-    }
-    #header .content .inner h1 {
-      margin: 0; 
-      font-size: 2em;
-    }
-    nav ul {
-      list-style: none; 
-      padding: 0; 
-      margin-top: 1.5em;
-      display: flex; 
-      justify-content: center; 
-      gap: 1em;
-    }
-    nav ul li a {
-      color: #fff; 
-      text-decoration: none;
-      font-weight: bold; 
-      padding: 0.5em 1em;
-      border: 1px solid rgba(255,255,255,0.3);
-      border-radius: 4px;
-      transition: background 0.3s;
-    }
-    nav ul li a:hover {
-      background: rgba(255,255,255,0.2);
-    }
-
-    /* -- Collapsible Sections -- */
-    details summary {
-      cursor: pointer; 
-      padding: 1em;
-      background: #f5f5f5; 
-      border: 1px solid #ccc;
-      border-radius: 6px; 
-      margin-bottom: 1em;
-      font-weight: bold;
-    }
-    details[open] summary {
-      border-bottom: none; 
-      border-radius: 6px 6px 0 0;
-    }
-    details > section {
-      padding: 1.5em; 
-      border: 1px solid #ccc;
-      border-top: none; 
-      border-radius: 0 0 6px 6px;
-      background: #fff; 
-      margin-bottom: 1.5em;
-    }
-    details table {
-      width: 100%; 
-      border-collapse: collapse; 
-      margin-top: 1em;
-    }
-    details th, details td {
-      border: 1px solid #ccc; 
-      padding: 0.5em;
-    }
-    details thead th {
-      background: #eaeaea;
-    }
-
-    /* -- Footer -- */
     #footer {
-      padding: 2em;
       text-align: center;
+      padding: 2em;
+      font-size: 0.9em;
+      color: #aaa;
+      background: rgba(0,0,0,0.8);
     }
   </style>
 </head>
 <body class="is-preload">
   <div id="bg"></div>
-  <div id="wrapper">
-    <header id="header">
-      <div class="logo">
-        <img src="../images/school.png" alt="PHYSX 114 Logo" />
-      </div>
-      <div class="content">
-        <div class="inner">
-          <h1>PHYSX 114: College Physics I Laboratory</h1>
-          <p>University of Kansas &mdash; Fall 2024</p>
-        </div>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="../education.html">Back to Education</a></li>
-          <li><a href="../index.html">Home</a></li>
-        </ul>
-      </nav>
-    </header>
 
+  <!-- Fixed Header -->
+  <header id="header">
+    <h1>PHYSX 114: College Physics I Lab</h1>
+    <nav>
+      <ul>
+        <li><a href="../index.html" target="_self">Home</a></li>
+        <li><a href="javascript:history.back()" target="_self">Back</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div id="wrapper">
+    <!-- Scrollable Content -->
     <div id="main">
       <article>
-        <h2 class="major">Course Information</h2>
-
-        <!-- All Content Sections -->
         <details open>
-          <summary>Credit Hours & Method</summary>
+          <summary><h2 class="major">Course Overview</h2></summary>
           <section>
             <p><strong>Credit Hours:</strong> 4 (includes 1 lab hour/week)<br>
-               <strong>Instructional Method:</strong> In-Person</p>
+            <strong>Institution:</strong> University of Kansas<br>
+            <strong>Semester:</strong> Fall 2024</p>
           </section>
         </details>
 
         <details>
-          <summary>Prerequisites & Restrictions</summary>
+          <summary><h2 class="major">Requirements</h2></summary>
           <section>
-            <p><strong>Prerequisite:</strong> Must be eligible for MATH 115<br>
-               <strong>Not open to students with credit in:</strong> PHSX 211, PHSX 212, PHSX 216, PHSX 236</p>
+            <div class="notice">
+              <strong>Critical Prerequisites:</strong>
+              <ul>
+                <li>Eligibility for MATH 115</li>
+                <li>Not open to students with credit in PHSX 211/212/216/236</li>
+              </ul>
+            </div>
+            <p><strong>Recommended Preparation:</strong> 3.5 years college-prep math including trigonometry</p>
           </section>
         </details>
 
         <details>
-          <summary>Course Description</summary>
+          <summary><h2 class="major">Learning Outcomes</h2></summary>
           <section>
-            <p>This course introduces mechanics, fluids, heat, thermodynamics, and sound waves through hands-on labs and data analysis. Emphasis on quantitative reasoning, uncertainty analysis, and scientific method.</p>
-            <p><em>Note: 3.5 years of college-prep math (including trigonometry) recommended.</em></p>
-          </section>
-        </details>
-
-        <details>
-          <summary>KU Core 34: Natural &amp; Physical Sciences</summary>
-          <section>
-            <p>Upon completion, students will be able to:</p>
             <ul>
-              <li>Apply the scientific method to experimental data.</li>
-              <li>Use mathematical reasoning for scientific conclusions.</li>
-              <li>Evaluate scientific models and their limitations.</li>
+              <li>Apply scientific method to experimental data</li>
+              <li>Use mathematical reasoning for conclusions</li>
+              <li>Evaluate scientific models and limitations</li>
+              <li>Master error analysis and uncertainty calculations</li>
             </ul>
           </section>
         </details>
 
         <details>
-          <summary>Learning Outcomes</summary>
+          <summary><h2 class="major">Grading Policy</h2></summary>
           <section>
-            <ul>
-              <li>Collect data and assess uncertainties.</li>
-              <li>Compare linear vs. nonlinear models.</li>
-              <li>Apply error propagation.</li>
-              <li>Redesign experiments based on results.</li>
-            </ul>
-          </section>
-        </details>
-
-        <details>
-          <summary>Course Topics (Selected Modules)</summary>
-          <section>
-            <ul>
-              <li>Measurement &amp; Error Analysis</li>
-              <li>Excel Tools for Data Analysis</li>
-              <li>Graphs, Correlations &amp; Curve Fitting</li>
-              <li>Statistical Methods (t-tests, histograms)</li>
-              <li>Lab Modules: R1, M3, F1, Final Assessments</li>
-            </ul>
-          </section>
-        </details>
-
-        <details>
-          <summary>Grading Breakdown</summary>
-          <section>
-            <p>400 total points:</p>
             <table>
-              <thead><tr><th>Grade</th><th>Points</th></tr></thead>
+              <thead>
+                <tr>
+                  <th>Grade</th>
+                  <th>Points</th>
+                  <th>Percentage</th>
+                </tr>
+              </thead>
               <tbody>
-                <tr><td>A</td><td>320+</td></tr>
-                <tr><td>B</td><td>240–319</td></tr>
-                <tr><td>C</td><td>160–239</td></tr>
-                <tr><td>D</td><td>80–159</td></tr>
-                <tr><td>F</td><td>&lt; 80</td></tr>
+                <tr><td>A</td><td>320+</td><td>≥80%</td></tr>
+                <tr><td>B</td><td>240–319</td><td>60-79%</td></tr>
+                <tr><td>C</td><td>160–239</td><td>40-59%</td></tr>
+                <tr><td>D</td><td>80–159</td><td>20-39%</td></tr>
+                <tr><td>F</td><td>&lt;80</td><td>&lt;20%</td></tr>
               </tbody>
+            </table>
+            
+            <div class="notice">
+              <strong>Attendance Policy:</strong>
+              <ul>
+                <li>Lab attendance mandatory for worksheet credit</li>
+                <li>Three unexcused absences result in course failure</li>
+                <li>Medical absences require official documentation</li>
+              </ul>
+            </div>
+          </section>
+        </details>
+
+        <details>
+          <summary><h2 class="major">Course Structure</h2></summary>
+          <section>
+            <h3>Core Modules</h3>
+            <ul>
+              <li>Measurement & Error Analysis</li>
+              <li>Data Analysis with Excel</li>
+              <li>Statistical Methods (t-tests, histograms)</li>
+              <li>Lab Modules: R1, M3, F1</li>
+            </ul>
+
+            <h3>Weekly Commitment</h3>
+            <table>
+              <tr><td>In-class</td><td>3 hours/week</td></tr>
+              <tr><td>Outside class</td><td>6+ hours/week</td></tr>
+              <tr><td>Total/Semester</td><td>135+ hours</td></tr>
             </table>
           </section>
         </details>
 
         <details>
-          <summary>Sources of Points</summary>
+          <summary><h2 class="major">Assessment Methods</h2></summary>
           <section>
-            <ul>
-              <li>Worksheets (60 pts each)</li>
-              <li>Canvas Journal Entries</li>
-              <li>Group Lab Reports</li>
-              <li>Discussion Board Posts</li>
-              <li>Lab Tests</li>
-            </ul>
-            <p><em>Note:</em> Only present students receive credit on worksheets/reports; journals and tests are individual.</p>
-          </section>
-        </details>
-
-        <details>
-          <summary>Course Expectations</summary>
-          <section>
-            <ul>
-              <li>Lab attendance required</li>
-              <li>Redo reports if necessary to achieve mastery</li>
-              <li>Honest error reporting is mandatory</li>
-              <li>Excel proficiency expected</li>
-            </ul>
-          </section>
-        </details>
-
-        <details>
-          <summary>Time Commitment</summary>
-          <section>
-            <p>15-week semester:</p>
-            <ul>
-              <li>3 hrs/week in class</li>
-              <li>6+ hrs/week on reports &amp; study</li>
-            </ul>
-            <p>Accelerated formats adjust accordingly.</p>
+            <table>
+              <tr><th>Component</th><th>Weight</th><th>Type</th></tr>
+              <tr><td>Worksheets</td><td>60 pts each</td><td>Group</td></tr>
+              <tr><td>Lab Reports</td><td>40 pts each</td><td>Individual</td></tr>
+              <tr><td>Journal Entries</td><td>20 pts each</td><td>Individual</td></tr>
+              <tr><td>Lab Tests</td><td>100 pts</td><td>Individual</td></tr>
+            </table>
           </section>
         </details>
       </article>
     </div>
 
     <footer id="footer">
-      <p>&copy; 2025 Utsav Siwakoti. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+      <p>&copy; 2024 University of Kansas. Design: <a href="https://html5up.net" target="_self">HTML5 UP</a>.</p>
     </footer>
   </div>
 
