@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>General Physics Syllabus</title>
+  <title>PHYS 104 Syllabus</title>
   <style>
     :root {
       --header-height: 80px;
@@ -13,9 +13,10 @@
     html, body {
       height: 100%;
       margin: 0;
-      overflow-x: hidden;
       font-family: Arial, sans-serif;
       color: white;
+      background-color: black;
+      overflow-x: hidden;
     }
 
     #wrapper {
@@ -25,45 +26,10 @@
       flex-direction: column;
     }
 
-    .table-wrapper {
-      margin: 1.5em 0;
-      overflow-x: auto;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: rgba(255,255,255,0.1);
-    }
-
-    td, th {
-      padding: 0.75em 1em;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
-    }
-
-    tr:nth-child(even) {
-      background: rgba(0,0,0,0.2);
-    }
-
-    .notice {
-      background: rgba(255,0,0,0.1);
-      border-left: 4px solid #ff4444;
-      padding: 1em;
-      margin: 1.5em 0;
-      border-radius: 4px;
-    }
-
-    .notice strong {
-      color: #ff8888;
-      display: block;
-      margin-bottom: 0.5em;
-    }
-
     #main {
       flex: 1;
       padding: 2em;
-      overflow-y: auto;
-      background: rgba(0,0,0,0.7);
+      background: rgba(0, 0, 0, 0.7);
     }
 
     header#header {
@@ -72,7 +38,7 @@
       left: 0;
       right: 0;
       height: var(--header-height);
-      background: rgba(0,0,0,var(--bg-opacity));
+      background: rgba(0, 0, 0, var(--bg-opacity));
       z-index: 1000;
       display: flex;
       align-items: center;
@@ -88,36 +54,77 @@
     }
 
     nav ul {
+      display: flex;
+      gap: 2em;
       list-style: none;
       padding: 0;
       margin: 0;
-      display: flex;
-      gap: 2em;
     }
 
-    nav a {
+    nav a, nav button {
+      background: none;
+      border: none;
       color: white;
       text-decoration: none;
+      font: inherit;
+      cursor: pointer;
       padding: 0.5em 1em;
       border-radius: 4px;
-      transition: background 0.3s ease;
+      transition: background 0.3s;
     }
 
-    nav a:hover {
+    nav a:hover, nav button:hover {
       background: rgba(255,255,255,0.1);
     }
 
+    h2 {
+      margin-top: 1.5em;
+    }
+
+    .table-wrapper {
+      margin-top: 1em;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: rgba(255,255,255,0.1);
+    }
+
+    th, td {
+      padding: 0.75em 1em;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    tr:nth-child(even) {
+      background: rgba(255,255,255,0.05);
+    }
+
+    .notice {
+      background: rgba(255,0,0,0.1);
+      border-left: 4px solid #ff4444;
+      padding: 1em;
+      border-radius: 4px;
+      margin-top: 1em;
+    }
+
+    .notice strong {
+      color: #ff8888;
+      display: block;
+      margin-bottom: 0.5em;
+    }
+
     details {
-      margin-bottom: 1em;
+      margin: 1.5em 0;
       background: rgba(255,255,255,0.1);
       border-radius: 6px;
     }
 
     summary {
-      cursor: pointer;
       padding: 1em;
-      font-weight: 600;
-      list-style: none;
+      font-weight: bold;
+      cursor: pointer;
     }
 
     details[open] summary {
@@ -133,7 +140,7 @@
       background: rgba(255,255,255,0.2);
       padding: 0.25em 0.75em;
       border-radius: 1em;
-      font-size: 0.9em;
+      font-size: 0.85em;
       margin-left: 1em;
     }
 
@@ -157,27 +164,26 @@
     }
   </style>
 </head>
-
 <body class="is-preload">
   <div id="bg"></div>
 
   <header id="header">
     <h1>PHYS 104: General Physics</h1>
-  <nav>
-    <ul>
-      <li><a href="../index.html" target="_self">Home</a></li>
-      <li><button onclick="history.back();">Back</button></li>
-    </ul>
-  </nav>
-
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><button onclick="history.back();">Back</button></li>
+      </ul>
+    </nav>
   </header>
 
   <div id="wrapper">
     <div id="main">
       <article>
-        <section class="course-info">
-          <h2>B. Pharm./B. Tech. I &mdash; Semester I (3 Credits)</h2>
-          <p>Kathmandu University School of Science<br>
+        <section>
+          <h2>Course Information</h2>
+          <p><strong>B. Pharm. / B. Tech. I – Semester I (3 Credits)</strong><br>
+          Kathmandu University School of Science<br>
           Department of Physics</p>
         </section>
 
@@ -210,9 +216,9 @@
 
         <section>
           <h2>Course Structure (45 Hours)</h2>
-          
+
           <details>
-            <summary><h3>Mechanics <span class="hours-badge">16 hours</span></h3></summary>
+            <summary>Mechanics <span class="hours-badge">16 hours</span></summary>
             <section>
               <h4>Dynamics of System of Particles</h4>
               <ul>
@@ -221,7 +227,7 @@
                 <li>Rotational kinematics</li>
                 <li>Moment of inertia calculations</li>
               </ul>
-              
+
               <h4>Wave and Oscillation</h4>
               <ul>
                 <li>Harmonic oscillators</li>
@@ -232,7 +238,7 @@
           </details>
 
           <details>
-            <summary><h3>Optics <span class="hours-badge">10 hours</span></h3></summary>
+            <summary>Optics <span class="hours-badge">10 hours</span></summary>
             <section>
               <h4>Interference</h4>
               <ul>
@@ -240,7 +246,7 @@
                 <li>Thin film interference</li>
                 <li>Newton's rings</li>
               </ul>
-              
+
               <h4>Diffraction</h4>
               <ul>
                 <li>Fraunhofer diffraction</li>
@@ -250,14 +256,14 @@
           </details>
 
           <details>
-            <summary><h3>Thermodynamics <span class="hours-badge">7 hours</span></h3></summary>
+            <summary>Thermodynamics <span class="hours-badge">7 hours</span></summary>
             <section>
               <h4>Heat Transfer</h4>
               <ul>
                 <li>Thermal conductivity</li>
                 <li>Black body radiation</li>
               </ul>
-              
+
               <h4>Thermodynamic Laws</h4>
               <ul>
                 <li>First & Second laws</li>
@@ -268,14 +274,14 @@
           </details>
 
           <details>
-            <summary><h3>Modern Physics <span class="hours-badge">12 hours</span></h3></summary>
+            <summary>Modern Physics <span class="hours-badge">12 hours</span></summary>
             <section>
               <h4>Atomic & Molecular Physics</h4>
               <ul>
                 <li>Atomic spectra</li>
                 <li>Semiconductor theory</li>
               </ul>
-              
+
               <h4>Nuclear Physics</h4>
               <ul>
                 <li>Nuclear reactions</li>
