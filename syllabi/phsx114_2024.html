@@ -3,90 +3,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PHSX 114 Syllabus | Fall 2024</title>
-  <link rel="stylesheet" href="../assets/css/main.css" />
-  <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
-
+  <title>PHSX 114</title>
   <style>
-    /* — root variables — */
     :root {
-      --header-height: 100px;   /* match your header’s actual height */
-      --bg-opacity: 0.7;
+      --header-height: 80px;
+      --bg-opacity: 0.9;
     }
 
-    /* — allow full page scroll — */
     html, body {
-      height: auto;
+      height: 100%;
       margin: 0;
-      padding: 0;
-      overflow-y: auto;
+      overflow-x: hidden;
       font-family: Arial, sans-serif;
-      color: #fff;
-      background: #000;
+      color: white;
     }
 
-    /* — full‐screen background image — */
-    #bg {
-      position: fixed; top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: url("../images/bg-education.jpg") center/cover no-repeat;
-      z-index: -1;
-      opacity: var(--bg-opacity);
-    }
-
-    /* — header fixed at top — */
-    header#header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      height: var(--header-height);
-      background: rgba(0,0,0, var(--bg-opacity));
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 2em;
-      z-index: 1000;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
-    }
-    header#header .logo {
-      display: flex; align-items: center;
-    }
-    header#header .logo span.icon {
-      font-size: 2.5em;
-      color: #fff;
-    }
-    header#header .content .inner {
-      text-align: center;
-    }
-    header#header .content h1 {
-      margin: 0;
-      font-size: 1.6em;
-      color: #fff;
-    }
-    header#header .content p {
-      margin: 0.2em 0 0;
-      font-size: 0.9em;
-      color: #ccc;
-    }
-    header#header nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1em;
-      margin: 0;
-      padding: 0;
-    }
-    header#header nav a {
-      color: #fff;
-      text-decoration: none;
-      padding: 0.5em 1em;
-      border-radius: 4px;
-      border: 1px solid rgba(255,255,255,0.3);
-      transition: background 0.2s;
-    }
-    header#header nav a:hover {
-      background: rgba(255,255,255,0.1);
-    }
-
-    /* — push content below the fixed header — */
     #wrapper {
       margin-top: var(--header-height);
       min-height: calc(100vh - var(--header-height));
@@ -94,84 +25,138 @@
       flex-direction: column;
     }
 
-    /* — main content area — */
-    #main {
-      flex: 1;
-      padding: 2em;
-      overflow: visible;
-      background: rgba(0,0,0,0.6);
-    }
-
-    /* — collapsible panels styling — */
-    details {
-      margin-bottom: 1.5em;
-      background: rgba(255,255,255,0.1);
-      border-radius: 6px;
-      overflow: hidden;
-    }
-    details summary {
-      cursor: pointer;
-      padding: 1em;
-      font-weight: bold;
-      background: rgba(255,255,255,0.2);
-      list-style: none;
-    }
-    details[open] summary {
-      border-bottom: 1px solid rgba(255,255,255,0.3);
-    }
-    details > section {
-      padding: 1.5em;
-      background: rgba(0,0,0,0.4);
-    }
-
-    /* — typography tweaks — */
-    h2.major {
-      margin: 0 0 0.5em;
-      border-bottom: 2px solid #fff;
-      padding-bottom: 0.3em;
-    }
-    section ul {
-      padding-left: 1.2em;
-      line-height: 1.5;
-    }
-    section p, section li {
-      font-size: 0.95em;
-      color: #eee;
-    }
-    strong {
-      color: #fff;
-    }
-    /* — table inside details — */
     .table-wrapper {
+      margin: 1.5em 0;
       overflow-x: auto;
-      margin: 1em 0;
     }
-    details table {
+
+    table {
       width: 100%;
       border-collapse: collapse;
       background: rgba(255,255,255,0.1);
     }
-    details th, details td {
-      padding: 0.6em 0.8em;
-      border: 1px solid rgba(255,255,255,0.2);
-      text-align: left;
-    }
-    details thead th {
-      background: rgba(255,255,255,0.2);
+
+    td, th {
+      padding: 0.75em 1em;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
     }
 
-    /* — footer — */
+    tr:nth-child(even) {
+      background: rgba(0,0,0,0.2);
+    }
+
+    .notice {
+      background: rgba(255,0,0,0.1);
+      border-left: 4px solid #ff4444;
+      padding: 1em;
+      margin: 1.5em 0;
+      border-radius: 4px;
+    }
+
+    .notice strong {
+      color: #ff8888;
+      display: block;
+      margin-bottom: 0.5em;
+    }
+
+    #main {
+      flex: 1;
+      padding: 2em;
+      overflow-y: auto;
+      background: rgba(0,0,0,0.7);
+    }
+
+    header#header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--header-height);
+      background: rgba(0,0,0,var(--bg-opacity));
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2em;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8em;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 2em;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5em 1em;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+
+    nav a:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    details {
+      margin-bottom: 1em;
+      background: rgba(255,255,255,0.1);
+      border-radius: 6px;
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 1em;
+      font-weight: 600;
+      list-style: none;
+    }
+
+    details[open] summary {
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    details > section {
+      padding: 1.5em;
+      background: rgba(0,0,0,0.3);
+    }
+
+    .hours-badge {
+      background: rgba(255,255,255,0.2);
+      padding: 0.25em 0.75em;
+      border-radius: 1em;
+      font-size: 0.9em;
+      margin-left: 1em;
+    }
+
     #footer {
       text-align: center;
-      padding: 1.5em;
-      background: rgba(0,0,0,0.8);
-      color: #aaa;
+      padding: 2em;
       font-size: 0.9em;
+      color: #aaa;
+      background: rgba(0,0,0,0.8);
+    }
+
+    #bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("images/bg.jpg") center/cover no-repeat;
+      z-index: -1;
+      opacity: 1;
     }
   </style>
 </head>
-<body class="is-preload">
-  <div id="bg"></div>
 
   <!-- header -->
   <header id="header">
