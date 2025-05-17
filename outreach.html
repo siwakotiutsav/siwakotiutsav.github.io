@@ -1,72 +1,251 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Stellar View - Utsav Siwakoti</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
-		<div id="wrapper">
-			<header id="header">
-				<div class="logo">
-					<span class="icon fa-star"></span>
-				</div>
-				<div class="content">
-					<div class="inner">
-						<h1>Stellar View</h1>
-						<p>A glimpse into my public outreach and passion for astrophotography.</p>
-					</div>
-				</div>
-				<nav>
-					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="research.html">Research</a></li>
-						<li><a href="education.html">Education</a></li>
-						<li><a href="stellar.html" class="active">Stellar View</a></li>
-					</ul>
-				</nav>
-			</header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Outreach</title>
+  <style>
+    :root {
+      --main-color: #0051BA;
+      --font-body: 'Georgia', serif;
+      --header-height: 70px;
+    }
 
-			<div id="main">
-				<article id="stellar">
-					<h2 class="major">Astronomy Outreach</h2>
-					<p>I am passionate about bringing the universe closer to the public through interactive talks, stargazing sessions, and community events. Some highlights of my outreach work include:</p>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
 
-					<ul>
-						<li>Organized monthly public telescope nights at the University of Kansas Observatory (2023–2024)</li>
-						<li>Presented “The James Webb Space Telescope: A New Era in Astronomy” at Lawrence Public Library (2023)</li>
-						<li>Led stargazing sessions for high school students in Nepal during outreach tours (2018–2019)</li>
-						<li>Volunteer speaker at Astronomy Day events, KU Physics & Astronomy Department</li>
-					</ul>
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      background: #fff;
+      color: #111;
+      line-height: 1.75;
+    }
 
-					<h2 class="major">Astrophotography</h2>
-					<p>Capturing the cosmos through my lens is a personal passion. Below are a few selected shots from my astrophotography collection.</p>
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--header-height);
+      background: #f9f9f9;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.5rem;
+      z-index: 1000;
+    }
 
-					<section class="gallery">
-						<span class="image fit"><img src="images/milkyway_nepal.jpg" alt="Milky Way over Nepal" /></span>
-						<span class="image fit"><img src="images/lunar_eclipse.jpg" alt="Lunar Eclipse" /></span>
-						<span class="image fit"><img src="images/orion_nebula.jpg" alt="Orion Nebula" /></span>
-						<span class="image fit"><img src="images/andromeda.jpg" alt="Andromeda Galaxy" /></span>
-					</section>
+    header h1 {
+      font-size: 1.6rem;
+      color: var(--main-color);
+      margin: 0;
+    }
 
-					<p>More images and detailed stories behind each shot coming soon.</p>
-				</article>
-			</div>
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
 
-			<footer id="footer">
-				<p class="copyright">&copy; Utsav Siwakoti. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-			</footer>
-		</div>
+    nav a {
+      text-decoration: none;
+      color: var(--main-color);
+      font-weight: bold;
+    }
 
-		<div id="bg"></div>
+    nav a:hover {
+      text-decoration: underline;
+    }
 
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-	</body>
+    main {
+      max-width: 850px;
+      margin: calc(var(--header-height) + 2rem) auto 3rem;
+      padding: 0 1rem;
+    }
+
+    h2 {
+      color: var(--main-color);
+      font-size: 1.75rem;
+      border-bottom: 2px solid var(--main-color);
+      padding-bottom: 0.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+      border-left: 3px solid #ccc;
+    }
+
+    .timeline-entry {
+      position: relative;
+      margin-bottom: 2.5rem;
+      padding-left: 0.5rem;
+    }
+
+    .timeline-entry::before {
+      content: '';
+      position: absolute;
+      left: -11px;
+      top: 0.35rem;
+      width: 14px;
+      height: 14px;
+      background: var(--main-color);
+      border: 2px solid white;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .timeline-entry h3 {
+      margin: 0 0 0.25rem;
+      font-size: 1.3rem;
+      color: #222;
+    }
+
+    .timeline-entry p {
+      margin: 0 0 1rem;
+      color: #444;
+      font-style: italic;
+    }
+
+    .timeline-entry ul {
+      padding-left: 1.2rem;
+      margin: 0.5rem 0 0;
+      list-style-type: disc;
+    }
+
+    .timeline-entry li {
+      margin-bottom: 1rem;
+    }
+
+    .timeline-entry strong {
+      color: #000;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    a.button {
+      display: inline-block;
+      margin-top: 0.3rem;
+      padding: 0.45rem 0.9rem;
+      font-size: 0.9rem;
+      border: 1px solid var(--main-color);
+      border-radius: 4px;
+      color: var(--main-color);
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    a.button:hover {
+      background: var(--main-color);
+      color: #fff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #555;
+      background: #f1f1f1;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        font-size: 16px;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 1rem;
+        gap: 0.5rem;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 0.3rem;
+        padding-left: 0;
+      }
+
+      .timeline {
+        padding-left: 1.5rem;
+      }
+
+      .timeline-entry::before {
+        left: -10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Outreach and Events</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Outreach and Events</h2>
+    <div class="timeline">
+      <div class="timeline-entry">
+        <h3>University of Kansas</h3>
+        <p>Graduate Teaching Assistant · Aug 2024 – May 2025</p>
+        <ul>
+          <li>
+            <strong>PHSX 114 – General Physics Lab</strong>
+            <a class="button" href="syllabi/phsx114_2024.html">View Syllabus</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="timeline-entry">
+        <h3>Kathmandu University</h3>
+        <p>Visiting Faculty · Aug 2023 – Jul 2024</p>
+        <ul>
+          <li>
+            <strong>Biophysics (PHYS-105)</strong>
+            Aug 2023 – Jan 2024<br />
+            <a class="button" href="syllabi/biophysics_2023.html">View Syllabus</a>
+          </li>
+          <li>
+            <strong>General Physics (PHYS-104)</strong>
+            Apr 2024 – Jul 2024<br />
+            <a class="button" href="syllabi/mechanics_2024.html">View Syllabus</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="timeline-entry">
+        <h3>Nepal Research and Collaboration Center (NRCC)</h3>
+        <p>LaTeX Trainer 2023/2024/2025</p>
+        <ul>
+          <li>
+            <strong>Research Training</strong>
+            <a class="button" href="syllabi/latex.html">View Syllabus</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="timeline-entry">
+        <h3>YouTube Educational Content</h3>
+        <p>Creating free educational videos for students</p>
+        <a class="button" href="https://www.youtube.com/@utsaved" target="_blank">Visit Channel</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Utsav Siwakoti. Design inspired by HTML5 UP and custom syllabus style.</p>
+  </footer>
+</body>
 </html>
