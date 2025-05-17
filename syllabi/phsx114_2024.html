@@ -8,23 +8,27 @@
   <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
 
   <style>
-    /* === Make the page scrollable === */
+    /* Allow full page scrolling */
     html, body {
-      height: auto;          /* allow body to grow beyond viewport */
-      overflow-y: auto;      /* enable vertical scroll */
+      height: auto !important;
+      overflow-y: auto !important;
+      margin: 0;
+      padding: 0;
     }
+    /* Wrapper flex layout */
     #wrapper {
-      min-height: 100vh;     /* full‐height container but can grow */
-      display: flex;
-      flex-direction: column;
+      display: flex !important;
+      flex-direction: column !important;
+      min-height: 100vh !important;
     }
+    /* Main content grows */
     #main {
-      flex: 1;               /* take remaining space */
+      flex: 1 !important;
       padding: 3em 2em;
-      overflow: visible;     /* ensure content is shown */
+      overflow: visible !important;
     }
 
-    /* === Collapsible section styling === */
+    /* Collapsible sections */
     details summary {
       cursor: pointer;
       padding: 1em;
@@ -44,9 +48,22 @@
       border-top: none;
       border-radius: 0 0 6px 6px;
       background: #fff;
-    }
-    details:not(:last-child) {
       margin-bottom: 1.5em;
+    }
+
+    /* Optional: style the table inside details */
+    details table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1em;
+    }
+    details th, details td {
+      border: 1px solid #ccc;
+      padding: 0.5em;
+      text-align: left;
+    }
+    details thead th {
+      background: #eaeaea;
     }
   </style>
 </head>
@@ -86,7 +103,7 @@
           <summary>Prerequisites & Restrictions</summary>
           <section>
             <p><strong>Prerequisite:</strong> Must be eligible for MATH 115<br>
-            <strong>Not open to students with credit in:</strong> PHSX 211, PHSX 212, PHSX 216, or PHSX 236</p>
+            <strong>Not open to students with credit in:</strong> PHSX 211, 212, 216, or 236</p>
           </section>
         </details>
 
@@ -101,7 +118,7 @@
         <details>
           <summary>KU Core 34: Natural &amp; Physical Sciences</summary>
           <section>
-            <p>This course satisfies the KU Core Goal for Natural &amp; Physical Sciences. Upon completion, students will be able to:</p>
+            <p>This course satisfies the KU Core goal for Natural &amp; Physical Sciences. Upon completion, students will be able to:</p>
             <ul>
               <li>Apply the scientific method to gather, analyze, and interpret experimental data.</li>
               <li>Use mathematical reasoning to support conclusions drawn from scientific observations.</li>
@@ -129,7 +146,7 @@
               <li>Measurement and Error Analysis: Uncertainty types, standard deviation, and error propagation.</li>
               <li>Excel Tools for Data Analysis: Organizing data, formulas, and graphing.</li>
               <li>Graphs and Correlations: Scatter plots, error bars, residuals, curve fitting.</li>
-              <li>Comparative Statistical Methods: Modified t-tests (Welch's T and T*), histograms.</li>
+              <li>Comparative Statistical Methods: Modified t-tests (Welch’s T and T*), histograms.</li>
               <li>Lab Modules:
                 <ul>
                   <li>R1: Rolling Down a Ramp</li>
@@ -172,7 +189,7 @@
               <li><strong>Canvas Discussion Board Posts</strong>: Share insights and provide peer feedback.</li>
               <li><strong>Lab Tests</strong>: Individual assessments related to the experiment.</li>
             </ul>
-            <p>💡 <em>Important:</em> You must be present in the lab to have your name included on worksheets or group reports. While reports are submitted as a group, journals, discussions, and tests must reflect <strong>individual</strong> work.</p>
+            <p>💡 <em>Important:</em> You must be present in the lab to have your name included on worksheets or group reports. Journals, discussions, and tests must reflect <strong>individual</strong> work.</p>
           </section>
         </details>
 
@@ -180,10 +197,10 @@
           <summary>Course Expectations</summary>
           <section>
             <ul>
-              <li>Lab Attendance is required for credit.</li>
-              <li>Redoing Reports may be necessary to reach mastery.</li>
-              <li><em>Error is Normal, Mistakes are a Problem:</em> Learning from measurement uncertainty is a goal—falsifying data, copying others, or failing to report errors honestly is unacceptable.</li>
-              <li>Excel Literacy: Proficiency in Excel for averages, standard deviations, trendlines, and error bars is expected.</li>
+              <li>Lab attendance is required for credit.</li>
+              <li>Redoing reports may be necessary to reach mastery.</li>
+              <li><em>Error is normal; mistakes are a problem:</em> Learning from measurement uncertainty is a goal—falsifying data or copying others is unacceptable.</li>
+              <li>Excel literacy: Proficiency in Excel for averages, standard deviations, trendlines, and error bars is expected.</li>
             </ul>
           </section>
         </details>
@@ -191,20 +208,21 @@
         <details>
           <summary>Time Commitment</summary>
           <section>
-            <p>As a 4-credit course over a standard 15-week semester, expect to spend:</p>
+            <p>As a 4-credit course over a 15-week semester, expect to spend:</p>
             <ul>
               <li>3 hours/week in class</li>
               <li>6+ hours/week outside of class on lab reports, analysis, and study</li>
             </ul>
-            <p>If offered over an accelerated format (e.g., 8 weeks), time commitments will be adjusted accordingly.</p>
+            <p>In accelerated formats (e.g. 8 weeks), time commitments adjust accordingly.</p>
           </section>
         </details>
+
       </article>
     </div>
 
     <!-- Footer -->
     <footer id="footer">
-      <p>&copy; Utsav Siwakoti. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+      <p>&copy; 2025 Utsav Siwakoti. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
     </footer>
   </div>
 
