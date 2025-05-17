@@ -78,12 +78,13 @@
       border-bottom: 2px solid var(--main-color);
       padding-bottom: 0.3em;
       margin-top: 2em;
+      font-size: 1.5em;
     }
 
     .timeline {
       border-left: 3px solid var(--main-color);
-      margin-top: 2em;
       padding-left: 1.5em;
+      margin-top: 2em;
     }
 
     .timeline-entry {
@@ -96,15 +97,27 @@
       content: "";
       position: absolute;
       left: -1.1em;
-      top: 0.2em;
+      top: 0.3em;
       width: 0.8em;
       height: 0.8em;
       background: var(--main-color);
       border-radius: 50%;
     }
 
+    .timeline-entry summary {
+      cursor: pointer;
+      list-style: none;
+      outline: none;
+    }
+
+    .timeline-entry summary h2,
+    .timeline-entry summary p {
+      display: inline;
+      margin-right: 0.5em;
+    }
+
     .timeline-entry h3 {
-      margin: 0;
+      margin-top: 1.5em;
       font-size: 1.3em;
       color: var(--main-color);
     }
@@ -117,16 +130,17 @@
     }
 
     .timeline-entry p {
-      margin: 0 0 1rem;
+      margin-bottom: 1em;
       color: #444;
-      font-style: normal; /* matching syllabus styling */
     }
 
     .timeline-entry img {
       max-width: 100%;
+      height: auto;
       border: 1px solid #ccc;
       border-radius: 4px;
-      margin-top: 0.5em;
+      margin: 0.5em 0;
+      display: block;
     }
 
     footer {
@@ -144,7 +158,6 @@
     }
   </style>
 </head>
-
 <body>
   <header>
     <h1>Astrophotography</h1>
@@ -154,6 +167,9 @@
       </ul>
     </nav>
   </header>
+
+  <main id="main">
+    <div class="timeline">
   
   
 <div class="timeline">
