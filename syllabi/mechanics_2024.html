@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gemera;  Syllabus</title>
+  <title>General Physics Syllabus</title>
   <style>
     :root {
       --header-height: 80px;
@@ -26,47 +26,38 @@
     }
 
     .table-wrapper {
-  margin: 1.5em 0;
-  overflow-x: auto;
-}
+      margin: 1.5em 0;
+      overflow-x: auto;
+    }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: rgba(255,255,255,0.1);
-}
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: rgba(255,255,255,0.1);
+    }
 
-td {
-  padding: 0.75em 1em;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-}
+    td, th {
+      padding: 0.75em 1em;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
 
-tr:nth-child(even) {
-  background: rgba(0,0,0,0.2);
-}
+    tr:nth-child(even) {
+      background: rgba(0,0,0,0.2);
+    }
 
-.notice {
-  background: rgba(255,0,0,0.1);
-  border-left: 4px solid #ff4444;
-  padding: 1em;
-  margin: 1.5em 0;
-  border-radius: 4px;
-}
+    .notice {
+      background: rgba(255,0,0,0.1);
+      border-left: 4px solid #ff4444;
+      padding: 1em;
+      margin: 1.5em 0;
+      border-radius: 4px;
+    }
 
-.notice strong {
-  color: #ff8888;
-  display: block;
-  margin-bottom: 0.5em;
-}
-
-.notice ul {
-  margin: 0.5em 0;
-  padding-left: 1.5em;
-}
-
-.notice li {
-  margin: 0.5em 0;
-}
+    .notice strong {
+      color: #ff8888;
+      display: block;
+      margin-bottom: 0.5em;
+    }
 
     #main {
       flex: 1;
@@ -110,59 +101,41 @@ tr:nth-child(even) {
       padding: 0.5em 1em;
       border-radius: 4px;
       transition: background 0.3s ease;
-      display: inline-block;
     }
 
     nav a:hover {
       background: rgba(255,255,255,0.1);
     }
 
-    .timeline {
-      position: relative;
-      margin: 2em 0;
-      padding-left: 40px;
-      border-left: 2px solid rgba(255,255,255,0.3);
-    }
-
-    .timeline-entry {
-      position: relative;
-      margin-bottom: 3em;
-    }
-
-    .timeline-entry::before {
-      content: "";
-      position: absolute;
-      top: 0.6em;
-      left: -10px;
-      width: 14px;
-      height: 14px;
-      background-color: #fff;
-      border: 2px solid #333;
-      border-radius: 50%;
-      z-index: 1;
-    }
-
-    .timeline-entry details {
-      background: rgba(0,0,0,0.3);
-      padding: 1em;
+    details {
+      margin-bottom: 1em;
+      background: rgba(255,255,255,0.1);
       border-radius: 6px;
-      border: 1px solid rgba(255,255,255,0.2);
     }
 
-    .timeline-entry summary {
+    summary {
       cursor: pointer;
-      list-style: none;
-      font-size: 1.1em;
+      padding: 1em;
       font-weight: 600;
-      color: #fff;
+      list-style: none;
     }
 
-    .timeline-entry summary::-webkit-details-marker {
-      display: none;
+    details[open] summary {
+      border-bottom: 1px solid rgba(255,255,255,0.2);
     }
 
-    .timeline-entry[open] summary h3:after { content: " ▲"; }
-    .timeline-entry summary h3:after { content: " ▼"; }
+    details > section {
+      padding: 1.5em;
+      background: rgba(0,0,0,0.3);
+    }
+
+    .hours-badge {
+      background: rgba(255,255,255,0.2);
+      padding: 0.25em 0.75em;
+      border-radius: 1em;
+      font-size: 0.9em;
+      margin-left: 1em;
+    }
 
     #footer {
       text-align: center;
@@ -182,144 +155,152 @@ tr:nth-child(even) {
       z-index: -1;
       opacity: 1;
     }
-
-    .major h2 {
-      border-bottom: 2px solid #fff;
-      padding-bottom: 0.5em;
-      margin-bottom: 1em;
-    }
-
-    section {
-      margin: 2em 0;
-    }
-
-    ul {
-      padding-left: 1.5em;
-      line-height: 1.6;
-    }
-
-    strong {
-      color: #fff;
-    }
   </style>
 </head>
 
 <body class="is-preload">
   <div id="bg"></div>
 
-  <!-- Fixed Header -->
   <header id="header">
-    <h1>General Physics Syllabus (PHYS 104) 2024</h1>
+    <h1>PHYS 104: General Physics</h1>
     <nav>
       <ul>
-        <li><a href="index.html" target="_self">Home</a></li>
-        <li><a href="javascript:history.back()" target="_self">Back</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="javascript:history.back()">Back</a></li>
       </ul>
     </nav>
   </header>
- <div id="wrapper">
-    <!-- Scrollable Content -->
+
+  <div id="wrapper">
     <div id="main">
       <article>
         <section class="course-info">
-          <p><strong>Level:</strong> B. Pharm./B. Tech. I<br>
-          <strong>Credit Hours:</strong> 3<br>
-          <strong>Semester:</strong> I</p>
+          <h2>B. Pharm./B. Tech. I &mdash; Semester I (3 Credits)</h2>
+          <p>Kathmandu University School of Science<br>
+          Department of Physics</p>
         </section>
 
         <section>
           <h2>Course Objectives</h2>
-          <p>This course helps first-year undergraduate students develop physical intuition through understanding fundamental concepts in mechanics, optics, heat & thermodynamics, and modern physics, with emphasis on conceptual understanding over complex mathematics.</p>
+          <p>Develop physical intuition through fundamental concepts in mechanics, optics, thermodynamics, and modern physics, emphasizing conceptual understanding over complex mathematics.</p>
         </section>
 
         <section>
           <h2>Grading Policy</h2>
           <div class="table-wrapper">
             <table>
-              <tbody>
-                <tr>
-                  <td>Attendance</td>
-                  <td>5%</td>
-                </tr>
-                <tr>
-                  <td>Homework Problems</td>
-                  <td>10%</td>
-                </tr>
-                <tr>
-                  <td>Internal Exams (2)</td>
-                  <td>5% + 5%</td>
-                </tr>
-                <tr>
-                  <td>Practical Exam</td>
-                  <td>25%</td>
-                </tr>
-                <tr>
-                  <td>Final Exam</td>
-                  <td>50%</td>
-                </tr>
-              </tbody>
+              <tr><th>Component</th><th>Weight</th></tr>
+              <tr><td>Attendance</td><td>5%</td></tr>
+              <tr><td>Homework Problems</td><td>10%</td></tr>
+              <tr><td>Internal Exams (2)</td><td>5% + 5%</td></tr>
+              <tr><td>Practical Exam</td><td>25%</td></tr>
+              <tr><td>Final Exam</td><td>50%</td></tr>
             </table>
           </div>
-
           <div class="notice">
             <strong>Qualification Requirements:</strong>
             <ul>
-              <li>Minimum 10% combined from Attendance + Homework + Internal required for final exam eligibility</li>
-              <li>Failure to meet minimum results in NQ (Not Qualified) grade</li>
-              <li>NQ students cannot attempt final examinations</li>
-              <li>Practical exams mandatory regardless of NQ status</li>
+              <li>Minimum 10% combined from Attendance + Homework + Internal Exams required for final exam eligibility</li>
+              <li>NQ (Not Qualified) students cannot attempt finals</li>
+              <li>Practical exam mandatory regardless of NQ status</li>
             </ul>
           </div>
         </section>
 
         <section>
-          <h2>Course Structure (Total 45 Hours)</h2>
-          <div class="course-structure">
-            
-            <div class="course-section">
-              <h3>Mechanics <span class="hours-badge">16 hours</span></h3>
-              <details>
-                <summary>Dynamics of System of Particles</summary>
-                <ul>
-                  <li>Work done by constant/variable forces</li>
-                  <li>Work-energy theorem</li>
-                  <li>Conservative/non-conservative forces</li>
-                  <li>Conservation of linear momentum</li>
-                  <li>Center of mass & variable mass systems</li>
-                  <li>Collisions & angular momentum</li>
-                  <li>Rotational kinematics & moment of inertia</li>
-                </ul>
-              </details>
+          <h2>Course Structure (45 Hours)</h2>
+          
+          <details>
+            <summary><h3>Mechanics <span class="hours-badge">16 hours</span></h3></summary>
+            <section>
+              <h4>Dynamics of System of Particles</h4>
+              <ul>
+                <li>Work-energy theorem</li>
+                <li>Conservation laws (momentum, angular momentum)</li>
+                <li>Rotational kinematics</li>
+                <li>Moment of inertia calculations</li>
+              </ul>
               
-              <details>
-                <summary>Wave and Oscillation</summary>
-                <ul>
-                  <li>Simple harmonic oscillator</li>
-                  <li>Damped/forced vibrations</li>
-                  <li>Resonance systems</li>
-                </ul>
-              </details>
-            </div>
+              <h4>Wave and Oscillation</h4>
+              <ul>
+                <li>Harmonic oscillators</li>
+                <li>Damped/forced vibrations</li>
+                <li>Resonance phenomena</li>
+              </ul>
+            </section>
+          </details>
 
-            <!-- Similar structure for Optics, Heat & Thermodynamics, Modern Physics -->
-            <!-- Include all content from PDF with matching structure -->
+          <details>
+            <summary><h3>Optics <span class="hours-badge">10 hours</span></h3></summary>
+            <section>
+              <h4>Interference</h4>
+              <ul>
+                <li>Young's double-slit</li>
+                <li>Thin film interference</li>
+                <li>Newton's rings</li>
+              </ul>
+              
+              <h4>Diffraction</h4>
+              <ul>
+                <li>Fraunhofer diffraction</li>
+                <li>Diffraction gratings</li>
+              </ul>
+            </section>
+          </details>
 
-          </div>
+          <details>
+            <summary><h3>Thermodynamics <span class="hours-badge">7 hours</span></h3></summary>
+            <section>
+              <h4>Heat Transfer</h4>
+              <ul>
+                <li>Thermal conductivity</li>
+                <li>Black body radiation</li>
+              </ul>
+              
+              <h4>Thermodynamic Laws</h4>
+              <ul>
+                <li>First & Second laws</li>
+                <li>Heat engines</li>
+                <li>Entropy</li>
+              </ul>
+            </section>
+          </details>
+
+          <details>
+            <summary><h3>Modern Physics <span class="hours-badge">12 hours</span></h3></summary>
+            <section>
+              <h4>Atomic & Molecular Physics</h4>
+              <ul>
+                <li>Atomic spectra</li>
+                <li>Semiconductor theory</li>
+              </ul>
+              
+              <h4>Nuclear Physics</h4>
+              <ul>
+                <li>Nuclear reactions</li>
+                <li>Radiation applications</li>
+                <li>MRI fundamentals</li>
+              </ul>
+            </section>
+          </details>
         </section>
 
         <section>
           <h2>Textbooks</h2>
-          <ul class="textbook-list">
-            <li>Resnick & Halliday, <em>Physics I & II</em></li>
-            <li>Serway & Jewett, <em>Physics for Engineers</em></li>
-            <li>Murugeshan, <em>Modern Physics</em></li>
-          </ul>
+          <div class="table-wrapper">
+            <table>
+              <tr><th>Title</th><th>Authors</th></tr>
+              <tr><td>Physics I & II</td><td>Resnick & Halliday</td></tr>
+              <tr><td>Physics for Engineers</td><td>Serway & Jewett</td></tr>
+              <tr><td>Modern Physics</td><td>R. Murugeshan</td></tr>
+            </table>
+          </div>
         </section>
       </article>
     </div>
 
     <footer id="footer">
-      <p>&copy; Kathmandu University. Department of Physics.</p>
+      <p>&copy; 2024 Kathmandu University - Department of Physics</p>
     </footer>
   </div>
 </body>
