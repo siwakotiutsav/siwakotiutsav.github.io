@@ -1,165 +1,137 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PHSX 114 Syllabus</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PHSX 114: Physics Lab Syllabus</title>
   <style>
     :root {
+      --main-color: #0051BA;
       --header-height: 80px;
-      --bg-opacity: 0.9;
+      --font-body: 'Georgia', serif;
     }
 
-    html, body {
-      height: 100%;
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
       margin: 0;
-      overflow-x: hidden;
-      font-family: Arial, sans-serif;
-      color: white;
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      color: #000;
+      background: #fff;
     }
 
-    #wrapper {
-      margin-top: var(--header-height);
-      min-height: calc(100vh - var(--header-height));
-      display: flex;
-      flex-direction: column;
+    a {
+      color: var(--main-color);
+      text-decoration: none;
     }
 
-    .table-wrapper {
-      margin: 1.5em 0;
-      overflow-x: auto;
+    a:hover {
+      text-decoration: underline;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: rgba(255,255,255,0.1);
-    }
-
-    td {
-      padding: 0.75em 1em;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
-    }
-
-    tr:nth-child(even) {
-      background: rgba(0,0,0,0.2);
-    }
-
-    .notice {
-      background: rgba(255,0,0,0.1);
-      border-left: 4px solid #ff4444;
-      padding: 1em;
-      margin: 1.5em 0;
-      border-radius: 4px;
-    }
-
-    .notice strong {
-      color: #ff8888;
-      display: block;
-      margin-bottom: 0.5em;
-    }
-
-    #main {
-      flex: 1;
-      padding: 2em;
-      overflow-y: auto;
-      background: rgba(0,0,0,0.7);
-    }
-
-    header#header {
+    header {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
       height: var(--header-height);
-      background: rgba(0,0,0,var(--bg-opacity));
-      z-index: 1000;
+      background: #f7f7f7;
+      border-bottom: 1px solid #ccc;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 2em;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
+      z-index: 1000;
     }
 
     header h1 {
-      margin: 0;
       font-size: 1.8em;
-      letter-spacing: 1px;
+      margin: 0;
+      color: var(--main-color);
     }
 
     nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
       display: flex;
-      gap: 2em;
+      gap: 1em;
+      list-style: none;
+      margin: 0;
+      padding: 0;
     }
 
     nav a {
-      color: white;
-      text-decoration: none;
       padding: 0.5em 1em;
       border-radius: 4px;
-      transition: background 0.3s ease;
-      display: inline-block;
     }
 
-    nav a:hover {
-      background: rgba(255,255,255,0.1);
-    }
-
-    #footer {
-      text-align: center;
-      padding: 2em;
-      font-size: 0.9em;
-      color: #aaa;
-      background: rgba(0,0,0,0.8);
-    }
-
-    #bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url("images/bg.jpg") center/cover no-repeat;
-      z-index: -1;
-      opacity: 1;
-    }
-
-    section {
-      margin: 2em 0;
+    #main {
+      max-width: 900px;
+      margin: calc(var(--header-height) + 2em) auto 2em;
+      padding: 0 1em;
     }
 
     h2 {
-      border-bottom: 2px solid #fff;
-      padding-bottom: 0.5em;
-      margin-bottom: 1em;
+      color: var(--main-color);
+      border-bottom: 2px solid var(--main-color);
+      padding-bottom: 0.3em;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1em;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.75em;
+      text-align: left;
+    }
+
+    tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+
+    .notice {
+      background: #ffe5e5;
+      border-left: 4px solid red;
+      padding: 1em;
+      margin-top: 1em;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2em;
+      background: #f0f0f0;
+      font-size: 0.9em;
+      color: #333;
     }
 
     ul {
-      padding-left: 1.5em;
-      line-height: 1.6;
+      padding-left: 1.2em;
     }
 
-    strong {
-      color: #fff;
+    @media (max-width: 600px) {
+      body {
+        font-size: 15px;
+      }
     }
   </style>
 </head>
-<body class="is-preload">
-  <div id="bg"></div>
-  <header id="header">
-    <h1>PHSX-114</h1>
+<body>
+  <header>
+    <h1>PHSX 114: Physics Lab</h1>
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="javascript:history.back()">Back</a></li>
+        <li><a href="../index.html">Home</a></li>
+        <li><a onclick="history.back();">Back</a></li>
       </ul>
     </nav>
   </header>
 
-  <div id="wrapper">
   <main id="main">
     <section>
       <h2>Physics Lab Syllabus</h2>
@@ -171,15 +143,13 @@
     <section>
       <h2>Course Grade</h2>
       <p>Your lab grade is based on reports, forum posts, and in-class lab practicals. A total of 400 points is possible. Grades are assigned as follows:</p>
-      <div class="table-wrapper">
-        <table>
-          <tr><td><strong>Grade</strong></td><td><strong>Points Needed</strong></td></tr>
-          <tr><td>A</td><td>320</td></tr>
-          <tr><td>B</td><td>240</td></tr>
-          <tr><td>C</td><td>160</td></tr>
-          <tr><td>D</td><td>80</td></tr>
-        </table>
-      </div>
+      <table>
+        <tr><th>Grade</th><th>Points Needed</th></tr>
+        <tr><td>A</td><td>320</td></tr>
+        <tr><td>B</td><td>240</td></tr>
+        <tr><td>C</td><td>160</td></tr>
+        <tr><td>D</td><td>80</td></tr>
+      </table>
     </section>
 
     <section>
@@ -214,26 +184,12 @@
 
     <section>
       <h2>Contents (Preview)</h2>
-      <p>This syllabus includes:</p>
-      <ul>
-        <li>Symbols, Letters, and Language</li>
-        <li>Functional Notation</li>
-        <li>Excel Tips</li>
-        <li>Measurement and Uncertainty</li>
-        <li>Comparing Measurements</li>
-        <li>Graphs and Correlations</li>
-        
-        <li>Prediction and Propagation of Error</li>
-        <li>R1: Rolling Down a Ramp</li>
-        <li>M3: Falling Time</li>
-        <li>F1: Hookes Law</li>
-        <li>Finals</li>
-      </ul>
+      <p>Lab content and experiment topics are introduced progressively and may include motion analysis, circuits, and thermal physics. A full schedule will be provided on Canvas.</p>
     </section>
   </main>
 
-    <footer id="footer">
-      <p>&copy; Utsav Siwakoti. Design: <a href="https://html5up.net" target="_self" style="color:#fff;">HTML5 UP</a>.</p>
-    </footer>
+  <footer>
+    <p>&copy; 2024 University of Kansas - Department of Physics & Astronomy</p>
+  </footer>
 </body>
 </html>

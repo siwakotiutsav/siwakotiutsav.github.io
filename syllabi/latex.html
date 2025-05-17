@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LaTeX Workshop Syllabus</title>
+  <style>
+    :root {
+      --main-color: #0051BA;
+      --header-height: 80px;
+      --font-body: 'Georgia', serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      color: #000;
+      background: #fff;
+    }
+
+    a {
+      color: var(--main-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--header-height);
+      background: #f7f7f7;
+      border-bottom: 1px solid #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2em;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 1.8em;
+      margin: 0;
+      color: var(--main-color);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1em;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      padding: 0.5em 1em;
+      border-radius: 4px;
+    }
+
+    #main {
+      max-width: 900px;
+      margin: calc(var(--header-height) + 2em) auto 2em;
+      padding: 0 1em;
+    }
+
+    h2 {
+      color: var(--main-color);
+      border-bottom: 2px solid var(--main-color);
+      padding-bottom: 0.3em;
+    }
+
+    ul {
+      padding-left: 1.5em;
+    }
+
+    .day-block {
+      margin-bottom: 1.5em;
+    }
+
+    .notice {
+      background: #fff4d6;
+      border-left: 4px solid #f0ad4e;
+      padding: 1em;
+      margin-top: 1em;
+    }
+
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    details {
+      margin-bottom: 1em;
+      background: none;
+      border: none;
+      border-radius: 0;
+      padding: 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2em;
+      background: #f0f0f0;
+      font-size: 0.9em;
+      color: #333;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header id="header">
+    <h1>LaTeX Workshop Syllabus</h1>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a onclick="history.back();">Back</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <details open>
+      <h2>Course Schedule</h2>
+
+      <section class="day-block">
+        <h3>Day 1</h3>
+        <ul>
+          <li>Introduction to Overleaf</li>
+          <li>Basic Document Structure in LaTeX</li>
+          <li>Writing Mathematical Equations</li>
+          <li>Creating Lists and sublist</li>
+          <li>Assignment & Discussions</li>
+        </ul>
+      </section>
+
+      <section class="day-block">
+        <h3>Day 2</h3>
+        <ul>
+          <li>Working with Figures and Tables</li>
+          <li>Mini Page and Multi-column Layouts</li>
+          <li>Bibliographies and Citations with BibTeX</li>
+          <li>Customizing Document Formatting</li>
+          <li>Assignment & Discussions</li>
+        </ul>
+      </section>
+
+      <section class="day-block">
+        <h3>Day 3</h3>
+        <ul>
+          <li>Collaborative Writing Tools in Overleaf</li>
+          <li>Finalizing the Document for Submission</li>
+          <li>Introduction to Beamer Presentations</li>
+          <li>Using AI Tools to Enhance LaTeX Documents</li>
+          <li>Assignment & Discussions</li>
+        </ul>
+      </section>
+
+      <div class="notice">
+        <h3>Expectations & Requirements</h3>
+        <ul>
+          <li>Participants must review all provided materials and resources.</li>
+          <li>Completion of all assignments, quizzes, and in-session tasks is mandatory.</li>
+          <li>Recommended tutorial videos should be watched as per the schedule.</li>
+          <li>Full attendance is required on all three days to receive certification/milestone completion.</li>
+          <li>Project details and group assignments (if applicable) will be updated on Canvas.</li>
+        </ul>
+      </div>
+    </details>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Utsav Siwakoti - University of Kansas</p>
+  </footer>
+</body>
+</html>
