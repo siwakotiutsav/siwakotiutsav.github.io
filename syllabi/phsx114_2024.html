@@ -6,61 +6,83 @@
   <title>PHYSX 114 Syllabus | Fall 2024</title>
   <link rel="stylesheet" href="../assets/css/main.css" />
   <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
-
   <style>
-    /* Allow full page scrolling */
+    /* — Make the page scrollable — */
     html, body {
       height: auto !important;
       overflow-y: auto !important;
       margin: 0;
       padding: 0;
     }
-    /* Wrapper flex layout */
     #wrapper {
-      display: flex !important;
-      flex-direction: column !important;
-      min-height: 100vh !important;
+      display: flex; flex-direction: column;
+      min-height: 100vh;
     }
-    /* Main content grows */
     #main {
-      flex: 1 !important;
-      padding: 3em 2em;
-      overflow: visible !important;
+      flex: 1; padding: 3em 2em;
+      overflow: visible;
     }
 
-    /* Collapsible sections */
-    details summary {
-      cursor: pointer;
-      padding: 1em;
-      background-color: #f5f5f5;
-      border: 1px solid #ccc;
-      border-radius: 6px;
+    /* — Background & Header styles — */
+    #bg {
+      position: fixed; top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url("../images/bg-education.jpg") center/cover no-repeat;
+      z-index: -1; opacity: 1;
+    }
+    #header {
+      text-align: center;
+      padding: 3em 2em 2em;
+    }
+    #header .logo img {
+      width: 180px; height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #fff;
       margin-bottom: 1em;
+    }
+    #header .content .inner {
+      max-width: 600px; margin: 0 auto;
+      color: #fff;
+    }
+    #header .content .inner h1 {
+      margin: 0; font-size: 2em;
+    }
+    nav ul {
+      list-style: none; padding: 0; margin-top: 1.5em;
+      display: flex; justify-content: center; gap: 1em;
+    }
+    nav ul li a {
+      color: #fff; text-decoration: none;
+      font-weight: bold; padding: 0.5em 1em;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    nav ul li a:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    /* — Collapsible details styling — */
+    details summary {
+      cursor: pointer; padding: 1em;
+      background: #f5f5f5; border: 1px solid #ccc;
+      border-radius: 6px; margin-bottom: 1em;
       font-weight: bold;
     }
     details[open] summary {
-      border-bottom: none;
-      border-radius: 6px 6px 0 0;
+      border-bottom: none; border-radius: 6px 6px 0 0;
     }
     details > section {
-      padding: 1.5em;
-      border: 1px solid #ccc;
-      border-top: none;
-      border-radius: 0 0 6px 6px;
-      background: #fff;
-      margin-bottom: 1.5em;
+      padding: 1.5em; border: 1px solid #ccc;
+      border-top: none; border-radius: 0 0 6px 6px;
+      background: #fff; margin-bottom: 1.5em;
     }
-
-    /* Optional: style the table inside details */
     details table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1em;
+      width: 100%; border-collapse: collapse; margin-top: 1em;
     }
     details th, details td {
-      border: 1px solid #ccc;
-      padding: 0.5em;
-      text-align: left;
+      border: 1px solid #ccc; padding: 0.5em;
     }
     details thead th {
       background: #eaeaea;
@@ -68,10 +90,13 @@
   </style>
 </head>
 <body class="is-preload">
+  <div id="bg"></div>
   <div id="wrapper">
     <!-- Header -->
     <header id="header">
-      <div class="logo"><span class="icon fa-flask"></span></div>
+      <div class="logo">
+        <img src="../images/school.png" alt="PHYSX 114 Logo" />
+      </div>
       <div class="content">
         <div class="inner">
           <h1>PHYSX 114: College Physics I Laboratory</h1>
@@ -86,7 +111,7 @@
       </nav>
     </header>
 
-    <!-- Main -->
+    <!-- Main Content -->
     <div id="main">
       <article>
         <h2 class="major">Course Information</h2>
@@ -95,7 +120,7 @@
           <summary>Credit Hours & Method</summary>
           <section>
             <p><strong>Credit Hours:</strong> 4 (includes 1 lab hour/week)<br>
-            <strong>Instructional Method:</strong> In-Person</p>
+               <strong>Instructional Method:</strong> In-Person</p>
           </section>
         </details>
 
@@ -103,26 +128,26 @@
           <summary>Prerequisites & Restrictions</summary>
           <section>
             <p><strong>Prerequisite:</strong> Must be eligible for MATH 115<br>
-            <strong>Not open to students with credit in:</strong> PHSX 211, 212, 216, or 236</p>
+               <strong>Not open to students with credit in:</strong> PHSX 211, PHSX 212, PHSX 216, PHSX 236</p>
           </section>
         </details>
 
         <details>
           <summary>Course Description</summary>
           <section>
-            <p>This course introduces the principles and applications of mechanics, fluids, heat, thermodynamics, and sound waves through hands-on experiments and data analysis. Emphasis is placed on developing quantitative reasoning and problem-solving skills through the practice of scientific methods. Students will conduct experiments, analyze data with attention to measurement uncertainty, and use those results to draw conclusions about physical models.</p>
-            <p><em>Note: Students should have completed 3.5 years of college-prep math, including trigonometry.</em></p>
+            <p>This course introduces mechanics, fluids, heat, thermodynamics, and sound waves through hands-on labs and data analysis. Emphasis on quantitative reasoning, uncertainty analysis, and scientific method.</p>
+            <p><em>Note: 3.5 years of college-prep math (including trigonometry) recommended.</em></p>
           </section>
         </details>
 
         <details>
           <summary>KU Core 34: Natural &amp; Physical Sciences</summary>
           <section>
-            <p>This course satisfies the KU Core goal for Natural &amp; Physical Sciences. Upon completion, students will be able to:</p>
+            <p>Upon completion, students will be able to:</p>
             <ul>
-              <li>Apply the scientific method to gather, analyze, and interpret experimental data.</li>
-              <li>Use mathematical reasoning to support conclusions drawn from scientific observations.</li>
-              <li>Understand and evaluate scientific models, assumptions, and limitations.</li>
+              <li>Apply the scientific method to experimental data.</li>
+              <li>Use mathematical reasoning for scientific conclusions.</li>
+              <li>Evaluate scientific models and their limitations.</li>
             </ul>
           </section>
         </details>
@@ -131,10 +156,10 @@
           <summary>Learning Outcomes</summary>
           <section>
             <ul>
-              <li>Collect experimental data and determine statistical and systematic uncertainties.</li>
-              <li>Differentiate between linear and nonlinear physical models using correlations and predictions.</li>
-              <li>Apply error propagation techniques to make and evaluate predictions.</li>
-              <li>Iteratively redesign experiments based on findings and uncertainty analysis.</li>
+              <li>Collect data and assess uncertainties.</li>
+              <li>Compare linear vs. nonlinear models.</li>
+              <li>Apply error propagation.</li>
+              <li>Redesign experiments based on results.</li>
             </ul>
           </section>
         </details>
@@ -143,18 +168,11 @@
           <summary>Course Topics (Selected Modules)</summary>
           <section>
             <ul>
-              <li>Measurement and Error Analysis: Uncertainty types, standard deviation, and error propagation.</li>
-              <li>Excel Tools for Data Analysis: Organizing data, formulas, and graphing.</li>
-              <li>Graphs and Correlations: Scatter plots, error bars, residuals, curve fitting.</li>
-              <li>Comparative Statistical Methods: Modified t-tests (Welch’s T and T*), histograms.</li>
-              <li>Lab Modules:
-                <ul>
-                  <li>R1: Rolling Down a Ramp</li>
-                  <li>M3: Falling Time</li>
-                  <li>F1: Hooke’s Law</li>
-                  <li>Final Labs: Period and Range assessments</li>
-                </ul>
-              </li>
+              <li>Measurement &amp; Error Analysis</li>
+              <li>Excel Tools for Data Analysis</li>
+              <li>Graphs, Correlations &amp; Curve Fitting</li>
+              <li>Statistical Methods (t-tests, histograms)</li>
+              <li>Lab Modules: R1, M3, F1, Final Assessments</li>
             </ul>
           </section>
         </details>
@@ -162,11 +180,9 @@
         <details>
           <summary>Grading Breakdown</summary>
           <section>
-            <p>The lab is worth <strong>400 total points</strong>. Your final lab grade will be determined by the total number of points earned:</p>
+            <p>400 total points:</p>
             <table>
-              <thead>
-                <tr><th>Grade</th><th>Points Required</th></tr>
-              </thead>
+              <thead><tr><th>Grade</th><th>Points</th></tr></thead>
               <tbody>
                 <tr><td>A</td><td>320+</td></tr>
                 <tr><td>B</td><td>240–319</td></tr>
@@ -181,15 +197,14 @@
         <details>
           <summary>Sources of Points</summary>
           <section>
-            <p>For each of the three core labs (R1, M3, F1), students will complete:</p>
             <ul>
-              <li><strong>Worksheets</strong> (60 points per lab): Due at the end of each lab session.</li>
-              <li><strong>Canvas Journal Entries</strong>: Record your experimental process (individual work).</li>
-              <li><strong>Group Lab Reports</strong>: One report per lab group (original collaborative work).</li>
-              <li><strong>Canvas Discussion Board Posts</strong>: Share insights and provide peer feedback.</li>
-              <li><strong>Lab Tests</strong>: Individual assessments related to the experiment.</li>
+              <li>Worksheets (60 pts each)</li>
+              <li>Canvas Journal Entries</li>
+              <li>Group Lab Reports</li>
+              <li>Discussion Board Posts</li>
+              <li>Lab Tests</li>
             </ul>
-            <p>💡 <em>Important:</em> You must be present in the lab to have your name included on worksheets or group reports. Journals, discussions, and tests must reflect <strong>individual</strong> work.</p>
+            <p><em>Note:</em> Only present students receive credit on worksheets/reports; journals and tests are individual.</p>
           </section>
         </details>
 
@@ -197,10 +212,10 @@
           <summary>Course Expectations</summary>
           <section>
             <ul>
-              <li>Lab attendance is required for credit.</li>
-              <li>Redoing reports may be necessary to reach mastery.</li>
-              <li><em>Error is normal; mistakes are a problem:</em> Learning from measurement uncertainty is a goal—falsifying data or copying others is unacceptable.</li>
-              <li>Excel literacy: Proficiency in Excel for averages, standard deviations, trendlines, and error bars is expected.</li>
+              <li>Lab attendance required</li>
+              <li>Redo reports if necessary to achieve mastery</li>
+              <li>Honest error reporting is mandatory</li>
+              <li>Excel proficiency expected</li>
             </ul>
           </section>
         </details>
@@ -208,15 +223,14 @@
         <details>
           <summary>Time Commitment</summary>
           <section>
-            <p>As a 4-credit course over a 15-week semester, expect to spend:</p>
+            <p>15-week semester:</p>
             <ul>
-              <li>3 hours/week in class</li>
-              <li>6+ hours/week outside of class on lab reports, analysis, and study</li>
+              <li>3 hrs/week in class</li>
+              <li>6+ hrs/week on reports &amp; study</li>
             </ul>
-            <p>In accelerated formats (e.g. 8 weeks), time commitments adjust accordingly.</p>
+            <p>Accelerated formats adjust accordingly.</p>
           </section>
         </details>
-
       </article>
     </div>
 
