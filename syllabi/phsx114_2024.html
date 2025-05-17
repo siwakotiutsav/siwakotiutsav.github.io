@@ -6,6 +6,34 @@
   <title>PHYSX 114 Syllabus | Fall 2024</title>
   <link rel="stylesheet" href="../assets/css/main.css" />
   <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+  <style>
+    details summary {
+      cursor: pointer;
+      padding: 1em;
+      background-color: #f5f5f5;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 1em;
+      font-weight: bold;
+    }
+
+    details[open] summary {
+      border-bottom: none;
+      border-radius: 6px 6px 0 0;
+    }
+
+    details > section {
+      padding: 1.5em;
+      border: 1px solid #ccc;
+      border-top: none;
+      border-radius: 0 0 6px 6px;
+      background: #fff;
+    }
+
+    details:not(:last-child) {
+      margin-bottom: 1.5em;
+    }
+  </style>
 </head>
 <body class="is-preload">
   <div id="wrapper">
@@ -30,102 +58,132 @@
     <div id="main">
       <article>
         <h2 class="major">Course Information</h2>
-        <section>
-          <h3>Credit Hours & Method</h3>
-          <p><strong>Credit Hours:</strong> 4 (includes 1 lab hour/week)<br>
-          <strong>Instructional Method:</strong> In-Person</p>
-        </section>
-        <section>
-          <h3>Prerequisites & Restrictions</h3>
-          <p><strong>Prerequisite:</strong> Must be eligible for MATH 115<br>
-          <strong>Not open to students with credit in:</strong> PHSX 211, PHSX 212, PHSX 216, or PHSX 236</p>
-        </section>
-        <section>
-          <h3>Course Description</h3>
-          <p>This course introduces the principles and applications of mechanics, fluids, heat, thermodynamics, and sound waves through hands-on experiments and data analysis. Emphasis is placed on developing quantitative reasoning and problem-solving skills through the practice of scientific methods. Students will conduct experiments, analyze data with attention to measurement uncertainty, and use those results to draw conclusions about physical models.</p>
-          <p><em>Note: Students should have completed 3.5 years of college-prep math, including trigonometry.</em></p>
-        </section>
-        <section>
-          <h3>KU Core 34: Natural &amp; Physical Sciences</h3>
-          <p>This course satisfies the KU Core Goal for Natural &amp; Physical Sciences. Upon completion, students will be able to:</p>
-          <ul>
-            <li>Apply the scientific method to gather, analyze, and interpret experimental data.</li>
-            <li>Use mathematical reasoning to support conclusions drawn from scientific observations.</li>
-            <li>Understand and evaluate scientific models, assumptions, and limitations.</li>
-          </ul>
-        </section>
-        <section>
-          <h3>Learning Outcomes</h3>
-          <ul>
-            <li>Collect experimental data and determine statistical and systematic uncertainties.</li>
-            <li>Differentiate between linear and nonlinear physical models using correlations and predictions.</li>
-            <li>Apply error propagation techniques to make and evaluate predictions.</li>
-            <li>Iteratively redesign experiments based on findings and uncertainty analysis.</li>
-          </ul>
-        </section>
-        <section>
-          <h3>Course Topics (Selected Modules)</h3>
-          <ul>
-            <li>Measurement and Error Analysis: Uncertainty types, standard deviation, and error propagation.</li>
-            <li>Excel Tools for Data Analysis: Organizing data, formulas, and graphing.</li>
-            <li>Graphs and Correlations: Scatter plots, error bars, residuals, curve fitting.</li>
-            <li>Comparative Statistical Methods: Modified t-tests (Welch's T and T*), histograms.</li>
-            <li>Lab Modules:
-              <ul>
-                <li>R1: Rolling Down a Ramp</li>
-                <li>M3: Falling Time</li>
-                <li>F1: Hooke’s Law</li>
-                <li>Final Labs: Period and Range assessments</li>
-              </ul>
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h3>Grading Breakdown</h3>
-          <p>The lab is worth <strong>400 total points</strong>. Your final lab grade will be determined by the total number of points earned:</p>
-          <table>
-            <thead>
-              <tr><th>Grade</th><th>Points Required</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>A</td><td>320+</td></tr>
-              <tr><td>B</td><td>240–319</td></tr>
-              <tr><td>C</td><td>160–239</td></tr>
-              <tr><td>D</td><td>80–159</td></tr>
-              <tr><td>F</td><td>&lt; 80</td></tr>
-            </tbody>
-          </table>
-        </section>
-        <section>
-          <h3>Sources of Points</h3>
-          <p>For each of the three core labs (R1, M3, F1), students will complete:</p>
-          <ul>
-            <li><strong>Worksheets</strong> (60 points per lab): Due at the end of each lab session.</li>
-            <li><strong>Canvas Journal Entries</strong>: Record your experimental process (individual work).</li>
-            <li><strong>Group Lab Reports</strong>: One report per lab group (original collaborative work).</li>
-            <li><strong>Canvas Discussion Board Posts</strong>: Share insights and provide peer feedback.</li>
-            <li><strong>Lab Tests</strong>: Individual assessments related to the experiment.</li>
-          </ul>
-          <p>💡 <em>Important:</em> You must be present in the lab to have your name included on worksheets or group reports. While reports are submitted as a group, journals, discussions, and tests must reflect <strong>individual</strong> work.</p>
-        </section>
-        <section>
-          <h3>Course Expectations</h3>
-          <ul>
-            <li>Lab Attendance is required for credit.</li>
-            <li>Redoing Reports may be necessary to reach mastery.</li>
-            <li><em>Error is Normal, Mistakes are a Problem:</em> Learning from measurement uncertainty is a goal—falsifying data, copying others, or failing to report errors honestly is unacceptable.</li>
-            <li>Excel Literacy: Proficiency in Excel for averages, standard deviations, trendlines, and error bars is expected.</li>
-          </ul>
-        </section>
-        <section>
-          <h3>Time Commitment</h3>
-          <p>As a 4-credit course over a standard 15-week semester, expect to spend:</p>
-          <ul>
-            <li>3 hours/week in class</li>
-            <li>6+ hours/week outside of class on lab reports, analysis, and study</li>
-          </ul>
-          <p>If offered over an accelerated format (e.g., 8 weeks), time commitments will be adjusted accordingly.</p>
-        </section>
+
+        <details>
+          <summary>Credit Hours & Method</summary>
+          <section>
+            <p><strong>Credit Hours:</strong> 4 (includes 1 lab hour/week)<br>
+            <strong>Instructional Method:</strong> In-Person</p>
+          </section>
+        </details>
+
+        <details>
+          <summary>Prerequisites & Restrictions</summary>
+          <section>
+            <p><strong>Prerequisite:</strong> Must be eligible for MATH 115<br>
+            <strong>Not open to students with credit in:</strong> PHSX 211, PHSX 212, PHSX 216, or PHSX 236</p>
+          </section>
+        </details>
+
+        <details>
+          <summary>Course Description</summary>
+          <section>
+            <p>This course introduces the principles and applications of mechanics, fluids, heat, thermodynamics, and sound waves through hands-on experiments and data analysis. Emphasis is placed on developing quantitative reasoning and problem-solving skills through the practice of scientific methods. Students will conduct experiments, analyze data with attention to measurement uncertainty, and use those results to draw conclusions about physical models.</p>
+            <p><em>Note: Students should have completed 3.5 years of college-prep math, including trigonometry.</em></p>
+          </section>
+        </details>
+
+        <details>
+          <summary>KU Core 34: Natural &amp; Physical Sciences</summary>
+          <section>
+            <p>This course satisfies the KU Core Goal for Natural &amp; Physical Sciences. Upon completion, students will be able to:</p>
+            <ul>
+              <li>Apply the scientific method to gather, analyze, and interpret experimental data.</li>
+              <li>Use mathematical reasoning to support conclusions drawn from scientific observations.</li>
+              <li>Understand and evaluate scientific models, assumptions, and limitations.</li>
+            </ul>
+          </section>
+        </details>
+
+        <details>
+          <summary>Learning Outcomes</summary>
+          <section>
+            <ul>
+              <li>Collect experimental data and determine statistical and systematic uncertainties.</li>
+              <li>Differentiate between linear and nonlinear physical models using correlations and predictions.</li>
+              <li>Apply error propagation techniques to make and evaluate predictions.</li>
+              <li>Iteratively redesign experiments based on findings and uncertainty analysis.</li>
+            </ul>
+          </section>
+        </details>
+
+        <details>
+          <summary>Course Topics (Selected Modules)</summary>
+          <section>
+            <ul>
+              <li>Measurement and Error Analysis: Uncertainty types, standard deviation, and error propagation.</li>
+              <li>Excel Tools for Data Analysis: Organizing data, formulas, and graphing.</li>
+              <li>Graphs and Correlations: Scatter plots, error bars, residuals, curve fitting.</li>
+              <li>Comparative Statistical Methods: Modified t-tests (Welch's T and T*), histograms.</li>
+              <li>Lab Modules:
+                <ul>
+                  <li>R1: Rolling Down a Ramp</li>
+                  <li>M3: Falling Time</li>
+                  <li>F1: Hooke’s Law</li>
+                  <li>Final Labs: Period and Range assessments</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+        </details>
+
+        <details>
+          <summary>Grading Breakdown</summary>
+          <section>
+            <p>The lab is worth <strong>400 total points</strong>. Your final lab grade will be determined by the total number of points earned:</p>
+            <table>
+              <thead>
+                <tr><th>Grade</th><th>Points Required</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>A</td><td>320+</td></tr>
+                <tr><td>B</td><td>240–319</td></tr>
+                <tr><td>C</td><td>160–239</td></tr>
+                <tr><td>D</td><td>80–159</td></tr>
+                <tr><td>F</td><td>&lt; 80</td></tr>
+              </tbody>
+            </table>
+          </section>
+        </details>
+
+        <details>
+          <summary>Sources of Points</summary>
+          <section>
+            <p>For each of the three core labs (R1, M3, F1), students will complete:</p>
+            <ul>
+              <li><strong>Worksheets</strong> (60 points per lab): Due at the end of each lab session.</li>
+              <li><strong>Canvas Journal Entries</strong>: Record your experimental process (individual work).</li>
+              <li><strong>Group Lab Reports</strong>: One report per lab group (original collaborative work).</li>
+              <li><strong>Canvas Discussion Board Posts</strong>: Share insights and provide peer feedback.</li>
+              <li><strong>Lab Tests</strong>: Individual assessments related to the experiment.</li>
+            </ul>
+            <p>💡 <em>Important:</em> You must be present in the lab to have your name included on worksheets or group reports. While reports are submitted as a group, journals, discussions, and tests must reflect <strong>individual</strong> work.</p>
+          </section>
+        </details>
+
+        <details>
+          <summary>Course Expectations</summary>
+          <section>
+            <ul>
+              <li>Lab Attendance is required for credit.</li>
+              <li>Redoing Reports may be necessary to reach mastery.</li>
+              <li><em>Error is Normal, Mistakes are a Problem:</em> Learning from measurement uncertainty is a goal—falsifying data, copying others, or failing to report errors honestly is unacceptable.</li>
+              <li>Excel Literacy: Proficiency in Excel for averages, standard deviations, trendlines, and error bars is expected.</li>
+            </ul>
+          </section>
+        </details>
+
+        <details>
+          <summary>Time Commitment</summary>
+          <section>
+            <p>As a 4-credit course over a standard 15-week semester, expect to spend:</p>
+            <ul>
+              <li>3 hours/week in class</li>
+              <li>6+ hours/week outside of class on lab reports, analysis, and study</li>
+            </ul>
+            <p>If offered over an accelerated format (e.g., 8 weeks), time commitments will be adjusted accordingly.</p>
+          </section>
+        </details>
       </article>
     </div>
 
