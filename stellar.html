@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Astrophotography</title>
   <style>
     :root {
@@ -63,7 +63,7 @@
     }
 
     main {
-      max-width: 850px;
+      max-width: 880px;
       margin: calc(var(--header-height) + 2rem) auto 3rem;
       padding: 0 1rem;
     }
@@ -101,37 +101,53 @@
       z-index: 1;
     }
 
+    .timeline-entry summary {
+      cursor: pointer;
+      padding: 0.25rem 0;
+    }
+
     .timeline-entry h2 {
-      margin: 0 0 0.25rem;
-      font-size: 1.3rem;
+      font-size: 1.4rem;
+      margin: 0 0 0.3rem;
       color: #222;
     }
 
     .timeline-entry p {
-      margin: 0 0 1rem;
+      margin: 0 0 0.5rem;
       color: #444;
       font-style: italic;
     }
 
     .timeline-entry ul {
       padding-left: 1.2rem;
-      margin: 0.5rem 0 0;
+      margin: 0.5rem 0 1rem;
       list-style-type: disc;
     }
 
     .timeline-entry li {
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
     }
 
     .timeline-entry strong {
       color: #000;
-      display: block;
-      margin-bottom: 0.2rem;
+    }
+
+    .image.fit {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 1.2rem 0;
+    }
+
+    .image.fit img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
     }
 
     a.button {
       display: inline-block;
-      margin-top: 0.3rem;
+      margin-top: 0.5rem;
       padding: 0.45rem 0.9rem;
       font-size: 0.9rem;
       border: 1px solid var(--main-color);
@@ -180,20 +196,10 @@
       .timeline-entry::before {
         left: -10px;
       }
-
-      .image.fit {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 1rem 0;
-      }
-
-      
     }
   </style>
 </head>
 
-  
 <body>
   <header>
     <h1>Astrophotography</h1>
@@ -203,6 +209,7 @@
       </ul>
     </nav>
   </header>
+  
   
 <div class="timeline">
 <div class="timeline-entry">
