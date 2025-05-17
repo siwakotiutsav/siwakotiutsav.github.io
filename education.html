@@ -4,10 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Education</title>
-
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-
   <style>
     html, body {
       height: 100%;
@@ -26,7 +24,6 @@
       padding: 3em 2em;
     }
 
-    /* Timeline layout */
     .timeline {
       position: relative;
       margin: 2em 0;
@@ -52,51 +49,6 @@
       z-index: 1;
     }
 
-    .timeline-entry details {
-      background: rgba(0,0,0,0.3);
-      padding: 1em;
-      border-radius: 6px;
-      border: 1px solid rgba(255,255,255,0.2);
-    }
-
-    .timeline-entry summary {
-      cursor: pointer;
-      list-style: none;
-      font-size: 1.1em;
-      font-weight: 600;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .timeline-entry summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .timeline-entry summary h3 {
-      display: inline;
-      margin: 0;
-      font-size: 1.2em;
-    }
-
-    .timeline-entry summary p {
-      margin: 0.5em 0 0;
-      font-size: 0.9em;
-      color: #ccc;
-      font-style: italic;
-    }
-
-    .timeline-entry[open] summary h3:after { content: " ▲"; }
-    .timeline-entry summary h3:after { content: " ▼"; }
-
-    .image.fit img {
-      display: block;
-      width: 100%;
-      height: auto;
-      margin: 1em 0;
-      border-radius: 4px;
-    }
-
     #footer {
       text-align: center;
       padding: 2em;
@@ -114,6 +66,12 @@
       z-index: -1;
       opacity: 1;
     }
+
+    .major {
+      border-bottom: 2px solid #fff;
+      padding-bottom: 0.5em;
+      margin-bottom: 1em;
+    }
   </style>
 </head>
 
@@ -123,79 +81,56 @@
   <div id="wrapper">
     <!-- Header -->
     <header id="header">
-      <div class="logo">
-        <img src="images/logo.png" alt="Utsav Siwakoti" style="width: 240px; height: 240px; border-radius: 50%; object-fit: cover;" />
-      </div>
-      <div class="content">
-        <div class="inner">
-          <h1>Education & Teaching</h1>
-          <p>Courses I’ve taught and institutions I’ve been affiliated with.</p>
-        </div>
-      </div>
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="research.html">Research</a></li>
-          <li><a href="education.html" class="active">Education</a></li>
-          <li><a href="stellar.html">Astrophotography</a></li>
-          <li><a href="outreach.html">Outreach</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </nav>
+      <div class="content">
+        <div class="inner">
+          <h1>Education & Teaching</h1>
+          <p>Courses I've taught and institutions I've been affiliated with.</p>
+        </div>
+      </div>
     </header>
 
     <!-- Main -->
     <div id="main">
-      <h2 class="major">Teaching Timeline</h2>
+      <h2 class="major">Teaching Experience</h2>
       <div class="timeline">
 
         <div class="timeline-entry">
-          <details open>
-            <summary>
-              <h3>University of Kansas</h3>
-              <p>Graduate Teaching Assistant · Aug 2024 – May 2025</p>
-            </summary>
-            <ul>
-              <li>
-                <strong>PHSX 114 – General Physics Lab</strong><br />
-                <a class="button small" href="syllabi/phsx114_2024.html" target="_blank">View Syllabus</a>
-              </li>
-            </ul>
-          </details>
+          <h3>University of Kansas</h3>
+          <p>Graduate Teaching Assistant · Aug 2024 – May 2025</p>
+          <ul>
+            <li>
+              <strong>PHSX 114 – General Physics Lab</strong><br />
+              <a class="button small" href="syllabi/phsx114_2024.html">View Syllabus</a>
+            </li>
+          </ul>
         </div>
 
         <div class="timeline-entry">
-          <details>
-            <summary>
-              <h3>Kathmandu University</h3>
-              <p>Visiting Faculty · Aug 2023 – Jan 2024 / Apr 2024 – Jul 2024</p>
-            </summary>
-            <ul>
-              <li>
-                <strong>Biophysics</strong><br />
-                Aug 2023 – Jan 2024<br />
-                <a class="button small" href="syllabi/biophysics_2023.html" target="_blank">View Syllabus</a>
-              </li>
-              <li>
-                <strong>Mechanics</strong><br />
-                Apr 2024 – Jul 2024<br />
-                <a class="button small" href="syllabi/mechanics_2024.html" target="_blank">View Syllabus</a>
-              </li>
-            </ul>
-          </details>
+          <h3>Kathmandu University</h3>
+          <p>Visiting Faculty · Aug 2023 – Jan 2024 / Apr 2024 – Jul 2024</p>
+          <ul>
+            <li>
+              <strong>Biophysics</strong><br />
+              Aug 2023 – Jan 2024<br />
+              <a class="button small" href="syllabi/biophysics_2023.html">View Syllabus</a>
+            </li>
+            <li>
+              <strong>Mechanics</strong><br />
+              Apr 2024 – Jul 2024<br />
+              <a class="button small" href="syllabi/mechanics_2024.html">View Syllabus</a>
+            </li>
+          </ul>
         </div>
-        
-  <div class="timeline-entry">
-          <details>
-            <summary>
-              <h3>Youtube Journey</h3>
-              <p>I do make some YouTube videos to help students access knowledge freely whenever I get time. 
-                Currently, there are some videos in Nepali, but I will soon be uploading more content in English 
-                to reach a wider audience</p>
-              <strong>Utsav Education</strong><br />
-                <a class="button small" href="https://www.youtube.com/@utsaved" target="_blank">Find Channel</a>
-        
-          </details>
+
+        <div class="timeline-entry">
+          <h3>YouTube Educational Content</h3>
+          <p>Creating free educational videos for students</p>
+          <a class="button small" href="https://www.youtube.com/@utsaved">Visit Channel</a>
         </div>
       </div>
     </div>
