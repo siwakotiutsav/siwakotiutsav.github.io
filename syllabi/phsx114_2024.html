@@ -3,21 +3,90 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PHSX 114 Syllabus</title>
+  <title>PHSX 114 Syllabus | Fall 2024</title>
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+
   <style>
+    /* — root variables — */
     :root {
-      --header-height: 80px;
-      --bg-opacity: 0.9;
+      --header-height: 100px;   /* match your header’s actual height */
+      --bg-opacity: 0.7;
     }
 
+    /* — allow full page scroll — */
     html, body {
-      height: 100%;
+      height: auto;
       margin: 0;
-      overflow-x: hidden;
+      padding: 0;
+      overflow-y: auto;
       font-family: Arial, sans-serif;
-      color: white;
+      color: #fff;
+      background: #000;
     }
 
+    /* — full‐screen background image — */
+    #bg {
+      position: fixed; top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url("../images/bg-education.jpg") center/cover no-repeat;
+      z-index: -1;
+      opacity: var(--bg-opacity);
+    }
+
+    /* — header fixed at top — */
+    header#header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--header-height);
+      background: rgba(0,0,0, var(--bg-opacity));
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2em;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+    header#header .logo {
+      display: flex; align-items: center;
+    }
+    header#header .logo span.icon {
+      font-size: 2.5em;
+      color: #fff;
+    }
+    header#header .content .inner {
+      text-align: center;
+    }
+    header#header .content h1 {
+      margin: 0;
+      font-size: 1.6em;
+      color: #fff;
+    }
+    header#header .content p {
+      margin: 0.2em 0 0;
+      font-size: 0.9em;
+      color: #ccc;
+    }
+    header#header nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1em;
+      margin: 0;
+      padding: 0;
+    }
+    header#header nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 0.5em 1em;
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.3);
+      transition: background 0.2s;
+    }
+    header#header nav a:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* — push content below the fixed header — */
     #wrapper {
       margin-top: var(--header-height);
       min-height: calc(100vh - var(--header-height));
@@ -25,198 +94,122 @@
       flex-direction: column;
     }
 
-    .table-wrapper {
-      margin: 1.5em 0;
-      overflow-x: auto;
+    /* — main content area — */
+    #main {
+      flex: 1;
+      padding: 2em;
+      overflow: visible;
+      background: rgba(0,0,0,0.6);
     }
 
-    table {
+    /* — collapsible panels styling — */
+    details {
+      margin-bottom: 1.5em;
+      background: rgba(255,255,255,0.1);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    details summary {
+      cursor: pointer;
+      padding: 1em;
+      font-weight: bold;
+      background: rgba(255,255,255,0.2);
+      list-style: none;
+    }
+    details[open] summary {
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+    }
+    details > section {
+      padding: 1.5em;
+      background: rgba(0,0,0,0.4);
+    }
+
+    /* — typography tweaks — */
+    h2.major {
+      margin: 0 0 0.5em;
+      border-bottom: 2px solid #fff;
+      padding-bottom: 0.3em;
+    }
+    section ul {
+      padding-left: 1.2em;
+      line-height: 1.5;
+    }
+    section p, section li {
+      font-size: 0.95em;
+      color: #eee;
+    }
+    strong {
+      color: #fff;
+    }
+    /* — table inside details — */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 1em 0;
+    }
+    details table {
       width: 100%;
       border-collapse: collapse;
       background: rgba(255,255,255,0.1);
     }
-
-    td {
-      padding: 0.75em 1em;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
+    details th, details td {
+      padding: 0.6em 0.8em;
+      border: 1px solid rgba(255,255,255,0.2);
+      text-align: left;
+    }
+    details thead th {
+      background: rgba(255,255,255,0.2);
     }
 
-    tr:nth-child(even) {
-      background: rgba(0,0,0,0.2);
-    }
-
-    .notice {
-      background: rgba(255,0,0,0.1);
-      border-left: 4px solid #ff4444;
-      padding: 1em;
-      margin: 1.5em 0;
-      border-radius: 4px;
-    }
-
-    .notice strong {
-      color: #ff8888;
-      display: block;
-      margin-bottom: 0.5em;
-    }
-
-    .notice ul {
-      margin: 0.5em 0;
-      padding-left: 1.5em;
-    }
-
-    .notice li {
-      margin: 0.5em 0;
-    }
-
-    #main {
-      flex: 1;
-      padding: 2em;
-      overflow-y: auto;
-      background: rgba(0,0,0,0.7);
-    }
-
-    header#header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: var(--header-height);
-      background: rgba(0,0,0,var(--bg-opacity));
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 2em;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 1.8em;
-      letter-spacing: 1px;
-    }
-
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      gap: 2em;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      padding: 0.5em 1em;
-      border-radius: 4px;
-      transition: background 0.3s ease;
-      display: inline-block;
-    }
-
-    nav a:hover {
-      background: rgba(255,255,255,0.1);
-    }
-
+    /* — footer — */
     #footer {
       text-align: center;
-      padding: 2em;
-      font-size: 0.9em;
-      color: #aaa;
-      background: rgba(0,0,0,0.8);
-    }
-
-    #bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url("images/bg.jpg") center/cover no-repeat;
-      z-index: -1;
-      opacity: 1;
-    }
-
-    .major h2 {
-      border-bottom: 2px solid #fff;
-      padding-bottom: 0.5em;
-      margin-bottom: 1em;
-    }
-
-    section {
-      margin: 2em 0;
-    }
-
-    ul {
-      padding-left: 1.5em;
-      line-height: 1.6;
-    }
-
-    strong {
-      color: #fff;
-    }
-
-    details {
-      margin-bottom: 1em;
-      background: rgba(255,255,255,0.1);
-      border-radius: 6px;
-    }
-
-    summary {
-      cursor: pointer;
-      padding: 1em;
-      font-weight: 600;
-      list-style: none;
-    }
-
-    details[open] summary {
-      border-bottom: 1px solid rgba(255,255,255,0.2);
-    }
-
-    details > section {
       padding: 1.5em;
-      background: rgba(0,0,0,0.3);
+      background: rgba(0,0,0,0.8);
+      color: #aaa;
+      font-size: 0.9em;
     }
   </style>
 </head>
-
 <body class="is-preload">
   <div id="bg"></div>
 
-  <!-- Single Fixed Header -->
+  <!-- header -->
   <header id="header">
-    <h1>PHSX 114: College Physics I Lab</h1>
+    <div class="logo"><span class="icon fa-flask"></span></div>
+    <div class="content">
+      <div class="inner">
+        <h1>PHSX 114: College Physics I Lab</h1>
+        <p>University of Kansas &mdash; Fall 2024</p>
+      </div>
+    </div>
     <nav>
       <ul>
         <li><a href="../index.html">Home</a></li>
-        <li><a href="javascript:history.back()">Back</a></li>
+        <li><a href="../education.html">Back to Education</a></li>
       </ul>
     </nav>
   </header>
 
+  <!-- wrapper & main -->
   <div id="wrapper">
-    <!-- Scrollable Content -->
     <div id="main">
       <article>
         <details open>
           <summary><h2 class="major">Course Overview</h2></summary>
           <section>
-            <p><strong>Credit Hours:</strong> 4 (includes 1 lab hour/week)<br>
-            <strong>Institution:</strong> University of Kansas<br>
-            <strong>Semester:</strong> Fall 2024</p>
+            <p><strong>Credit Hours:</strong> 4 (includes 1 lab hr/week)<br>
+               <strong>Instruction:</strong> In-Person</p>
           </section>
         </details>
 
         <details>
-          <summary><h2 class="major">Requirements</h2></summary>
+          <summary><h2 class="major">Prerequisites &amp; Restrictions</h2></summary>
           <section>
-            <div class="notice">
-              <strong>Critical Prerequisites:</strong>
-              <ul>
-                <li>Eligibility for MATH 115</li>
-                <li>Not open to students with credit in PHSX 211/212/216/236</li>
-              </ul>
-            </div>
-            <p><strong>Recommended Preparation:</strong> 3.5 years college-prep math including trigonometry</p>
+            <ul>
+              <li>Eligible for MATH 115</li>
+              <li>Not open to PHSX 211/212/216/236</li>
+            </ul>
+            <p><em>Recommended: 3½ years college‐prep math including trig.</em></p>
           </section>
         </details>
 
@@ -224,10 +217,10 @@
           <summary><h2 class="major">Learning Outcomes</h2></summary>
           <section>
             <ul>
-              <li>Apply scientific method to experimental data</li>
-              <li>Use mathematical reasoning for conclusions</li>
-              <li>Evaluate scientific models and limitations</li>
-              <li>Master error analysis and uncertainty calculations</li>
+              <li>Apply scientific method to data</li>
+              <li>Use math for experimental conclusions</li>
+              <li>Evaluate models &amp; limitations</li>
+              <li>Perform error &amp; uncertainty analysis</li>
             </ul>
           </section>
         </details>
@@ -238,78 +231,48 @@
             <div class="table-wrapper">
               <table>
                 <thead>
-                  <tr>
-                    <th>Grade</th>
-                    <th>Points</th>
-                    <th>Percentage</th>
-                  </tr>
+                  <tr><th>Grade</th><th>Points</th><th>%</th></tr>
                 </thead>
                 <tbody>
                   <tr><td>A</td><td>320+</td><td>≥80%</td></tr>
-                  <tr><td>B</td><td>240–319</td><td>60-79%</td></tr>
-                  <tr><td>C</td><td>160–239</td><td>40-59%</td></tr>
-                  <tr><td>D</td><td>80–159</td><td>20-39%</td></tr>
-                  <tr><td>F</td><td>&lt;80</td><td>&lt;20%</td></tr>
+                  <tr><td>B</td><td>240–319</td><td>60–79%</td></tr>
+                  <tr><td>C</td><td>160–239</td><td>40–59%</td></tr>
+                  <tr><td>D</td><td>80–159</td><td>20–39%</td></tr>
+                  <tr><td>F</td><td><80</td><td><20%</td></tr>
                 </tbody>
               </table>
             </div>
-            
-            <div class="notice">
-              <strong>Attendance Policy:</strong>
-              <ul>
-                <li>Lab attendance mandatory for worksheet credit</li>
-                <li>Three unexcused absences result in course failure</li>
-                <li>Medical absences require official documentation</li>
-              </ul>
-            </div>
-          </section>
-        </details>
-
-        <details>
-          <summary><h2 class="major">Course Structure</h2></summary>
-          <section>
-            <h3>Core Modules</h3>
             <ul>
-              <li>Measurement & Error Analysis</li>
-              <li>Data Analysis with Excel</li>
-              <li>Statistical Methods (t-tests, histograms)</li>
-              <li>Lab Modules: R1, M3, F1</li>
+              <li>Worksheets (60 pts each)</li>
+              <li>Lab Reports (40 pts each)</li>
+              <li>Journal Entries (20 pts each)</li>
+              <li>Lab Tests (100 pts)</li>
             </ul>
-
-            <h3>Weekly Commitment</h3>
-            <div class="table-wrapper">
-              <table>
-                <tr><td>In-class</td><td>3 hours/week</td></tr>
-                <tr><td>Outside class</td><td>6+ hours/week</td></tr>
-                <tr><td>Total/Semester</td><td>135+ hours</td></tr>
-              </table>
-            </div>
           </section>
         </details>
 
         <details>
-          <summary><h2 class="major">Assessment Methods</h2></summary>
+          <summary><h2 class="major">Course Topics</h2></summary>
           <section>
-            <div class="table-wrapper">
-              <table>
-                <tr><th>Component</th><th>Weight</th><th>Type</th></tr>
-                <tr><td>Worksheets</td><td>60 pts each</td><td>Group</td></tr>
-                <tr><td>Lab Reports</td><td>40 pts each</td><td>Individual</td></tr>
-                <tr><td>Journal Entries</td><td>20 pts each</td><td>Individual</td></tr>
-                <tr><td>Lab Tests</td><td>100 pts</td><td>Individual</td></tr>
-              </table>
-            </div>
+            <ul>
+              <li>Measurement &amp; Error Analysis</li>
+              <li>Excel Data Analysis</li>
+              <li>Statistical Methods</li>
+              <li>Lab Modules: R1, M3, F1</li>
+              <li>Final Assessments</li>
+            </ul>
           </section>
         </details>
       </article>
     </div>
 
+    <!-- footer -->
     <footer id="footer">
       <p>&copy; 2024 University of Kansas. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
     </footer>
   </div>
 
-  <!-- Scripts -->
+  <!-- scripts -->
   <script src="../assets/js/jquery.min.js"></script>
   <script src="../assets/js/browser.min.js"></script>
   <script src="../assets/js/breakpoints.min.js"></script>
