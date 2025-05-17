@@ -6,7 +6,25 @@
   <title>PHYSX 114 Syllabus | Fall 2024</title>
   <link rel="stylesheet" href="../assets/css/main.css" />
   <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+
   <style>
+    /* === Make the page scrollable === */
+    html, body {
+      height: auto;          /* allow body to grow beyond viewport */
+      overflow-y: auto;      /* enable vertical scroll */
+    }
+    #wrapper {
+      min-height: 100vh;     /* full‐height container but can grow */
+      display: flex;
+      flex-direction: column;
+    }
+    #main {
+      flex: 1;               /* take remaining space */
+      padding: 3em 2em;
+      overflow: visible;     /* ensure content is shown */
+    }
+
+    /* === Collapsible section styling === */
     details summary {
       cursor: pointer;
       padding: 1em;
@@ -16,12 +34,10 @@
       margin-bottom: 1em;
       font-weight: bold;
     }
-
     details[open] summary {
       border-bottom: none;
       border-radius: 6px 6px 0 0;
     }
-
     details > section {
       padding: 1.5em;
       border: 1px solid #ccc;
@@ -29,7 +45,6 @@
       border-radius: 0 0 6px 6px;
       background: #fff;
     }
-
     details:not(:last-child) {
       margin-bottom: 1.5em;
     }
@@ -59,7 +74,7 @@
       <article>
         <h2 class="major">Course Information</h2>
 
-        <details>
+        <details open>
           <summary>Credit Hours & Method</summary>
           <section>
             <p><strong>Credit Hours:</strong> 4 (includes 1 lab hour/week)<br>
