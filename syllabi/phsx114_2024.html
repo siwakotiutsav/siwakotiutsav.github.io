@@ -3,9 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PHYSX 114 Syllabus | Fall 2024</title>
-  <link rel="stylesheet" href="../assets/css/main.css" />
-  <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+  <title>PHSX 114 Syllabus</title>
   <style>
     :root {
       --header-height: 80px;
@@ -26,6 +24,49 @@
       display: flex;
       flex-direction: column;
     }
+
+    .table-wrapper {
+  margin: 1.5em 0;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255,255,255,0.1);
+}
+
+td {
+  padding: 0.75em 1em;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+tr:nth-child(even) {
+  background: rgba(0,0,0,0.2);
+}
+
+.notice {
+  background: rgba(255,0,0,0.1);
+  border-left: 4px solid #ff4444;
+  padding: 1em;
+  margin: 1.5em 0;
+  border-radius: 4px;
+}
+
+.notice strong {
+  color: #ff8888;
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+.notice ul {
+  margin: 0.5em 0;
+  padding-left: 1.5em;
+}
+
+.notice li {
+  margin: 0.5em 0;
+}
 
     #main {
       flex: 1;
@@ -69,76 +110,59 @@
       padding: 0.5em 1em;
       border-radius: 4px;
       transition: background 0.3s ease;
+      display: inline-block;
     }
 
     nav a:hover {
       background: rgba(255,255,255,0.1);
     }
 
-    /* Content Styling */
-    .major {
-      border-bottom: 2px solid #fff;
-      padding-bottom: 0.5em;
-      margin-bottom: 1em;
+    .timeline {
+      position: relative;
+      margin: 2em 0;
+      padding-left: 40px;
+      border-left: 2px solid rgba(255,255,255,0.3);
     }
 
-    details {
-      background: rgba(255,255,255,0.1);
-      border-radius: 6px;
-      margin-bottom: 1em;
+    .timeline-entry {
+      position: relative;
+      margin-bottom: 3em;
     }
 
-    summary {
-      cursor: pointer;
+    .timeline-entry::before {
+      content: "";
+      position: absolute;
+      top: 0.6em;
+      left: -10px;
+      width: 14px;
+      height: 14px;
+      background-color: #fff;
+      border: 2px solid #333;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .timeline-entry details {
+      background: rgba(0,0,0,0.3);
       padding: 1em;
-      font-weight: 600;
-      list-style: none;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.2);
     }
 
-    summary::-webkit-details-marker {
+    .timeline-entry summary {
+      cursor: pointer;
+      list-style: none;
+      font-size: 1.1em;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .timeline-entry summary::-webkit-details-marker {
       display: none;
     }
 
-    details[open] summary {
-      border-bottom: 1px solid rgba(255,255,255,0.2);
-    }
-
-    details section {
-      padding: 1.5em;
-      background: rgba(0,0,0,0.3);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1em 0;
-      background: rgba(255,255,255,0.1);
-    }
-
-    th, td {
-      padding: 0.75em;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
-      text-align: left;
-    }
-
-    .notice {
-      background: rgba(255,0,0,0.1);
-      border-left: 4px solid #ff4444;
-      padding: 1em;
-      margin: 1.5em 0;
-      border-radius: 4px;
-    }
-
-    #bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url("../images/bg-education.jpg") center/cover no-repeat;
-      z-index: -1;
-      opacity: 1;
-    }
+    .timeline-entry[open] summary h3:after { content: " ▲"; }
+    .timeline-entry summary h3:after { content: " ▼"; }
 
     #footer {
       text-align: center;
@@ -147,8 +171,52 @@
       color: #aaa;
       background: rgba(0,0,0,0.8);
     }
+
+    #bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("images/bg.jpg") center/cover no-repeat;
+      z-index: -1;
+      opacity: 1;
+    }
+
+    .major h2 {
+      border-bottom: 2px solid #fff;
+      padding-bottom: 0.5em;
+      margin-bottom: 1em;
+    }
+
+    section {
+      margin: 2em 0;
+    }
+
+    ul {
+      padding-left: 1.5em;
+      line-height: 1.6;
+    }
+
+    strong {
+      color: #fff;
+    }
   </style>
 </head>
+
+<body class="is-preload">
+  <div id="bg"></div>
+
+  <!-- Fixed Header -->
+  <header id="header">
+    <h1>PHSX 114 Syllabus 2024 Fall - 2025 Spring</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html" target="_self">Home</a></li>
+        <li><a href="javascript:history.back()" target="_self">Back</a></li>
+      </ul>
+    </nav>
+  </header>
 <body class="is-preload">
   <div id="bg"></div>
 
