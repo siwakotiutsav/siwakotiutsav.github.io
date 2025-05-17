@@ -4,29 +4,75 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Education</title>
-
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-
   <style>
+    :root {
+      --header-height: 80px;
+      --bg-opacity: 0.9;
+    }
+
     html, body {
       height: 100%;
       margin: 0;
       overflow-x: hidden;
+      font-family: Arial, sans-serif;
+      color: white;
     }
 
     #wrapper {
+      margin-top: var(--header-height);
+      min-height: calc(100vh - var(--header-height));
       display: flex;
       flex-direction: column;
-      min-height: 100vh;
     }
 
     #main {
       flex: 1;
-      padding: 3em 2em;
+      padding: 2em;
+      overflow-y: auto;
+      background: rgba(0,0,0,0.7);
     }
 
-    /* Timeline layout */
+    header#header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--header-height);
+      background: rgba(0,0,0,var(--bg-opacity));
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2em;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8em;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 2em;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5em 1em;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+
+    nav a:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
     .timeline {
       position: relative;
       margin: 2em 0;
@@ -65,43 +111,21 @@
       font-size: 1.1em;
       font-weight: 600;
       color: #fff;
-      display: flex;
-      flex-direction: column;
     }
 
     .timeline-entry summary::-webkit-details-marker {
       display: none;
     }
 
-    .timeline-entry summary h3 {
-      display: inline;
-      margin: 0;
-      font-size: 1.2em;
-    }
-
-    .timeline-entry summary p {
-      margin: 0.5em 0 0;
-      font-size: 0.9em;
-      color: #ccc;
-      font-style: italic;
-    }
-
     .timeline-entry[open] summary h3:after { content: " ▲"; }
     .timeline-entry summary h3:after { content: " ▼"; }
-
-    .image.fit img {
-      display: block;
-      width: 100%;
-      height: auto;
-      margin: 1em 0;
-      border-radius: 4px;
-    }
 
     #footer {
       text-align: center;
       padding: 2em;
       font-size: 0.9em;
       color: #aaa;
+      background: rgba(0,0,0,0.8);
     }
 
     #bg {
@@ -114,39 +138,46 @@
       z-index: -1;
       opacity: 1;
     }
+
+    .major h2 {
+      border-bottom: 2px solid #fff;
+      padding-bottom: 0.5em;
+      margin-bottom: 1em;
+    }
+
+    section {
+      margin: 2em 0;
+    }
+
+    ul {
+      padding-left: 1.5em;
+      line-height: 1.6;
+    }
+
+    strong {
+      color: #fff;
+    }
   </style>
 </head>
 
 <body class="is-preload">
   <div id="bg"></div>
 
-  <div id="wrapper">
-    <!-- Header -->
-    <header id="header">
-      <div class="logo">
-        <img src="images/logo.png" alt="Utsav Siwakoti" style="width: 240px; height: 240px; border-radius: 50%; object-fit: cover;" />
-      </div>
-      <div class="content">
-        <div class="inner">
-          <h1>Education & Teaching</h1>
-          <p>Courses I’ve taught and institutions I’ve been affiliated with.</p>
-        </div>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="research.html">Research</a></li>
-          <li><a href="education.html" class="active">Education</a></li>
-          <li><a href="stellar.html">Astrophotography</a></li>
-          <li><a href="outreach.html">Outreach</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+  <!-- Fixed Header -->
+  <header id="header">
+    <h1>Education & Teaching</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="javascript:history.back()">Back</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Main -->
+  <div id="wrapper">
+    <!-- Scrollable Content -->
     <div id="main">
-      <details>
+      <details open>
         <summary><h2 class="major">Course Details</h2></summary>
         <article>
           <section>
@@ -201,15 +232,8 @@
 
     <!-- Footer -->
     <footer id="footer">
-      <p>&copy; Utsav Siwakoti. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+      <p>&copy; Utsav Siwakoti. Design: <a href="https://html5up.net" style="color:#fff;">HTML5 UP</a>.</p>
     </footer>
   </div>
-
-  <!-- Scripts -->
-  <script src="../assets/js/jquery.min.js"></script>
-  <script src="../assets/js/browser.min.js"></script>
-  <script src="../assets/js/breakpoints.min.js"></script>
-  <script src="../assets/js/util.js"></script>
-  <script src="../assets/js/main.js"></script>
 </body>
 </html>
