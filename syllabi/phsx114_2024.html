@@ -3,143 +3,241 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PHYSX 114 Syllabus | Fall 2024</title>
-  <link rel="stylesheet" href="../assets/css/main.css" />
-  <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+  <title>PHSX 114 Syllabus</title>
+  <style>
+    :root {
+      --header-height: 80px;
+      --bg-opacity: 0.9;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    #wrapper {
+      margin-top: var(--header-height);
+      min-height: calc(100vh - var(--header-height));
+      display: flex;
+      flex-direction: column;
+    }
+
+    .table-wrapper {
+      margin: 1.5em 0;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: rgba(255,255,255,0.1);
+    }
+
+    td {
+      padding: 0.75em 1em;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    tr:nth-child(even) {
+      background: rgba(0,0,0,0.2);
+    }
+
+    .notice {
+      background: rgba(255,0,0,0.1);
+      border-left: 4px solid #ff4444;
+      padding: 1em;
+      margin: 1.5em 0;
+      border-radius: 4px;
+    }
+
+    .notice strong {
+      color: #ff8888;
+      display: block;
+      margin-bottom: 0.5em;
+    }
+
+    #main {
+      flex: 1;
+      padding: 2em;
+      overflow-y: auto;
+      background: rgba(0,0,0,0.7);
+    }
+
+    header#header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--header-height);
+      background: rgba(0,0,0,var(--bg-opacity));
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2em;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8em;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 2em;
+    }
+
+    nav a, nav button {
+      color: white;
+      text-decoration: none;
+      padding: 0.5em 1em;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+      background: none;
+      border: none;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    nav a:hover, nav button:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    #footer {
+      text-align: center;
+      padding: 2em;
+      font-size: 0.9em;
+      color: #aaa;
+      background: rgba(0,0,0,0.8);
+    }
+
+    #bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("images/bg.jpg") center/cover no-repeat;
+      z-index: -1;
+      opacity: 1;
+    }
+
+    section {
+      margin: 2em 0;
+    }
+
+    h2 {
+      border-bottom: 2px solid #fff;
+      padding-bottom: 0.5em;
+      margin-bottom: 1em;
+    }
+
+    ul {
+      padding-left: 1.5em;
+      line-height: 1.6;
+    }
+
+    strong {
+      color: #fff;
+    }
+  </style>
 </head>
 <body class="is-preload">
+  <div id="bg"></div>
+  <header id="header">
+    <h1>PHSX-114</h1>
+    <nav>
+    <ul>
+      <li><a href="../index.html" target="_self">Home</a></li>
+      <li><button onclick="history.back();">Back</button></li>
+    </ul>
+    </nav>
+
+  </header>
+
   <div id="wrapper">
-    <!-- Header -->
-    <header id="header">
-      <div class="logo"><span class="icon fa-flask"></span></div>
-      <div class="content">
-        <div class="inner">
-          <h1>PHYSX 114: College Physics I Laboratory</h1>
-          <p>University of Kansas &mdash; Fall 2024</p>
-        </div>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="../education.html">Back to Education</a></li>
-          <li><a href="../index.html">Home</a></li>
-        </ul>
-      </nav>
-    </header>
+    <main id="main">
+      <section>
+        <h2>Physics Lab Syllabus</h2>
+        <p>Welcome to physics lab! The goal of this course is for you to develop and demonstrate proficiency with the skills associated with experimental science, especially in the context of physics. You will learn how to collect data and make predictions/models based on this data. This includes analyzing data and appropriately treating sources of uncertainty.</p>
+        <p>Help is available via Discord and in person. A schedule of TA availability will be posted on Canvas. You're encouraged to seek help from your TA and peers.</p>
+        <p>This course focuses on developing critical thinking and independent reasoning skills. Physics is about exploration and learning from mistakes, and high performance is achievable even without perfection.</p>
+      </section>
 
-    <!-- Main -->
-    <div id="main">
-      <article>
-        <h2 class="major">Course Information</h2>
-        <section>
-          <h3>Credit Hours & Method</h3>
-          <p><strong>Credit Hours:</strong> 4 (includes 1 lab hour/week)<br>
-          <strong>Instructional Method:</strong> In-Person</p>
-        </section>
-        <section>
-          <h3>Prerequisites & Restrictions</h3>
-          <p><strong>Prerequisite:</strong> Must be eligible for MATH 115<br>
-          <strong>Not open to students with credit in:</strong> PHSX 211, PHSX 212, PHSX 216, or PHSX 236</p>
-        </section>
-        <section>
-          <h3>Course Description</h3>
-          <p>This course introduces the principles and applications of mechanics, fluids, heat, thermodynamics, and sound waves through hands-on experiments and data analysis. Emphasis is placed on developing quantitative reasoning and problem-solving skills through the practice of scientific methods. Students will conduct experiments, analyze data with attention to measurement uncertainty, and use those results to draw conclusions about physical models.</p>
-          <p><em>Note: Students should have completed 3.5 years of college-prep math, including trigonometry.</em></p>
-        </section>
-        <section>
-          <h3>KU Core 34: Natural &amp; Physical Sciences</h3>
-          <p>This course satisfies the KU Core Goal for Natural &amp; Physical Sciences. Upon completion, students will be able to:</p>
-          <ul>
-            <li>Apply the scientific method to gather, analyze, and interpret experimental data.</li>
-            <li>Use mathematical reasoning to support conclusions drawn from scientific observations.</li>
-            <li>Understand and evaluate scientific models, assumptions, and limitations.</li>
-          </ul>
-        </section>
-        <section>
-          <h3>Learning Outcomes</h3>
-          <ul>
-            <li>Collect experimental data and determine statistical and systematic uncertainties.</li>
-            <li>Differentiate between linear and nonlinear physical models using correlations and predictions.</li>
-            <li>Apply error propagation techniques to make and evaluate predictions.</li>
-            <li>Iteratively redesign experiments based on findings and uncertainty analysis.</li>
-          </ul>
-        </section>
-        <section>
-          <h3>Course Topics (Selected Modules)</h3>
-          <ul>
-            <li>Measurement and Error Analysis: Uncertainty types, standard deviation, and error propagation.</li>
-            <li>Excel Tools for Data Analysis: Organizing data, formulas, and graphing.</li>
-            <li>Graphs and Correlations: Scatter plots, error bars, residuals, curve fitting.</li>
-            <li>Comparative Statistical Methods: Modified t-tests (Welch's T and T*), histograms.</li>
-            <li>Lab Modules:
-              <ul>
-                <li>R1: Rolling Down a Ramp</li>
-                <li>M3: Falling Time</li>
-                <li>F1: Hooke’s Law</li>
-                <li>Final Labs: Period and Range assessments</li>
-              </ul>
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h3>Grading Breakdown</h3>
-          <p>The lab is worth <strong>400 total points</strong>. Your final lab grade will be determined by the total number of points earned:</p>
+      <section>
+        <h2>Course Grade</h2>
+        <p>Your lab grade is based on reports, forum posts, and in-class lab practicals. A total of 400 points is possible. Grades are assigned as follows:</p>
+        <div class="table-wrapper">
           <table>
-            <thead>
-              <tr><th>Grade</th><th>Points Required</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>A</td><td>320+</td></tr>
-              <tr><td>B</td><td>240–319</td></tr>
-              <tr><td>C</td><td>160–239</td></tr>
-              <tr><td>D</td><td>80–159</td></tr>
-              <tr><td>F</td><td>&lt; 80</td></tr>
-            </tbody>
+            <tr><td><strong>Grade</strong></td><td><strong>Points Needed</strong></td></tr>
+            <tr><td>A</td><td>320</td></tr>
+            <tr><td>B</td><td>240</td></tr>
+            <tr><td>C</td><td>160</td></tr>
+            <tr><td>D</td><td>80</td></tr>
           </table>
-        </section>
-        <section>
-          <h3>Sources of Points</h3>
-          <p>For each of the three core labs (R1, M3, F1), students will complete:</p>
-          <ul>
-            <li><strong>Worksheets</strong> (60 points per lab): Due at the end of each lab session.</li>
-            <li><strong>Canvas Journal Entries</strong>: Record your experimental process (individual work).</li>
-            <li><strong>Group Lab Reports</strong>: One report per lab group (original collaborative work).</li>
-            <li><strong>Canvas Discussion Board Posts</strong>: Share insights and provide peer feedback.</li>
-            <li><strong>Lab Tests</strong>: Individual assessments related to the experiment.</li>
-          </ul>
-          <p>💡 <em>Important:</em> You must be present in the lab to have your name included on worksheets or group reports. While reports are submitted as a group, journals, discussions, and tests must reflect <strong>individual</strong> work.</p>
-        </section>
-        <section>
-          <h3>Course Expectations</h3>
-          <ul>
-            <li>Lab Attendance is required for credit.</li>
-            <li>Redoing Reports may be necessary to reach mastery.</li>
-            <li><em>Error is Normal, Mistakes are a Problem:</em> Learning from measurement uncertainty is a goal—falsifying data, copying others, or failing to report errors honestly is unacceptable.</li>
-            <li>Excel Literacy: Proficiency in Excel for averages, standard deviations, trendlines, and error bars is expected.</li>
-          </ul>
-        </section>
-        <section>
-          <h3>Time Commitment</h3>
-          <p>As a 4-credit course over a standard 15-week semester, expect to spend:</p>
-          <ul>
-            <li>3 hours/week in class</li>
-            <li>6+ hours/week outside of class on lab reports, analysis, and study</li>
-          </ul>
-          <p>If offered over an accelerated format (e.g., 8 weeks), time commitments will be adjusted accordingly.</p>
-        </section>
-      </article>
-    </div>
+        </div>
+      </section>
 
-    <!-- Footer -->
+      <section>
+        <h2>Lab Structure</h2>
+        <p>There are 3 labs and a final. Each includes a report and a test, along with forum posts and journal entries.</p>
+        <ul>
+          <li><strong>Lab Partners:</strong> Groups of 2–3. Reports are submitted as a group; journals, tests, and discussions are individual.</li>
+          <li><strong>Final:</strong> Students collaborate on data and ideas, but final reports and tests are individual.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Where Points Come From</h2>
+        <ul>
+          <li><strong>Worksheets (60 pts/lab):</strong> Submitted each lab period. It's your responsibility to complete and submit them on time.</li>
+          <li><strong>Discussion Posts (10 pts/lab):</strong> One group member posts the report. All members must leave feedback on another group’s report, checking calculations and offering constructive comments.</li>
+          <li><strong>Journal Entries (10 pts/lab):</strong> Log each experiment session, including discussions and data analysis steps. Late entries are not accepted.</li>
+          <li><strong>Prediction Tests (20 pts/lab):</strong> Conducted individually in person or on Zoom. Make a quantitative prediction using data from various sources.</li>
+          <li><strong>Final Report and Test (100 pts):</strong> Conduct and analyze an independent experiment. The final includes a practical prediction-based test.</li>
+        </ul>
+      </section>
+
+      <section class="notice">
+        <strong>Late Work Policy</strong>
+        <ul>
+          <li>Report/test sheets must be turned in on time during lab.</li>
+          <li>Late work accepted only up to lab test day, but not after.</li>
+          <li>Discussion posts, tests, and journals are not accepted late.</li>
+          <li>No extensions. Contact your TA if you have University-approved reasons for extended absences.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Contents (Preview)</h2>
+        <p>This syllabus includes:</p>
+        <ul>
+          <li>Symbols, Letters, and Language</li>
+          <li>Functional Notation</li>
+          <li>Excel Tips</li>
+          <li>Measurement and Uncertainty</li>
+          <li>Comparing Measurements</li>
+          <li>Graphs and Correlations</li>
+          <li>Prediction and Propagation of Error</li>
+          <li>R1: Rolling Down a Ramp</li>
+          <li>M3: Falling Time</li>
+          <li>F1: Hooke’s Law</li>
+          <li>Finals</li>
+        </ul>
+      </section>
+    </main>
+
     <footer id="footer">
-      <p>&copy; Utsav Siwakoti. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+      <p>&copy; Utsav Siwakoti. Design: <a href="https://html5up.net" target="_self" style="color:#fff;">HTML5 UP</a>.</p>
     </footer>
   </div>
-
-  <!-- Scripts -->
-  <script src="../assets/js/jquery.min.js"></script>
-  <script src="../assets/js/browser.min.js"></script>
-  <script src="../assets/js/breakpoints.min.js"></script>
-  <script src="../assets/js/util.js"></script>
-  <script src="../assets/js/main.js"></script>
 </body>
 </html>
