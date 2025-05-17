@@ -1,145 +1,201 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PHYS 104: General Physics Syllabus</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PHYS 104: General Physics</title>
   <style>
     :root {
-      --main-color: #0051BA;
       --header-height: 80px;
-      --font-body: 'Georgia', serif;
+      --bg-opacity: 0.9;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
+    html, body {
+      height: 100%;
       margin: 0;
-      font-family: var(--font-body);
-      font-size: 16px;
-      line-height: 1.6;
-      color: #000;
-      background: #fff;
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+      color: white;
     }
 
-    a {
-      color: var(--main-color);
-      text-decoration: none;
+    #bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("images/bg.jpg") center/cover no-repeat;
+      z-index: -1;
+      opacity: 1;
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
-
-    header {
+    header#header {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
       height: var(--header-height);
-      background: #f7f7f7;
-      border-bottom: 1px solid #ccc;
+      background: rgba(0,0,0,var(--bg-opacity));
+      z-index: 1000;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 2em;
-      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
     }
 
     header h1 {
-      font-size: 1.8em;
       margin: 0;
-      color: var(--main-color);
+      font-size: 1.8em;
+      letter-spacing: 1px;
     }
 
     nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
       display: flex;
       gap: 1em;
-      list-style: none;
-      margin: 0;
-      padding: 0;
     }
 
-    nav a {
+    nav a, nav button {
+      color: white;
+      text-decoration: none;
+      background: rgba(255,255,255,0.1);
       padding: 0.5em 1em;
-      border-radius: 4px;
+      border-radius: 6px;
+      border: none;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    nav a:hover, nav button:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    #wrapper {
+      margin-top: var(--header-height);
+      min-height: calc(100vh - var(--header-height));
+      display: flex;
+      flex-direction: column;
     }
 
     #main {
-      max-width: 900px;
-      margin: calc(var(--header-height) + 2em) auto 2em;
-      padding: 0 1em;
+      flex: 1;
+      padding: 2em;
+      overflow-y: auto;
+      background: rgba(0,0,0,0.7);
     }
 
-    h2 {
-      color: var(--main-color);
-      border-bottom: 2px solid var(--main-color);
-      padding-bottom: 0.3em;
+    article h2 {
+      border-bottom: 2px solid rgba(255,255,255,0.2);
+      padding-bottom: 0.5em;
+    }
+
+    .table-wrapper {
+      margin: 1.5em 0;
+      overflow-x: auto;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 1em;
+      background: rgba(255,255,255,0.1);
     }
 
-    th, td {
-      border: 1px solid #ccc;
-      padding: 0.75em;
-      text-align: left;
+    td, th {
+      padding: 0.75em 1em;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
     }
 
     tr:nth-child(even) {
-      background: #f9f9f9;
+      background: rgba(0,0,0,0.2);
     }
 
     .notice {
-      background: #ffe5e5;
-      border-left: 4px solid red;
+      background: rgba(255,0,0,0.1);
+      border-left: 4px solid #ff4444;
       padding: 1em;
-      margin-top: 1em;
+      margin: 1.5em 0;
+      border-radius: 4px;
     }
 
-    summary {
-      font-weight: bold;
-      cursor: pointer;
+    .notice strong {
+      color: #ff8888;
+      display: block;
+      margin-bottom: 0.5em;
     }
 
     details {
       margin-bottom: 1em;
-      background: #f0f0f0;
-      border: 1px solid #ccc;
+      background: rgba(255,255,255,0.1);
       border-radius: 6px;
+    }
+
+    summary {
+      cursor: pointer;
       padding: 1em;
+      font-weight: 600;
+      list-style: none;
+    }
+
+    details[open] summary {
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    details > section {
+      padding: 1.5em;
+      background: rgba(0,0,0,0.3);
     }
 
     .hours-badge {
-      font-size: 0.9em;
-      background: #ddd;
-      padding: 0.2em 0.6em;
+      background: rgba(255,255,255,0.2);
+      padding: 0.25em 0.75em;
       border-radius: 1em;
+      font-size: 0.9em;
       margin-left: 1em;
     }
 
-    footer {
+    #footer {
       text-align: center;
       padding: 2em;
-      background: #f0f0f0;
       font-size: 0.9em;
-      color: #333;
+      color: #aaa;
+      background: rgba(0,0,0,0.8);
     }
 
-    @media (max-width: 600px) {
-      body {
-        font-size: 15px;
-      }
+    .button-row {
+      text-align: center;
+      margin-top: 2em;
+    }
+
+    .button-row a,
+    .button-row button {
+      display: inline-block;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      text-decoration: none;
+      padding: 0.6em 1.2em;
+      margin: 0 0.5em;
+      border-radius: 6px;
+      border: none;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .button-row a:hover,
+    .button-row button:hover {
+      background: rgba(255,255,255,0.2);
     }
   </style>
 </head>
+
 <body>
-  <header>
+  <div id="bg"></div>
+
+  <header id="header">
     <h1>PHYS 104: General Physics</h1>
     <nav>
       <ul>
@@ -149,92 +205,142 @@
     </nav>
   </header>
 
-  <main id="main">
-    <section>
-      <h2>Course Information</h2>
-      <p><strong>Semester:</strong> B. Pharm./B. Tech. I — Semester I (3 Credits)<br>
-         <strong>Department:</strong> Department of Physics, Kathmandu University School of Science</p>
-    </section>
+  <div id="wrapper">
+    <div id="main">
+      <article>
+        <section class="course-info">
+          <h2>B. Pharm./B. Tech. I &mdash; Semester I (3 Credits)</h2>
+          <p>Kathmandu University School of Science<br>Department of Physics</p>
+        </section>
 
-    <section>
-      <h2>Course Objectives</h2>
-      <p>Develop physical intuition through fundamental concepts in mechanics, optics, thermodynamics, and modern physics, emphasizing conceptual understanding over complex mathematics.</p>
-    </section>
+        <section>
+          <h2>Course Objectives</h2>
+          <p>Develop physical intuition through fundamental concepts in mechanics, optics, thermodynamics, and modern physics, emphasizing conceptual understanding over complex mathematics.</p>
+        </section>
 
-    <section>
-      <h2>Instructor Information</h2>
-      <p><strong>Utsav Siwakoti</strong><br>
-         Email: <a href="mailto:siwakotiutsav@ku.edu">siwakotiutsav@ku.edu</a><br>
-         </p>
-    </section>
+        <section>
+          <h2>Grading Policy</h2>
+          <div class="table-wrapper">
+            <table>
+              <tr><th>Component</th><th>Weight</th></tr>
+              <tr><td>Attendance</td><td>5%</td></tr>
+              <tr><td>Homework Problems</td><td>10%</td></tr>
+              <tr><td>Internal Exams (2)</td><td>5% + 5%</td></tr>
+              <tr><td>Practical Exam</td><td>25%</td></tr>
+              <tr><td>Final Exam</td><td>50%</td></tr>
+            </table>
+          </div>
+          <div class="notice">
+            <strong>Qualification Requirements:</strong>
+            <ul>
+              <li>Minimum 10% combined from Attendance + Homework + Internal Exams required for final exam eligibility</li>
+              <li>NQ (Not Qualified) students cannot attempt finals</li>
+              <li>Practical exam mandatory regardless of NQ status</li>
+            </ul>
+          </div>
+        </section>
 
-    <section>
-      <h2>Grading Policy</h2>
-      <table>
-        <tr><th>Component</th><th>Weight</th></tr>
-        <tr><td>Attendance</td><td>5%</td></tr>
-        <tr><td>Homework Problems</td><td>10%</td></tr>
-        <tr><td>Internal Exams (2)</td><td>5% + 5%</td></tr>
-        <tr><td>Practical Exam</td><td>25%</td></tr>
-        <tr><td>Final Exam</td><td>50%</td></tr>
-      </table>
-      <div class="notice">
-        <strong>Qualification Requirements:</strong>
-        <ul>
-          <li>Minimum 10% combined from Attendance + Homework + Internal Exams required for final exam eligibility</li>
-          <li>NQ (Not Qualified) students cannot attempt finals</li>
-          <li>Practical exam mandatory regardless of NQ status</li>
-        </ul>
-      </div>
-    </section>
+        <section>
+          <h2>Course Structure (45 Hours)</h2>
 
-    <section>
-      <h2>Course Structure (45 Hours)</h2>
-      <details>
-        <summary>Mechanics <span class="hours-badge">16 hours</span></summary>
-        <ul>
-          <li>Dynamics of System of Particles</li>
-          <li>Work-energy theorem</li>
-          <li>Conservation laws (momentum, angular momentum)</li>
-          <li>Rotational kinematics & moment of inertia</li>
-          <li>Wave and Oscillation: harmonic, damped/forced, resonance</li>
-        </ul>
-      </details>
-      <details>
-        <summary>Optics <span class="hours-badge">10 hours</span></summary>
-        <ul>
-          <li>Interference: Young's double-slit, thin film, Newton's rings</li>
-          <li>Diffraction: Fraunhofer, diffraction gratings</li>
-        </ul>
-      </details>
-      <details>
-        <summary>Thermodynamics <span class="hours-badge">7 hours</span></summary>
-        <ul>
-          <li>Heat Transfer: thermal conductivity, black body radiation</li>
-          <li>Thermodynamic Laws: 1st & 2nd law, engines, entropy</li>
-        </ul>
-      </details>
-      <details>
-        <summary>Modern Physics <span class="hours-badge">12 hours</span></summary>
-        <ul>
-          <li>Atomic & Molecular Physics: spectra, semiconductors</li>
-          <li>Nuclear Physics: reactions, radiation uses, MRI</li>
-        </ul>
-      </details>
-    </section>
+          <details>
+            <summary><h3>Mechanics <span class="hours-badge">16 hours</span></h3></summary>
+            <section>
+              <h4>Dynamics of System of Particles</h4>
+              <ul>
+                <li>Work-energy theorem</li>
+                <li>Conservation laws (momentum, angular momentum)</li>
+                <li>Rotational kinematics</li>
+                <li>Moment of inertia calculations</li>
+              </ul>
 
-    <section>
-      <h2>Required Textbooks</h2>
-      <ul>
-        <li><em>Physics I & II</em> by Resnick & Halliday</li>
-        <li><em>Physics for Engineers</em> by Serway & Jewett</li>
-        <li><em>Modern Physics</em> by R. Murugeshan</li>
-      </ul>
-    </section>
-  </main>
+              <h4>Wave and Oscillation</h4>
+              <ul>
+                <li>Harmonic oscillators</li>
+                <li>Damped/forced vibrations</li>
+                <li>Resonance phenomena</li>
+              </ul>
+            </section>
+          </details>
 
-  <footer>
-    <p>&copy; 2024 Kathmandu University - Department of Physics</p>
-  </footer>
+          <details>
+            <summary><h3>Optics <span class="hours-badge">10 hours</span></h3></summary>
+            <section>
+              <h4>Interference</h4>
+              <ul>
+                <li>Young's double-slit</li>
+                <li>Thin film interference</li>
+                <li>Newton's rings</li>
+              </ul>
+
+              <h4>Diffraction</h4>
+              <ul>
+                <li>Fraunhofer diffraction</li>
+                <li>Diffraction gratings</li>
+              </ul>
+            </section>
+          </details>
+
+          <details>
+            <summary><h3>Thermodynamics <span class="hours-badge">7 hours</span></h3></summary>
+            <section>
+              <h4>Heat Transfer</h4>
+              <ul>
+                <li>Thermal conductivity</li>
+                <li>Black body radiation</li>
+              </ul>
+
+              <h4>Thermodynamic Laws</h4>
+              <ul>
+                <li>First & Second laws</li>
+                <li>Heat engines</li>
+                <li>Entropy</li>
+              </ul>
+            </section>
+          </details>
+
+          <details>
+            <summary><h3>Modern Physics <span class="hours-badge">12 hours</span></h3></summary>
+            <section>
+              <h4>Atomic & Molecular Physics</h4>
+              <ul>
+                <li>Atomic spectra</li>
+                <li>Semiconductor theory</li>
+              </ul>
+
+              <h4>Nuclear Physics</h4>
+              <ul>
+                <li>Nuclear reactions</li>
+                <li>Radiation applications</li>
+                <li>MRI fundamentals</li>
+              </ul>
+            </section>
+          </details>
+        </section>
+
+        <section>
+          <h2>Textbooks</h2>
+          <div class="table-wrapper">
+            <table>
+              <tr><th>Title</th><th>Authors</th></tr>
+              <tr><td>Physics I & II</td><td>Resnick & Halliday</td></tr>
+              <tr><td>Physics for Engineers</td><td>Serway & Jewett</td></tr>
+              <tr><td>Modern Physics</td><td>R. Murugeshan</td></tr>
+            </table>
+          </div>
+        </section>
+
+        <div class="button-row">
+          <a href="../index.html">Home</a>
+          <button onclick="history.back();">Back</button>
+        </div>
+
+      </article>
+    </div>
+
+    <footer id="footer">
+      <p>&copy; 2024 Kathmandu University - Department of Physics</p>
+    </footer>
+  </div>
 </body>
 </html>
