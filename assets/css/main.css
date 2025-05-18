@@ -644,6 +644,17 @@ input, select, textarea {
 		position: relative;
 	}
 
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;     /* Optional: smooth corners */
+  object-fit: contain;    /* Keeps aspect ratio without cropping */
+}
+
+
+
 		.image:before {
 			pointer-events: none;
 			background-image: url("../../images/overlay.png");
