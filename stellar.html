@@ -72,30 +72,40 @@
     }
 
     .timeline {
-      border-left: 3px solid var(--main-color);
-      padding-left: 1.5em;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 1em;
+      width: 3px;
+      height: 100%;
+      background-color: var(--main-color);
     }
 
     .timeline-entry {
       position: relative;
+      margin-left: 3em;
       margin-bottom: 2.5em;
-      padding-left: 0.5em;
     }
 
     .timeline-entry::before {
       content: "";
       position: absolute;
-      left: -1.1em;
-      top: 0.4em;
-      width: 0.8em;
-      height: 0.8em;
+      left: -2em;
+      top: 0.5em;
+      width: 12px;
+      height: 12px;
       background: var(--main-color);
       border-radius: 50%;
+      z-index: 1;
     }
 
     .timeline-entry details {
       border: 1px solid #ccc;
-      border-radius: 5px;
+      border-radius: 6px;
       padding: 1em;
       background: #fafafa;
     }
@@ -145,6 +155,18 @@
       .timeline-entry summary {
         font-size: 1em;
       }
+
+      .timeline::before {
+        left: 0.5em;
+      }
+
+      .timeline-entry {
+        margin-left: 2.5em;
+      }
+
+      .timeline-entry::before {
+        left: -1.5em;
+      }
     }
   </style>
 </head>
@@ -157,6 +179,7 @@
       </ul>
     </nav>
   </header>
+
 
   <main id="main">
     <div class="timeline">
