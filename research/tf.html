@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Systematic Biases in Tully-Fisher Distances | Research</title>
+  <style>
+    :root {
+      --main-color: #0051BA;
+      --header-height: 80px;
+      --font-body: 'Georgia', serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      color: #000;
+      background: #fff;
+    }
+
+    a {
+      color: var(--main-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--header-height);
+      background: #f7f7f7;
+      border-bottom: 1px solid #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2em;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 1.8em;
+      margin: 0;
+      color: var(--main-color);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1em;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      padding: 0.5em 1em;
+      border-radius: 4px;
+    }
+
+    #main {
+      max-width: 900px;
+      margin: calc(var(--header-height) + 2em) auto 2em;
+      padding: 0 1em;
+    }
+
+    h2 {
+      color: var(--main-color);
+      border-bottom: 2px solid var(--main-color);
+      padding-bottom: 0.3em;
+    }
+
+    ul {
+      padding-left: 1.5em;
+    }
+
+    section {
+      margin-bottom: 2em;
+    }
+
+    .notice {
+      background: #fff4d6;
+      border-left: 4px solid #f0ad4e;
+      padding: 1em;
+      margin-top: 1em;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2em;
+      background: #f0f0f0;
+      font-size: 0.9em;
+      color: #333;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header id="header">
+    <h1>Tully-Fisher Systematic Bias Study</h1>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a onclick="history.back();">Back</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section>
+      <h2>Overview</h2>
+      <p>
+        This project investigates systematic uncertainties in distance measurements derived from the Tully-Fisher relation,
+        a key tool used in large-scale galaxy surveys such as the Dark Energy Spectroscopic Instrument (DESI). The analysis focuses
+        on the impact of potential misalignments between photometric and kinematic position angles in spiral galaxies, which may
+        introduce non-negligible biases in distance estimates.
+      </p>
+    </section>
+
+    <section>
+      <h2>Research Focus</h2>
+      <ul>
+        <li>Evaluate the accuracy of photometric-based position angles used in DESI fibre placements.</li>
+        <li>Use integral field spectroscopy (IFS) data to extract kinematic properties of nearby galaxies.</li>
+        <li>Compare distances derived using photometric vs. kinematic Tully-Fisher parameters.</li>
+        <li>Quantify systematic biases and identify galaxy subsets where photometric assumptions break down.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Data & Methodology</h2>
+      <p>
+        The sample includes over 200 nearby galaxies observed with IFS instruments such as MUSE and PMAS. Kinematic maps were
+        constructed to determine rotation curves and position angles, and were compared with photometric parameters from
+        the Siena Galaxy Atlas and HostPhot catalogs. Distance biases were calculated by projecting Tully-Fisher relations
+        under both parameter sets.
+      </p>
+    </section>
+
+    <div class="notice">
+      <h3>Note</h3>
+      <p>
+        This research is part of my M.S. thesis work and the manuscript is currently in preparation. More detailed figures, methodology,
+        and results will be shared once the paper is submitted and publicly available.
+      </p>
+    </div>
+
+    <section>
+      <h2>Keywords</h2>
+      <p>Spiral galaxies, photometric vs. kinematic axes, Tully-Fisher relation, DESI, distance bias, integral field spectroscopy</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Utsav Siwakoti - University of Kansas</p>
+  </footer>
+</body>
+</html>

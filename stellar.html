@@ -1,172 +1,209 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Stellar View | Astrophotography</title>
-
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-
   <style>
-    html, body {
-      height: 100%;
+    :root {
+      --main-color: #0051BA;
+      --font-body: 'Georgia', serif;
+      --header-height: 80px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
       margin: 0;
-      overflow-x: hidden;
+      font-family: var(--font-body);
+      color: #000;
+      background: #fff;
+      line-height: 1.6;
     }
 
-    #wrapper {
+    a {
+      color: var(--main-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--header-height);
+      background: #f7f7f7;
+      border-bottom: 1px solid #ccc;
       display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.5em;
+      z-index: 1000;
     }
 
-    #main {
-      flex: 1;
-      padding: 3em 2em;
+    header h1 {
+      font-size: 1.8em;
+      margin: 0;
+      color: var(--main-color);
     }
 
-    /* Timeline layout */
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1em;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      padding: 0.5em 1em;
+    }
+
+    main {
+      max-width: 900px;
+      margin: calc(var(--header-height) + 2em) auto 3em;
+      padding: 0 1em;
+    }
+
     .timeline {
       position: relative;
-      margin: 2em 0;
-      padding-left: 40px;
-      border-left: 2px solid rgba(255,255,255,0.3);
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 1em;
+      width: 3px;
+      height: 100%;
+      background-color: var(--main-color);
     }
 
     .timeline-entry {
       position: relative;
-      margin-bottom: 3em;
+      margin-left: 3em;
+      margin-bottom: 2.5em;
     }
 
     .timeline-entry::before {
       content: "";
       position: absolute;
-      top: 0.6em;
-      left: -10px;
-      width: 14px;
-      height: 14px;
-      background-color: #fff;
-      border: 2px solid #333;
+      left: -2em;
+      top: 0.5em;
+      width: 12px;
+      height: 12px;
+      background: var(--main-color);
       border-radius: 50%;
       z-index: 1;
     }
 
     .timeline-entry details {
-      background: rgba(0,0,0,0.3);
-      padding: 1em;
+      border: 1px solid #ccc;
       border-radius: 6px;
-      border: 1px solid rgba(255,255,255,0.2);
+      padding: 1em;
+      background: #fafafa;
     }
 
     .timeline-entry summary {
       cursor: pointer;
-      list-style: none;
-      font-size: 1.1em;
-      font-weight: 600;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .timeline-entry summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .timeline-entry summary h3 {
-      display: inline;
-      margin: 0;
+      font-weight: bold;
+      color: var(--main-color);
       font-size: 1.2em;
+      outline: none;
+      list-style: none;
     }
 
-    .timeline-entry summary p {
-      margin: 0.5em 0 0;
-      font-size: 0.9em;
-      color: #ccc;
-      font-style: italic;
+    .timeline-entry h3 {
+      font-size: 1.1em;
+      margin-top: 1em;
+      color: #333;
     }
 
-    .timeline-entry[open] summary h3:after { content: " ▲"; }
-    .timeline-entry summary h3:after { content: " ▼"; }
+    .timeline-entry p {
+      color: #444;
+      margin-top: 0.5em;
+    }
 
-    .image.fit img {
-      display: block;
-      width: 100%;
+    .post-image {
+      max-width: 100%;
       height: auto;
       margin: 1em 0;
-      border-radius: 4px;
+      display: block;
+      border: 1px solid #ccc;
+      border-radius: 6px;
     }
 
-    #footer {
+    footer {
       text-align: center;
-      padding: 2em;
+      padding: 2em 1em;
+      background: #f0f0f0;
       font-size: 0.9em;
-      color: #aaa;
+      color: #333;
     }
 
-    #bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url("images/bg.jpg") center/cover no-repeat;
-      z-index: -1;
-      opacity: 1;
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.4em;
+      }
+
+      .timeline-entry summary {
+        font-size: 1em;
+      }
+
+      .timeline::before {
+        left: 0.5em;
+      }
+
+      .timeline-entry {
+        margin-left: 2.5em;
+      }
+
+      .timeline-entry::before {
+        left: -1.5em;
+      }
     }
   </style>
 </head>
+<body>
+  <header>
+    <h1>Astrophotography</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<body class="is-preload">
-  <div id="bg"></div>
 
-  <div id="wrapper">
-    <!-- Header -->
-    <header id="header">
-      <div class="logo">
-        <img src="images/moon.png" alt="Utsav Siwakoti" style="width: 240px; height: 240px; border-radius: 50%; object-fit: cover;" />
-      </div>
-      <div class="content">
-        <div class="inner">
-          <h1>Stellar View</h1>
-          <p>My Astrophotography Adventures</p>
-        </div>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="research.html">Research</a></li>
-          <li><a href="education.html">Education</a></li>
-          <li><a href="stellar.html" class="active">Astrophotography</a></li>
-          <li><a href="outreach.html">Outreach</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <!-- Main Content -->
-    <div id="main">
-      <h2 class="major">Astrophotography Timeline</h2>
-      <div class="timeline">
-
+  <main id="main">
+    <div class="timeline">
+  
+  
+<div class="timeline">
 <div class="timeline-entry">
   <details open>
     <summary>
-      <h3>Chasing Earth’s Shadow</h3>
+      <h2>Chasing Earth’s Shadow</h2>
       <p>Published: March 15, 2025</p>
     </summary>
     <div class="image fit">
-      <img src="astrophotography/lunar-eclipse-solo.png" alt="Composite of lunar eclipse phases" style="width: 880px; height: 720px;" />
+      <img src="astrophotography/lunar-eclipse-solo.png" alt="Composite of lunar eclipse phases" class="responsive-img" />
     </div>
     <p><strong>Keywords:</strong> astronomy, astrophotography, Canon EOS 250D, lunar eclipse, total eclipse, March 14, 2025</p>
 
-    <h4><strong>Chasing Earth’s Shadow</strong></h4>
+    <h3><strong>Chasing Earth’s Shadow</strong></h3>
     <p>Yesterday was a truly magical evening here in Lawrence, Kansas, as the Moon slipped into Earth’s shadow and put on a captivating celestial show. I’m excited to share my experience photographing the lunar eclipse and present a composite image I created to highlight each phase of this astronomical event.</p>
 
-    <h4><strong>The Anticipation</strong></h4>
+    <h3><strong>The Anticipation</strong></h3>
     <p>Lunar eclipses have always fascinated me—there’s something humbling about witnessing our planet’s shadow creeping across the face of the Moon. I began preparing well in advance: checking weather forecasts, scouting a suitable location with minimal light pollution, and planning my camera settings. Thankfully, Lawrence’s clear skies last night provided the perfect backdrop for the eclipse.</p>
 
-    <h4><strong>Gear and Setup</strong></h4>
+    <h3><strong>Gear and Setup</strong></h3>
     <ul>
       <li>Camera: Canon EOS 250D (crop sensor)</li>
       <li>Lens: 55–250mm at 250mm</li>
@@ -175,22 +212,22 @@
       <li>Post-Processing: Adobe Photoshop for composite and color balance</li>
     </ul>
 
-    <h4><strong>Watching the Eclipse Unfold</strong></h4>
+    <h3><strong>Watching the Eclipse Unfold</strong></h3>
     <p><strong>Before Eclipse:</strong> The Moon started off bright and fully illuminated. I took a few baseline shots to capture the crisp lunar details, from craters to maria (the darker basaltic plains on the Moon).</p>
     <p><strong>Eclipse Begins:</strong> As the Earth’s shadow began to nibble at the Moon’s edge, it felt like watching the first act of a cosmic ballet. The contrast between the bright illuminated portion and the emerging shadow was striking.</p>
     <p><strong>50% Partial:</strong> This was the moment when the Moon looked especially dramatic—half shrouded in darkness, half gleaming in white. The surface details on the lit portion provided a beautiful contrast against the reddening shadow.</p>
     <p><strong>Total Eclipse:</strong> Often referred to as the “Blood Moon,” the total eclipse stage saw the Moon take on a deep coppery-red hue. This occurs because sunlight filtering through Earth’s atmosphere scatters the shorter blue wavelengths, leaving predominantly red light to reach the Moon’s surface.</p>
     <p><strong>Greatest Eclipse:</strong> At the peak, the red tone was at its most vivid. Photographing this phase can be tricky because the Moon is dimmer than usual—raising the ISO and slowing the shutter speed was crucial to capturing enough detail.</p>
 
-    <h4><strong>Creating the Composite</strong></h4>
+    <h3><strong>Creating the Composite</strong></h3>
     <p>After the eclipse, I gathered all my shots and selected the best image from each phase. I used Adobe Photoshop to arrange them into a single composite, adjusting the size and brightness to highlight each stage in a visually cohesive manner. This technique offers a storytelling perspective: you can see the progression from a bright full Moon to the dramatic red and back again—all in one frame.</p>
 
-    <h4><strong>Reflecting on the Experience</strong></h4>
+    <h3><strong>Reflecting on the Experience</strong></h3>
     <p>For me, the most rewarding part of photographing a lunar eclipse is the sense of connection to something larger than ourselves. Standing under the night sky in Lawrence, Kansas, I felt a profound appreciation for the elegance of our cosmic neighborhood. Every eclipse reminds me that these celestial events are happening all around us—if we just take the time to look up.</p>
 
     <p>I hope this composite image and my account of the evening convey some of that wonder. Whether you’re a seasoned astronomer or just someone who loves a good sky show, witnessing a lunar eclipse is an unforgettable experience. If you missed this one, keep an eye on upcoming eclipse dates—there’s always another cosmic spectacle on the horizon!</p>
     <div class="image fit">
-      <img src="astrophotography/lunar-eclipse.jpeg" alt=" Composite of lunar eclipse phases" style="width: 1280px; height: 720px;" />
+      <img src="astrophotography/lunar-eclipse.jpeg" alt=" Composite of lunar eclipse phases" class="responsive-img" />
     </div>
     <p>Thank you for reading! If you enjoyed this post or have any questions about my photography process, feel free to leave a comment. I’d love to hear about your own eclipse experiences and tips for capturing these mesmerizing events.</p>
 
@@ -202,15 +239,15 @@
 <div class="timeline-entry">
   <details>
     <summary>
-      <h3>How I Captured the Hubble Space Telescope</h3>
+      <h2>How I Captured the Hubble Space Telescope</h2>
       <p>Published: December 31, 2023</p>
     </summary>
     <div class="image fit">
-      <img src="astrophotography/hubble.jpg" alt="Long exposure photo of Hubble Space Telescope trail across night sky" style="width: 1280px; height: 720px;"/>
+      <img src="astrophotography/hubble.jpg" alt="Long exposure photo of Hubble Space Telescope trail across night sky" class="responsive-img""/>
     </div>
     <p><strong>Keywords:</strong> astrophotography, Hubble Space Telescope, Kathmandu, Canon EOS 250D, satellite tracking, long exposure, NASO</p>
 
-    <h4><strong>How I Captured the Hubble Space Telescope</strong></h4>
+    <h3><strong>How I Captured the Hubble Space Telescope</strong></h3>
     <p>As I was browsing Facebook during the lockdown, I came across a post by the Nepal Astronomical Society (NASO) that caught my eye. It was about the Hubble Space Telescope (HST) passing over Nepal and how to track it online. I was intrigued by the idea of seeing this amazing piece of technology that has been orbiting the Earth for over three decades and has given us stunning images of the universe.</p>
 
     <p>I decided to give it a try and set up my Canon EOS 250D with an 18–55mm STM lens on a tripod. I also used my phone to follow the HST’s trajectory on the NASO website. I called my brother Nurap Karki to join me in this adventure and explained to him how to spot the HST in the sky.</p>
@@ -229,15 +266,15 @@
 <div class="timeline-entry">
   <details>
     <summary>
-      <h3>Venus and the Pleiades Celestial Dance</h3>
+      <h2>Venus and the Pleiades Celestial Dance</h2>
       <p>Published: April 2, 2021</p>
     </summary>
     <div class="image fit">
-      <img src="astrophotography/pledisis.png" alt="Venus and the Pleiades alignment" style="width: 1280px; height: 720px;" />
+      <img src="astrophotography/pledisis.png" alt="Venus and the Pleiades alignment" class="responsive-img" />
     </div>
     <p><strong>Keywords:</strong> Venus, Pleiades, planetary alignment, astrophotography, Canon EOS 250D, April 3 2020, celestial event, star stacking</p>
 
-    <h4><strong>Venus and the Pleiades Celestial Dance</strong></h4>
+    <h3><strong>Venus and the Pleiades Celestial Dance</strong></h3>
     <p>On the enchanting night of April 3rd, 2020, a celestial spectacle unfolded as Venus and the Pleiades aligned in a rare cosmic dance. Such a captivating alignment occurs only once every eight years, making it a truly remarkable opportunity for photography enthusiasts.</p>
 
     <p>Without hesitation, I swiftly grabbed my EOS 250D paired with a 55–250mm f/4–5.6 lens and set up my tripod on the terrace. With a manual focus on the frame, I eagerly captured the moment. The featured image was taken at 250mm with an aperture of f/5.6, exposing for just 2 seconds. To enhance the shot, I set the ISO to 1600 and snapped a series of continuous shots, ensuring the Pleiades remained in sharp focus throughout.</p>
@@ -252,15 +289,15 @@
 <div class="timeline-entry">
   <details>
     <summary>
-      <h3>Orion Unbound: Capturing the Hunter in Bhaktapur</h3>
+      <h2>Orion Unbound: Capturing the Hunter in Bhaktapur</h2>
       <p>Published: October 28, 2020</p>
     </summary>
     <div class="image fit">
-      <img src="astrophotography/orion.png" alt="Orion constellation over Bhaktapur Durbar Square" style="width: 1080px; height: 720px;" />
+      <img src="astrophotography/orion.png" alt="Orion constellation over Bhaktapur Durbar Square" class="responsive-img" />
     </div>
     <p><strong>Keywords:</strong> Orion, Bhaktapur Durbar Square, Kathmandu, constellation photography, light pollution, Canon EOS 250D, urban astrophotography, winter sky</p>
 
-    <h4><strong>Orion Unbound: Capturing the Mighty Hunter from Bhaktapur Durbar Square</strong></h4>
+    <h3><strong>Orion Unbound: Capturing the Mighty Hunter from Bhaktapur Durbar Square</strong></h3>
     <p>Orion, the celestial hunter, has captivated humanity for millennia. Its distinct silhouette, etched across the winter sky, has inspired countless myths and legends. But what about capturing its grandeur from a bustling city square, amidst the din of daily life and the unrelenting grip of light pollution?</p>
 
     <p>That's the challenge I recently embraced, armed with my trusty camera and a determined spirit. Standing in the heart of Bhaktapur Durbar Square, Kathmandu's vibrant cultural gem, I aimed my lens skyward, eager to snag a glimpse of the mighty hunter amidst the urban sprawl.</p>
@@ -295,10 +332,6 @@
     </footer>
   </div>
 
-  <script>
-    window.addEventListener('load', () => {
-      document.body.classList.remove('is-preload');
-    });
   </script>
 </body>
 </html>

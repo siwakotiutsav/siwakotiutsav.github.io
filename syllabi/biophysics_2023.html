@@ -1,325 +1,244 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Biophysics Syllabus</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PHYS 104: General Physics Syllabus</title>
   <style>
     :root {
+      --main-color: #0051BA;
       --header-height: 80px;
-      --bg-opacity: 0.9;
+      --font-body: 'Georgia', serif;
     }
 
-    html, body {
-      height: 100%;
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
       margin: 0;
-      overflow-x: hidden;
-      font-family: Arial, sans-serif;
-      color: white;
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      color: #000;
+      background: #fff;
     }
 
-    #wrapper {
-      margin-top: var(--header-height);
-      min-height: calc(100vh - var(--header-height));
-      display: flex;
-      flex-direction: column;
+    a {
+      color: var(--main-color);
+      text-decoration: none;
     }
 
-    .table-wrapper {
-  margin: 1.5em 0;
-  overflow-x: auto;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: rgba(255,255,255,0.1);
-}
-
-td {
-  padding: 0.75em 1em;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-}
-
-tr:nth-child(even) {
-  background: rgba(0,0,0,0.2);
-}
-
-.notice {
-  background: rgba(255,0,0,0.1);
-  border-left: 4px solid #ff4444;
-  padding: 1em;
-  margin: 1.5em 0;
-  border-radius: 4px;
-}
-
-.notice strong {
-  color: #ff8888;
-  display: block;
-  margin-bottom: 0.5em;
-}
-
-.notice ul {
-  margin: 0.5em 0;
-  padding-left: 1.5em;
-}
-
-.notice li {
-  margin: 0.5em 0;
-}
-
-    #main {
-      flex: 1;
-      padding: 2em;
-      overflow-y: auto;
-      background: rgba(0,0,0,0.7);
+    a:hover {
+      text-decoration: underline;
     }
 
-    header#header {
+    header {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
       height: var(--header-height);
-      background: rgba(0,0,0,var(--bg-opacity));
-      z-index: 1000;
+      background: #f7f7f7;
+      border-bottom: 1px solid #ccc;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 2em;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
+      z-index: 1000;
     }
 
     header h1 {
-      margin: 0;
       font-size: 1.8em;
-      letter-spacing: 1px;
+      margin: 0;
+      color: var(--main-color);
     }
 
     nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
       display: flex;
-      gap: 2em;
+      gap: 1em;
+      list-style: none;
+      margin: 0;
+      padding: 0;
     }
 
     nav a {
-      color: white;
-      text-decoration: none;
       padding: 0.5em 1em;
       border-radius: 4px;
-      transition: background 0.3s ease;
-      display: inline-block;
     }
 
-    nav a:hover {
-      background: rgba(255,255,255,0.1);
+    #main {
+      max-width: 900px;
+      margin: calc(var(--header-height) + 2em) auto 2em;
+      padding: 0 1em;
     }
 
-    .timeline {
-      position: relative;
-      margin: 2em 0;
-      padding-left: 40px;
-      border-left: 2px solid rgba(255,255,255,0.3);
+    h2 {
+      color: var(--main-color);
+      border-bottom: 2px solid var(--main-color);
+      padding-bottom: 0.3em;
     }
 
-    .timeline-entry {
-      position: relative;
-      margin-bottom: 3em;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1em;
     }
 
-    .timeline-entry::before {
-      content: "";
-      position: absolute;
-      top: 0.6em;
-      left: -10px;
-      width: 14px;
-      height: 14px;
-      background-color: #fff;
-      border: 2px solid #333;
-      border-radius: 50%;
-      z-index: 1;
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.75em;
+      text-align: left;
     }
 
-    .timeline-entry details {
-      background: rgba(0,0,0,0.3);
+    tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+
+    .notice {
+      background: #ffe5e5;
+      border-left: 4px solid red;
       padding: 1em;
-      border-radius: 6px;
-      border: 1px solid rgba(255,255,255,0.2);
+      margin-top: 1em;
     }
 
-    .timeline-entry summary {
+    summary {
+      font-weight: bold;
       cursor: pointer;
-      list-style: none;
-      font-size: 1.1em;
-      font-weight: 600;
-      color: #fff;
     }
 
-    .timeline-entry summary::-webkit-details-marker {
-      display: none;
+details {
+  margin-bottom: 1em;
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+}
+
+
+    .hours-badge {
+      font-size: 0.9em;
+      background: #ddd;
+      padding: 0.2em 0.6em;
+      border-radius: 1em;
+      margin-left: 1em;
     }
 
-    .timeline-entry[open] summary h3:after { content: " ▲"; }
-    .timeline-entry summary h3:after { content: " ▼"; }
-
-    #footer {
+    footer {
       text-align: center;
       padding: 2em;
+      background: #f0f0f0;
       font-size: 0.9em;
-      color: #aaa;
-      background: rgba(0,0,0,0.8);
+      color: #333;
     }
 
-    #bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url("images/bg.jpg") center/cover no-repeat;
-      z-index: -1;
-      opacity: 1;
-    }
-
-    .major h2 {
-      border-bottom: 2px solid #fff;
-      padding-bottom: 0.5em;
-      margin-bottom: 1em;
-    }
-
-    section {
-      margin: 2em 0;
-    }
-
-    ul {
-      padding-left: 1.5em;
-      line-height: 1.6;
-    }
-
-    strong {
-      color: #fff;
+    @media (max-width: 600px) {
+      body {
+        font-size: 15px;
+      }
     }
   </style>
 </head>
 
-<body class="is-preload">
+<body>
   <div id="bg"></div>
 
-  <!-- Fixed Header -->
   <header id="header">
-    <h1>Biophysics Syllabus (PHYS 105) 2023</h1>
-<nav>
-  <ul>
-    <li><a href="../index.html" target="_self">Home</a></li>
-    <li><button onclick="history.back();">Back</button></li>
-  </ul>
-</nav>
-
+    <h1>PHYS 105: Biophysics Syllabus</h1>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a onclick="history.back();">Back</a></li>
+      </ul>
+    </nav>
   </header>
 
   <div id="wrapper">
-    <!-- Scrollable Content -->
-    <div id="main">
+    <main id="main">
       <details open>
-        <summary><h2 class="major">Course Details</h2></summary>
-        <article>
-          <section>
-            <p><strong>Level:</strong> B.Tech I<br>
+        <h2 class="major">Course Details</h2>
+        <section>
+          <p><strong>Level:</strong> B.Tech I<br>
             <strong>Course:</strong> PHYS 105<br>
             <strong>Credit Hours:</strong> 3<br>
             <strong>Semester:</strong> II<br>
             <strong>Instruction:</strong> In-Person</p>
-          </section>
+        </section>
 
-          <section>
-            <h3>Course Objectives</h3>
-            <p>Biophysics integrates physical concepts into biology, recognizing that laws of physics apply to living systems. This course frames biology through a physical science lens, emphasizing theoretical approaches and interdisciplinary integration.</p>
-          </section>
+        <section>
+          <h3>Course Objectives</h3>
+          <p>Biophysics integrates physical concepts into biology, recognizing that laws of physics apply to living systems. This course frames biology through a physical science lens, emphasizing theoretical approaches and interdisciplinary integration.</p>
+        </section>
 
-<!-- Add this section after the Course Objectives -->
-<section>
-  <h3>Grading Policy</h3>
-  <div class="table-wrapper">
-    <table>
-      <tbody>
-        <tr>
-          <td>Attendance</td>
-          <td>5%</td>
-        </tr>
-        <tr>
-          <td>Homework Problems</td>
-          <td>10%</td>
-        </tr>
-        <tr>
-          <td>Internal Exams (2)</td>
-          <td>5% + 5%</td>
-        </tr>
-        <tr>
-          <td>Practical Exam</td>
-          <td>25%</td>
-        </tr>
-        <tr>
-          <td>Final Exam</td>
-          <td>50%</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+        <section>
+          <h2>Instructor Information</h2>
+          <p><strong>Utsav Siwakoti</strong><br>
+           Email: <a href="mailto:siwakotiutsav@ku.edu">siwakotiutsav@ku.edu</a><br>
+           </p>
+        </section>
 
-  <div class="notice">
-    <strong>Important Requirements:</strong>
-    <ul>
-      <li>Students must obtain combined minimum of 10% from Attendance + Homework + Internal to be eligible for final exam</li>
-      <li>Failure to meet minimum requirements results in NQ (Not Qualified) grade</li>
-      <li>NQ students cannot appear for final examinations</li>
-      <li>All practical exams must be attempted regardless of NQ status</li>
-    </ul>
-  </div>
-</section>
-          
-          <section>
-            <h3>Course Outline & Hours (Total 45)</h3>
+        
+        <section>
+          <h3>Grading Policy</h3>
+          <div class="table-wrapper">
+            <table>
+              <tbody>
+                <tr><td>Attendance</td><td>5%</td></tr>
+                <tr><td>Homework Problems</td><td>10%</td></tr>
+                <tr><td>Internal Exams (2)</td><td>5% + 5%</td></tr>
+                <tr><td>Practical Exam</td><td>25%</td></tr>
+                <tr><td>Final Exam</td><td>50%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="notice">
+            <strong>Important Requirements:</strong>
             <ul>
-              <li><strong>1. Introduction</strong> (1h): Biophysics overview, physics and biology development, living vs nonliving, reductionism.</li>
-              <li><strong>2. Wave Mechanics</strong> (4h): Wave mechanical atom model, Schrödinger equation, wavefunction properties, particle in a box.</li>
-              <li><strong>3. Electronic Structure of Atoms</strong> (7h): Bohr model, hydrogen spectra, orbitals, Pauli principle, Zeeman and Stark effects.</li>
-              <li><strong>4. Structure of Molecules</strong> (4h): Interaction energies, dipoles, bonding types, molecular orbitals, hybridization.</li>
-              <li><strong>5. Molecular Physics</strong> (4h): Electronic, rotational, vibration-rotation spectra, fluorescence, phosphorescence.</li>
-              <li><strong>6. Structural Analysis Techniques</strong> (4h): NMR, X-ray diffraction, STM, SEM, AFM.</li>
-              <li><strong>7. Biological Transport</strong> (7h): Diffusion, Fick’s laws, random walk, osmosis, membrane transport.</li>
-              <li><strong>8. Transport & Electrochemical Potential</strong> (4h): Electrochemical potentials, fluxes, osmotic pressure examples.</li>
-              <li><strong>9. Biological Thermodynamics</strong> (3h): Chemical equilibria, Nernst potential, active transport, resting potentials.</li>
-              <li><strong>10. Neurobiophysics</strong> (4h): Nerve cells, resting/action potentials, voltage clamp, synaptic transmission.</li>
-              <li><strong>11. Sensory Systems</strong> (3h): Receptors (photoreceptors, auditory hair cells), chemical and somatic receptors.</li>
+              <li>Students must obtain a combined minimum of 10% from Attendance, Homework, and Internal Exams to be eligible for the final exam.</li>
+              <li>Failure to meet minimum requirements results in an NQ (Not Qualified) grade.</li>
+              <li>NQ students cannot appear for final examinations.</li>
+              <li>All practical exams must be attempted regardless of NQ status.</li>
             </ul>
-          </section>
+          </div>
+        </section>
 
-          <section>
-            <h3>Textbooks & References</h3>
-            <ul>
-              <li>Sybesma, C. <em>Biophysics: An Introduction</em>, Kluwer (Netherlands).</li>
-              <li>Cotterill, R. <em>Biophysics: An Introduction</em>, Wiley (UK).</li>
-              <li>Murugeshan, R. <em>Modern Physics</em>, S. Chand (India).</li>
-            </ul>
-            <p><strong>Additional References:</strong></p>
-            <ul>
-              <li>Claycomb & Tran, <em>Introductory Biophysics</em>, Jones & Bartlett.</li>
-              <li>Banerjee, <em>Introduction to Biophysics</em>, S. Chand.</li>
-              <li>Tuszynski & Kurzynski, <em>Intro to Molecular Biophysics</em>, CRC Press.</li>
-              <li>Pattabhi & Gautham, <em>Biophysics</em>, Narosa.</li>
-              <li>Majumdar, <em>Quantum Mechanics in Physics and Chemistry</em>, PHI.</li>
-            </ul>
-          </section>
-        </article>
+        <section>
+          <h3>Course Outline & Hours (Total 45)</h3>
+          <ul>
+            <li><strong>1. Introduction</strong> (1h): Biophysics overview, physics and biology development, living vs nonliving, reductionism.</li>
+            <li><strong>2. Wave Mechanics</strong> (4h): Wave mechanical atom model, Schrödinger equation, wavefunction properties, particle in a box.</li>
+            <li><strong>3. Electronic Structure of Atoms</strong> (7h): Bohr model, hydrogen spectra, orbitals, Pauli principle, Zeeman and Stark effects.</li>
+            <li><strong>4. Structure of Molecules</strong> (4h): Interaction energies, dipoles, bonding types, molecular orbitals, hybridization.</li>
+            <li><strong>5. Molecular Physics</strong> (4h): Electronic, rotational, vibration-rotation spectra, fluorescence, phosphorescence.</li>
+            <li><strong>6. Structural Analysis Techniques</strong> (4h): NMR, X-ray diffraction, STM, SEM, AFM.</li>
+            <li><strong>7. Biological Transport</strong> (7h): Diffusion, Fick’s laws, random walk, osmosis, membrane transport.</li>
+            <li><strong>8. Transport & Electrochemical Potential</strong> (4h): Electrochemical potentials, fluxes, osmotic pressure examples.</li>
+            <li><strong>9. Biological Thermodynamics</strong> (3h): Chemical equilibria, Nernst potential, active transport, resting potentials.</li>
+            <li><strong>10. Neurobiophysics</strong> (4h): Nerve cells, resting/action potentials, voltage clamp, synaptic transmission.</li>
+            <li><strong>11. Sensory Systems</strong> (3h): Receptors (photoreceptors, auditory hair cells), chemical and somatic receptors.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Textbooks & References</h3>
+          <ul>
+            <li>Sybesma, C. <em>Biophysics: An Introduction</em>, Kluwer.</li>
+            <li>Cotterill, R. <em>Biophysics: An Introduction</em>, Wiley.</li>
+            <li>Murugeshan, R. <em>Modern Physics</em>, S. Chand.</li>
+          </ul>
+          <p><strong>Additional References:</strong></p>
+          <ul>
+            <li>Claycomb & Tran, <em>Introductory Biophysics</em>, Jones & Bartlett.</li>
+            <li>Banerjee, <em>Introduction to Biophysics</em>, S. Chand.</li>
+            <li>Tuszynski & Kurzynski, <em>Intro to Molecular Biophysics</em>, CRC Press.</li>
+          </ul>
+        </section>
       </details>
-    </div>
+    </main>
 
-    <!-- Footer -->
-    <footer id="footer">
-      <p>&copy; Utsav Siwakoti. Design: <a href="https://html5up.net" target="_self" style="color:#fff;">HTML5 UP</a>.</p>
-    </footer>
+  <footer>
+    <p>&copy; 2024 Kathmandu University - Department of Physics</p>
+  </footer>
   </div>
 </body>
 </html>

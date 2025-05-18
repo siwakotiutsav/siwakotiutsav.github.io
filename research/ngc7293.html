@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NGC 7293 Nebular Study | Research</title>
+  <style>
+    :root {
+      --main-color: #0051BA;
+      --header-height: 80px;
+      --font-body: 'Georgia', serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      color: #000;
+      background: #fff;
+    }
+
+    a {
+      color: var(--main-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--header-height);
+      background: #f7f7f7;
+      border-bottom: 1px solid #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2em;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 1.8em;
+      margin: 0;
+      color: var(--main-color);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1em;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      padding: 0.5em 1em;
+      border-radius: 4px;
+    }
+
+    #main {
+      max-width: 900px;
+      margin: calc(var(--header-height) + 2em) auto 2em;
+      padding: 0 1em;
+    }
+
+    h2 {
+      color: var(--main-color);
+      border-bottom: 2px solid var(--main-color);
+      padding-bottom: 0.3em;
+    }
+
+    section {
+      margin-bottom: 2em;
+    }
+
+    .notice {
+      background: #fff4d6;
+      border-left: 4px solid #f0ad4e;
+      padding: 1em;
+      margin-top: 1em;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2em;
+      background: #f0f0f0;
+      font-size: 0.9em;
+      color: #333;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header id="header">
+    <h1>NGC 7293 Nebular Structure Study</h1>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a onclick="history.back();">Back</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section>
+      <h2>Overview</h2>
+      <p>
+        This project focused on a comparative analysis of the physical properties of the nebular structure around NGC 7293 (the Helix Nebula)
+        using data from the IRIS and AKARI all-sky infrared surveys. The aim was to determine whether the region shows evidence of active star
+        formation or remains in local thermodynamic equilibrium.
+      </p>
+    </section>
+
+    <section>
+      <h2>Key Objectives</h2>
+      <ul>
+        <li>Analyze temperature and mass distribution using infrared data at various wavelengths (60, 90, 100, and 140 µm).</li>
+        <li>Estimate dust color temperatures, masses, and Jeans mass from IRIS and AKARI maps.</li>
+        <li>Assess thermodynamic stability and star formation potential of the nebula.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Data & Tools</h2>
+      <p>
+        FITS images were obtained via the <a href="https://skyview.gsfc.nasa.gov/" target="_blank">SkyView Virtual Observatory</a>
+        and processed using <strong>Aladin v2.503</strong>. Temperature and mass maps were derived by applying Planck’s function and
+        dust emission models. Gaussian and regression analyses helped confirm local equilibrium conditions.
+      </p>
+    </section>
+
+    <section>
+      <h2>Findings</h2>
+      <ul>
+        <li>The structure showed distinct flux peaks across all bands, more clearly defined in the AKARI maps.</li>
+        <li>Average temperatures: ~31 K (IRIS) and ~22 K (AKARI).</li>
+        <li>Total dust mass: ~6.5 × 10²⁶ kg (IRIS), ~3.0 × 10²⁸ kg (AKARI).</li>
+        <li>Estimated Jeans mass in both maps was significantly higher than actual mass, implying <strong>no active star formation</strong>.</li>
+      </ul>
+    </section>
+
+<section>
+  <h2>Figures</h2>
+
+  <figure style="margin-bottom: 2em;">
+    <img src="images/ngc7293/iris_temp_mass_contour.png" alt="IRIS temperature and mass contour plots" style="width:100%; max-width:700px;" />
+    <figcaption><strong>Figure 1:</strong> Temperature and mass contours from IRIS data.</figcaption>
+  </figure>
+
+  <figure style="margin-bottom: 2em;">
+    <img src="images/ngc7293/akari_temp_mass_contour.jpg" alt="AKARI temperature and mass contour plots" style="width:100%; max-width:700px;" />
+    <figcaption><strong>Figure 2:</strong> Temperature and mass contours from AKARI data.</figcaption>
+  </figure>
+
+  <figure style="margin-bottom: 2em;">
+    <img src="images/ngc7293/planck_major_minor.png" alt="Planck function variation along major and minor axes" style="width:100%; max-width:700px;" />
+    <figcaption><strong>Figure 3:</strong> Planck’s function variation along major and minor diameters.</figcaption>
+  </figure>
+
+  <figure style="margin-bottom: 2em;">
+    <img src="images/ngc7293/gaussian_fits.png" alt="Gaussian fits of mass and temperature" style="width:100%; max-width:700px;" />
+    <figcaption><strong>Figure 4:</strong> Gaussian fits of temperature and mass distributions in IRIS and AKARI maps.</figcaption>
+  </figure>
+</section>
+
+
+    <div class="notice">
+      <h3>Note</h3>
+      <p>
+        This work was completed as part of my undergraduate thesis at Amrit Campus, Tribhuvan University, and presented in partial
+        fulfilment of the B.Sc. in Physics. Tools used include Aladin, Origin, Excel, and IR image processing techniques.
+      </p>
+    </div>
+
+    <section>
+      <h2>Keywords</h2>
+      <p>NGC 7293, Helix Nebula, IRIS, AKARI, infrared astronomy, dust temperature, Jeans mass</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Utsav Siwakoti - Tribhuvan University</p>
+  </footer>
+</body>
+</html>
