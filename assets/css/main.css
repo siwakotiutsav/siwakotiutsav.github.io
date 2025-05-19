@@ -637,31 +637,34 @@ input, select, textarea {
 
 /* Image */
 
-.astro-image {
-  max-width: 800px;
-  margin: 2rem auto;
-  text-align: center;
-}
-
-.astro-image img {
+/* Add these styles to your existing CSS */
+.astro-image,
+.image.fit {
   max-width: 100%;
+  margin: 1em 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.astro-image img,
+.image.fit img {
+  width: 100%;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  display: block;
+  object-fit: contain;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
 
-.astro-image img:hover {
-  transform: scale(1.02);
+/* Optional: Add smooth loading effect */
+img[loading="lazy"] {
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.caption {
-  font-family: Georgia, serif;
-  font-size: 0.9rem;
-  color: #555;
-  margin-top: 0.5rem;
+img[loading="lazy"].loaded {
+  opacity: 1;
 }
-
 
 
 
