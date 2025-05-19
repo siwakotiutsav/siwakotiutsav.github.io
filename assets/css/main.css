@@ -637,33 +637,70 @@ input, select, textarea {
 
 /* Image */
 
-/* Add these styles to your existing CSS */
-.astro-image,
-.image.fit {
-  max-width: 100%;
-  margin: 1em 0;
-  position: relative;
-  overflow: hidden;
+/* Add this container rule above your .timeline styles */
+.timeline-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1em;
 }
 
-.astro-image img,
-.image.fit img {
+/* Modify your existing timeline styles */
+.timeline {
+  position: relative;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Update your astro-image styles */
+.astro-image {
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.astro-image img {
   width: 100%;
   height: auto;
-  display: block;
+  max-height: 70vh; /* Prevent vertical overflow */
   object-fit: contain;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
-/* Optional: Add smooth loading effect */
-img[loading="lazy"] {
-  opacity: 0;
-  transition: opacity 0.3s ease;
+/* Add this to your media queries */
+@media (max-width: 900px) {
+  .timeline::before {
+    left: 1.2rem; /* Adjust timeline position */
+  }
+  
+  .timeline-entry {
+    margin-left: 4rem; /* Give more space for images */
+  }
+  
+  .astro-image {
+    max-width: 100%;
+    padding: 0;
+  }
 }
 
-img[loading="lazy"].loaded {
-  opacity: 1;
+@media (max-width: 600px) {
+  .timeline-container {
+    padding: 0 0.5em;
+  }
+  
+  .timeline-entry {
+    margin-left: 2.5rem;
+  }
+  
+  .astro-image img {
+    max-height: 60vh;
+    border-radius: 8px;
+  }
 }
 
 
@@ -745,25 +782,7 @@ img[loading="lazy"].loaded {
 
 		}
 
-.pub-date {
-  font-size: 0.85em;
-  font-weight: normal;
-  color: #666;
-  margin-left: 0.5em;
-}
 
-.timeline-entry details[open] summary ~ * {
-  animation: fadeIn 0.4s ease-in;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-5px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-:target {
-  scroll-margin-top: var(--header-height);
-}
 
 
 
