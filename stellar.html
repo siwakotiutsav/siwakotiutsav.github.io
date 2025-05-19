@@ -7,8 +7,8 @@
   <style>
     :root {
       --main-color: #0051BA;
-      --header-height: 80px;
       --font-body: 'Georgia', serif;
+      --header-height: 80px;
     }
 
     * {
@@ -18,10 +18,9 @@
     body {
       margin: 0;
       font-family: var(--font-body);
-      font-size: 16px;
-      line-height: 1.6;
       color: #000;
       background: #fff;
+      line-height: 1.6;
     }
 
     a {
@@ -44,7 +43,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 2em;
+      padding: 0 1.5em;
       z-index: 1000;
     }
 
@@ -55,96 +54,122 @@
     }
 
     nav ul {
+      list-style: none;
       display: flex;
       gap: 1em;
-      list-style: none;
       margin: 0;
       padding: 0;
     }
 
     nav a {
       padding: 0.5em 1em;
-      border-radius: 4px;
     }
 
-    #main {
+    main {
       max-width: 900px;
-      margin: calc(var(--header-height) + 2em) auto 2em;
+      margin: calc(var(--header-height) + 2em) auto 3em;
       padding: 0 1em;
     }
 
-    h2 {
-      color: var(--main-color);
-      border-bottom: 2px solid var(--main-color);
-      padding-bottom: 0.3em;
-      margin-top: 2em;
+    .timeline {
+      position: relative;
     }
 
-    .timeline {
-      border-left: 3px solid var(--main-color);
-      margin-top: 2em;
-      padding-left: 1.5em;
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 1em;
+      width: 3px;
+      height: 100%;
+      background-color: var(--main-color);
     }
 
     .timeline-entry {
       position: relative;
-      margin-bottom: 2em;
-      padding-left: 1em;
+      margin-left: 3em;
+      margin-bottom: 2.5em;
     }
 
     .timeline-entry::before {
       content: "";
       position: absolute;
-      left: -1.1em;
-      top: 0.2em;
-      width: 0.8em;
-      height: 0.8em;
+      left: -2em;
+      top: 0.5em;
+      width: 12px;
+      height: 12px;
       background: var(--main-color);
       border-radius: 50%;
+      z-index: 1;
+    }
+
+    .timeline-entry details {
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 1em;
+      background: #fafafa;
+    }
+
+    .timeline-entry summary {
+      cursor: pointer;
+      font-weight: bold;
+      color: var(--main-color);
+      font-size: 1.2em;
+      outline: none;
+      list-style: none;
     }
 
     .timeline-entry h3 {
-      margin: 0;
-      font-size: 1.3em;
-      color: var(--main-color);
-    }
-
-    .timeline-entry span.date {
-      display: block;
-      font-size: 0.95em;
-      color: #555;
-      margin-bottom: 0.5em;
+      font-size: 1.1em;
+      margin-top: 1em;
+      color: #333;
     }
 
     .timeline-entry p {
-      margin: 0 0 1rem;
       color: #444;
-      font-style: normal; /* matching syllabus styling */
+      margin-top: 0.5em;
     }
 
-    .timeline-entry img {
+    .post-image {
       max-width: 100%;
+      height: auto;
+      margin: 1em 0;
+      display: block;
       border: 1px solid #ccc;
-      border-radius: 4px;
-      margin-top: 0.5em;
+      border-radius: 6px;
     }
 
     footer {
       text-align: center;
-      padding: 2em;
+      padding: 2em 1em;
       background: #f0f0f0;
       font-size: 0.9em;
       color: #333;
     }
 
     @media (max-width: 600px) {
-      body {
-        font-size: 15px;
+      header h1 {
+        font-size: 1.4em;
+      }
+
+      .timeline-entry summary {
+        font-size: 1em;
+      }
+
+      .timeline::before {
+        left: 0.5em;
+      }
+
+      .timeline-entry {
+        margin-left: 2.5em;
+      }
+
+      .timeline-entry::before {
+        left: -1.5em;
       }
     }
   </style>
 </head>
-
 <body>
   <header>
     <h1>Astrophotography</h1>
@@ -154,21 +179,32 @@
       </ul>
     </nav>
   </header>
+
+
+  <main id="main">
+    
+  <div class="timeline-container">
+    <div class="timeline">
   
   
-<div class="timeline">
 <div class="timeline-entry">
   <details open>
     <summary>
       <h2>Chasing Earth’s Shadow</h2>
       <p>Published: March 15, 2025</p>
     </summary>
-    <div class="image fit">
-      <img src="astrophotography/lunar-eclipse-solo.png" alt="Composite of lunar eclipse phases" style="width: 880px; height: 720px;" />
-    </div>
+            <!-- Fixed Image Section -->
+            <div style="max-width: 100%; overflow: hidden; margin: 1rem 0">
+              <div class="astro-image">
+                <img src="astrophotography/lunar-eclipse-solo.png" 
+                     alt="Composite image of Lunar Eclipse phases" 
+                     loading="lazy"
+                     style="max-width: 100%; height: auto; display: block">
+                <p class="caption">Greatest Lunar Eclipse</p>
+              </div>
+            </div>
     <p><strong>Keywords:</strong> astronomy, astrophotography, Canon EOS 250D, lunar eclipse, total eclipse, March 14, 2025</p>
 
-    <h3><strong>Chasing Earth’s Shadow</strong></h3>
     <p>Yesterday was a truly magical evening here in Lawrence, Kansas, as the Moon slipped into Earth’s shadow and put on a captivating celestial show. I’m excited to share my experience photographing the lunar eclipse and present a composite image I created to highlight each phase of this astronomical event.</p>
 
     <h3><strong>The Anticipation</strong></h3>
@@ -197,9 +233,18 @@
     <p>For me, the most rewarding part of photographing a lunar eclipse is the sense of connection to something larger than ourselves. Standing under the night sky in Lawrence, Kansas, I felt a profound appreciation for the elegance of our cosmic neighborhood. Every eclipse reminds me that these celestial events are happening all around us—if we just take the time to look up.</p>
 
     <p>I hope this composite image and my account of the evening convey some of that wonder. Whether you’re a seasoned astronomer or just someone who loves a good sky show, witnessing a lunar eclipse is an unforgettable experience. If you missed this one, keep an eye on upcoming eclipse dates—there’s always another cosmic spectacle on the horizon!</p>
-    <div class="image fit">
-      <img src="astrophotography/lunar-eclipse.jpeg" alt=" Composite of lunar eclipse phases" style="width: 1280px; height: 720px;" />
-    </div>
+    
+            <!-- Second Image -->
+            <div style="max-width: 100%; overflow: hidden; margin: 1rem 0">
+              <div class="astro-image">
+                <img src="astrophotography/lunar-eclipse.jpeg" 
+                     alt="Composite image of Lunar Eclipse phases" 
+                     loading="lazy"
+                     style="max-width: 100%; height: auto; display: block">
+                <p class="caption">Composite image of Lunar Eclipse phases.</p>
+              </div>
+            </div>
+
     <p>Thank you for reading! If you enjoyed this post or have any questions about my photography process, feel free to leave a comment. I’d love to hear about your own eclipse experiences and tips for capturing these mesmerizing events.</p>
 
     <p>Clear skies, and happy stargazing!<br>— Utsav Siwakoti</p>
@@ -213,12 +258,20 @@
       <h2>How I Captured the Hubble Space Telescope</h2>
       <p>Published: December 31, 2023</p>
     </summary>
-    <div class="image fit">
-      <img src="astrophotography/hubble.jpg" alt="Long exposure photo of Hubble Space Telescope trail across night sky" style="width: 1280px; height: 720px;"/>
-    </div>
+    
+          <div style="max-width: 100%; overflow: hidden; margin: 1rem 0">
+              <div class="astro-image">
+                <img src="astrophotography/hubble.jpg" 
+                     alt="Long exposure photo of Hubble Space Telescope trail across night sky" 
+                     loading="lazy"
+                     style="max-width: 100%; height: auto; display: block">
+                <p class="caption">Hubble Space Telescope Transit</p>
+              </div>
+            </div>
+    
+
     <p><strong>Keywords:</strong> astrophotography, Hubble Space Telescope, Kathmandu, Canon EOS 250D, satellite tracking, long exposure, NASO</p>
 
-    <h3><strong>How I Captured the Hubble Space Telescope</strong></h3>
     <p>As I was browsing Facebook during the lockdown, I came across a post by the Nepal Astronomical Society (NASO) that caught my eye. It was about the Hubble Space Telescope (HST) passing over Nepal and how to track it online. I was intrigued by the idea of seeing this amazing piece of technology that has been orbiting the Earth for over three decades and has given us stunning images of the universe.</p>
 
     <p>I decided to give it a try and set up my Canon EOS 250D with an 18–55mm STM lens on a tripod. I also used my phone to follow the HST’s trajectory on the NASO website. I called my brother Nurap Karki to join me in this adventure and explained to him how to spot the HST in the sky.</p>
@@ -240,12 +293,19 @@
       <h2>Venus and the Pleiades Celestial Dance</h2>
       <p>Published: April 2, 2021</p>
     </summary>
-    <div class="image fit">
-      <img src="astrophotography/pledisis.png" alt="Venus and the Pleiades alignment" style="width: 1280px; height: 720px;" />
-    </div>
+
+            <div style="max-width: 100%; overflow: hidden; margin: 1rem 0">
+              <div class="astro-image">
+                <img src="astrophotography/pledisis.png" 
+                     alt="Venus and the Pleiades alignment" 
+                     loading="lazy"
+                     style="max-width: 100%; height: auto; display: block">
+                <p class="caption">Venus and the Pleiades alignment</p>
+              </div>
+            </div>
+    
     <p><strong>Keywords:</strong> Venus, Pleiades, planetary alignment, astrophotography, Canon EOS 250D, April 3 2020, celestial event, star stacking</p>
 
-    <h3><strong>Venus and the Pleiades Celestial Dance</strong></h3>
     <p>On the enchanting night of April 3rd, 2020, a celestial spectacle unfolded as Venus and the Pleiades aligned in a rare cosmic dance. Such a captivating alignment occurs only once every eight years, making it a truly remarkable opportunity for photography enthusiasts.</p>
 
     <p>Without hesitation, I swiftly grabbed my EOS 250D paired with a 55–250mm f/4–5.6 lens and set up my tripod on the terrace. With a manual focus on the frame, I eagerly captured the moment. The featured image was taken at 250mm with an aperture of f/5.6, exposing for just 2 seconds. To enhance the shot, I set the ISO to 1600 and snapped a series of continuous shots, ensuring the Pleiades remained in sharp focus throughout.</p>
@@ -263,12 +323,19 @@
       <h2>Orion Unbound: Capturing the Hunter in Bhaktapur</h2>
       <p>Published: October 28, 2020</p>
     </summary>
-    <div class="image fit">
-      <img src="astrophotography/orion.png" alt="Orion constellation over Bhaktapur Durbar Square" style="width: 1080px; height: 720px;" />
-    </div>
+
+            <div style="max-width: 100%; overflow: hidden; margin: 1rem 0">
+              <div class="astro-image">
+                <img src="astrophotography/orion.png" 
+                     alt="Orion constellation over Bhaktapur Durbar Square" 
+                     loading="lazy"
+                     style="max-width: 100%; height: auto; display: block">
+                <p class="caption">Orion constellation over Bhaktapur Durbar Square</p>
+              </div>
+            </div>
+
     <p><strong>Keywords:</strong> Orion, Bhaktapur Durbar Square, Kathmandu, constellation photography, light pollution, Canon EOS 250D, urban astrophotography, winter sky</p>
 
-    <h3><strong>Orion Unbound: Capturing the Mighty Hunter from Bhaktapur Durbar Square</strong></h3>
     <p>Orion, the celestial hunter, has captivated humanity for millennia. Its distinct silhouette, etched across the winter sky, has inspired countless myths and legends. But what about capturing its grandeur from a bustling city square, amidst the din of daily life and the unrelenting grip of light pollution?</p>
 
     <p>That's the challenge I recently embraced, armed with my trusty camera and a determined spirit. Standing in the heart of Bhaktapur Durbar Square, Kathmandu's vibrant cultural gem, I aimed my lens skyward, eager to snag a glimpse of the mighty hunter amidst the urban sprawl.</p>

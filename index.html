@@ -20,6 +20,11 @@
         z-index: -1; /* Puts it behind all other content */
         opacity: 1;
       }
+
+        body {
+        font-family: 'Georgia', serif;
+        font-weight: bold;
+      }
     </style>
   </head>
 
@@ -31,7 +36,7 @@
       <!-- Header -->
       <header id="header">
         <div class="logo">
-          <img src="images/logo.png" alt="Utsav Siwakoti" style="width: 240px; height: 240px; border-radius: 50%; object-fit: cover;" />
+          <img src="images/logo.png" alt="Utsav Siwakoti" style="width: 16vw; max-width: 240px; height: auto; border-radius: 50%; object-fit: cover;" />
         </div>
 
 
@@ -39,7 +44,7 @@
           <div class="inner">
             <h1>UTSAV SIWAKOTI</h1>
             <p> I am a graduate student in the Department of Physics and Astronomy at <a href="https://physics.ku.edu/people/utsav-siwakoti" target="_blank">University of Kansas</a>. 
-              I work in the Nearby galaxy lab with <a href="https://mills.ku.edu/group/" target="_blank">Prof. Elisabeth Mills.</a><br /> I am interested in star formation mechanisms, distance mapping and galactic evolution as a whole. 
+              I work in the Nearby galaxy lab with <a href="https://mills.ku.edu/" target="_blank">Prof. Elisabeth Mills.</a><br /> I am interested in star formation mechanisms, distance mapping and galactic evolution as a whole. 
               Currently, I am using the JWST MIRI dataset to study the star-forming zones of NGC 253. You can find my full CV <a href = "https://europa.eu/europass/eportfolio/screen/share/924da162-7e84-4e9f-9f6b-025b9ba741c2?lang=en"> here: </a><br /></p>
           </div>
         </div>
@@ -59,32 +64,34 @@
         <!-- Contact -->
         <article id="contact">
           <h2 class="major">Contact</h2>
-          <form method="post" action="#">
+            <form method="POST" action="https://formspree.io/f/mgvkqzko">
             <div class="fields">
               <div class="field half">
                 <label for="name">Name</label>
-                <input type="text" name="name" id="name" />
+                <input type="text" name="name" id="name" required>
               </div>
               <div class="field half">
                 <label for="email">Email</label>
-                <input type="text" name="email" id="email" />
+                <input type="email" name="email" id="email" required>
               </div>
               <div class="field">
                 <label for="message">Message</label>
-                <textarea name="message" id="message" rows="4"></textarea>
+                <textarea name="message" id="message" rows="4" required></textarea>
               </div>
             </div>
             <ul class="actions">
-              <li><input type="submit" value="Send Message" class="primary" /></li>
-              <li><input type="reset" value="Reset" /></li>
-            </ul>
+      <li><button type="submit" class="primary">Send Message</button></li>
+      <li><button type="reset">Reset</button></li>
+    </ul>
+  </form>
           </form>
-          <ul class="icons">
-            <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-            <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-            <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-            <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-          </ul>
+            <ul class="icons">
+              <li><a href="https://github.com/siwakotiutsav" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+              <li><a href="https://www.linkedin.com/in/siwakotiutsav/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+              <li><a href="https://www.researchgate.net/profile/Utsav-Siwakoti-2?ev=hdr_xprf" class="icon solid fa-flask"><span class="label">ResearchGate</span></a></li>
+              <li><a href="https://orcid.org/0000-0003-3633-0098" class="icon solid fa-id-card"><span class="label">ORCID</span></a></li>
+            </ul>
+
         </article>
       </div>
 
