@@ -637,15 +637,71 @@ input, select, textarea {
 
 /* Image */
 
-.image {
-  max-width: 100%;
-  height: auto;
-  margin: 1em 0;
-  display: block;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+/* Add this container rule above your .timeline styles */
+.timeline-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1em;
 }
 
+/* Modify your existing timeline styles */
+.timeline {
+  position: relative;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Update your astro-image styles */
+.astro-image {
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.astro-image img {
+  width: 100%;
+  height: auto;
+  max-height: 70vh; /* Prevent vertical overflow */
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+/* Add this to your media queries */
+@media (max-width: 900px) {
+  .timeline::before {
+    left: 1.2rem; /* Adjust timeline position */
+  }
+  
+  .timeline-entry {
+    margin-left: 4rem; /* Give more space for images */
+  }
+  
+  .astro-image {
+    max-width: 100%;
+    padding: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .timeline-container {
+    padding: 0 0.5em;
+  }
+  
+  .timeline-entry {
+    margin-left: 2.5rem;
+  }
+  
+  .astro-image img {
+    max-height: 60vh;
+    border-radius: 8px;
+  }
+}
 
 
 
@@ -725,6 +781,10 @@ input, select, textarea {
 			}
 
 		}
+
+
+
+
 
 /* List */
 
