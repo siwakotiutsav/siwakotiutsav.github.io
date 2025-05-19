@@ -726,6 +726,28 @@ input, select, textarea {
 
 		}
 
+.pub-date {
+  font-size: 0.85em;
+  font-weight: normal;
+  color: #666;
+  margin-left: 0.5em;
+}
+
+.timeline-entry details[open] summary ~ * {
+  animation: fadeIn 0.4s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+:target {
+  scroll-margin-top: var(--header-height);
+}
+
+
+
 /* List */
 
 	ol {
