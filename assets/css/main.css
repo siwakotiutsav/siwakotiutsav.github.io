@@ -637,17 +637,9 @@ input, select, textarea {
 
 /* Image */
 
-.image {
-  max-width: 100%;
-  height: auto;
-  margin: 1em 0;
-  display: block;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
 .astro-image {
-  margin-top: 1rem;
+  max-width: 800px;
+  margin: 2rem auto;
   text-align: center;
 }
 
