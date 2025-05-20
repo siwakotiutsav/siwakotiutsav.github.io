@@ -227,33 +227,33 @@ body.light {
 </head>
 
 <body>
-<header>
+  <header>
+    <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; width: 100%; justify-content: space-between;">
+      
+      <!-- Left: Logo + Title -->
+      <div class="astro-image" style="display: flex; align-items: center; gap: 1rem;">
+        <img src="images/ngc253/ngl.jpg"
+             alt="Nearby Galaxies Lab Logo"
+             loading="lazy"
+             style="height: 48px; border-radius: 6px; display: block;">
+        <h1 style="margin: 0; font-size: 1.4rem; color: var(--main-color);">Nearby Galaxies Lab - KU</h1>
+      </div>
 
-  
-  <button id="toggle-dark" style="background:none;border:1px solid var(--main-color);padding:0.3rem 0.6rem;font-family:inherit;color:var(--main-color);border-radius:4px;cursor:pointer;">
-    Lights On/Off
-  </button>
-  
-<!-- Fixed Image Section -->
-<div style="max-width: 100%; overflow: hidden; margin: 0 1rem 0 0;">
-  <div class="astro-image" style="display: flex; align-items: center; gap: 1rem;">
-    <img src="images/ngc253/ngl.jpg"
-         alt="Nearby Galaxies Lab Logo"
-         loading="lazy"
-         style="height: 48px; border-radius: 6px; display: block;">
-    <p class="caption" style="margin: 0; font-size: 1.1rem; color: var(--text-color);">Nearby Galaxies Lab - KU</p>
-  </div>
-</div>
+      <!-- Center: Lights Toggle Button -->
+      <button id="toggle-dark" style="background:none;border:1px solid var(--main-color);padding:0.3rem 0.6rem;font-family:inherit;color:var(--main-color);border-radius:4px;cursor:pointer;">
+        Lights On/Off
+      </button>
 
+      <!-- Right: Navigation -->
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a onclick="history.back();">Back</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-
-  <nav>
-    <ul>
-      <li><a href="../index.html">Home</a></li>
-      <li><a onclick="history.back();">Back</a></li>
-    </ul>
-  </nav>
-</header>
 
 
 <main>
