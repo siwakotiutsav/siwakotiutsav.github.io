@@ -5,27 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Research</title>
   <style>
-    :root {
-      --main-color: #0051BA;
-      --font-body: 'Georgia', serif;
-      --header-height: 70px;
+:root {
+  --main-color: #0051BA;
+  --font-body: 'Georgia', serif;
+  --header-height: 70px;
 
-      --bg-color: #ffffff;
-      --text-color: #111111;
-      --border-color: #dddddd;
-      --timeline-border: #cccccc;
-      --highlight: #f9f9f9;
-      --footer-bg: #f1f1f1;
-    }
+  /* Dark theme as default */
+  --bg-color: #1c1c1c;
+  --text-color: #f1f1f1;
+  --border-color: #444444;
+  --timeline-border: #555555;
+  --highlight: #2a2a2a;
+  --footer-bg: #111;
+}
 
-    body.dark {
-      --bg-color: #1c1c1c;
-      --text-color: #f1f1f1;
-      --border-color: #444444;
-      --timeline-border: #555555;
-      --highlight: #2a2a2a;
-      --footer-bg: #111;
-    }
+body.light {
+  --bg-color: #ffffff;
+  --text-color: #111111;
+  --border-color: #dddddd;
+  --timeline-border: #cccccc;
+  --highlight: #f9f9f9;
+  --footer-bg: #f1f1f1;
+}
+
 
     *, *::before, *::after {
       box-sizing: border-box;
@@ -266,14 +268,15 @@
   const toggleBtn = document.getElementById('toggle-dark');
   const body = document.body;
 
-  // Load preference on page load
-  if (localStorage.getItem('theme') === 'dark') {
-    body.classList.add('dark');
+  // Default to dark (no class); add 'light' only if needed
+  const storedTheme = localStorage.getItem('theme');
+  if (storedTheme === 'light') {
+    body.classList.add('light');
   }
 
   toggleBtn.addEventListener('click', () => {
-    body.classList.toggle('dark');
-    const theme = body.classList.contains('dark') ? 'dark' : 'light';
+    const isLight = body.classList.toggle('light');
+    const theme = isLight ? 'light' : 'dark';
     localStorage.setItem('theme', theme);
   });
 </script>
