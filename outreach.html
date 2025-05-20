@@ -199,6 +199,28 @@ body.light {
         left: -10px;
       }
     }
+
+.collage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.collage-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease;
+}
+
+.collage-grid img:hover {
+  transform: scale(1.05);
+}
+
+
+    
   </style>
 </head>
 
