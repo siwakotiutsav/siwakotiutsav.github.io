@@ -228,28 +228,49 @@ body.light {
 
 <body>
   <header>
-    
-  <button id="toggle-dark" style="background:none;border:1px solid var(--main-color);padding:0.3rem 0.6rem;font-family:inherit;color:var(--main-color);border-radius:4px;cursor:pointer;">
-  Lights On/Off
-</button>
-    <h1>Nearby Galaxies Lab - KU</h1>
-    <nav>
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a onclick="history.back();">Back</a></li>
-      </ul>
-    </nav>
-  </header>
+    <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; width: 100%; justify-content: space-between;">
 
-  <main>
-    <h2>JWST MIRI view on clusters of NGC 253</h2>
-    <div class="timeline">
-      <div class="timeline-entry">
-        <h3>Coming Soon...!</h3>
-       
+      <button id="toggle-dark" style="background:none;border:1px solid var(--main-color);padding:0.3rem 0.6rem;font-family:inherit;color:var(--main-color);border-radius:4px;cursor:pointer;">
+        Lights On/Off
+      </button>
+
+
+      <div class="astro-image" style="display: flex; align-items: center; gap: 1rem;">
+        <img src="../images/ngc253/ngl.jpg"
+             alt="Nearby Galaxies Lab Logo"
+             loading="lazy"
+             style="height: 48px; border-radius: 6px; display: block;">
+        <h1 style="margin: 0; font-size: 1.4rem; color: var(--main-color);">Nearby Galaxies Lab - KU</h1>
       </div>
 
-  </main>
+
+
+
+      <!-- Right: Navigation -->
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a onclick="history.back();">Back</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+
+<main>
+<section>
+  <h2>Nearby Galaxies Lab</h2>
+  <img src="../images/groupphoto" alt="Group photo coming soon" style="max-width:100%; margin-bottom:1rem; border:1px solid var(--border-color); border-radius:8px;">
+  <p>
+    I am a member of the <strong>Nearby Galaxies Lab</strong> led by Prof. Elisabeth (Betsy) Mills at the University of Kansas. Our group explores the physics and chemistry of gas in the most extreme environments in the nearby universe, including the Galactic Center, starburst galaxies, and active galactic nuclei. We use radio, millimeter, and infrared spectroscopy to study how gas flows, forms stars, and interacts with black holes, with data from telescopes like <strong>ALMA</strong>, the <strong>VLA</strong>, and <strong>JWST</strong>.
+  </p>
+  <p>
+    As part of this team, I contribute to JWST observations of <strong>NGC 253</strong> and <strong>M82</strong>—two nearby starburst galaxies—to study embedded star clusters, feedback, and outflows. My work focuses on analyzing mid-infrared spectral data from <strong>JWST MIRI</strong> to model extinction and infrared pumping in these dusty, energetic regions. This involves extracting and fitting emission and absorption lines to better understand how radiation and dust shape the physical conditions of star-forming environments. These efforts complement ongoing analysis with <strong>ALMA</strong> and the <strong>VLA</strong>.
+  </p>
+</section>
+
+</main>
 
 <footer>
   <p>&copy; 2025 Utsav Siwakoti. Design inspired by HTML5 UP and KU style.</p>
