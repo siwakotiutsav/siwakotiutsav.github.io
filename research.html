@@ -257,8 +257,25 @@
       </div>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Utsav Siwakoti. Design inspired by HTML5 UP and custom syllabus style.</p>
-  </footer>
+<footer>
+  <p>&copy; 2025 Utsav Siwakoti. Design inspired by HTML5 UP and custom syllabus style.</p>
+</footer>
+
+<!-- Place the script RIGHT HERE, before </body> -->
+<script>
+  const toggleBtn = document.getElementById('toggle-dark');
+  const body = document.body;
+
+  // Load preference on page load
+  if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark');
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    body.classList.toggle('dark');
+    const theme = body.classList.contains('dark') ? 'dark' : 'light';
+    localStorage.setItem('theme', theme);
+  });
+</script>
 </body>
 </html>
